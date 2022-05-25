@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Occupation
+vid: occupation
+description: 'Occupational terms... more info: https://www.loc.gov/standards/sourcelist/'
+weight: 0

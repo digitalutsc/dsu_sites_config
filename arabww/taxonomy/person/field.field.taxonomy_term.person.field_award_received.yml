@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_award_received
+    - taxonomy.vocabulary.person
+id: taxonomy_term.person.field_award_received
+field_name: field_award_received
+entity_type: taxonomy_term
+bundle: person
+label: 'Award Received'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

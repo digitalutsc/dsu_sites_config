@@ -1,0 +1,215 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.person.field_affiliated_country
+    - field.field.taxonomy_term.person.field_affiliated_language
+    - field.field.taxonomy_term.person.field_alternate_name
+    - field.field.taxonomy_term.person.field_alternate_name_arabic
+    - field.field.taxonomy_term.person.field_authority_link
+    - field.field.taxonomy_term.person.field_award_received
+    - field.field.taxonomy_term.person.field_biography
+    - field.field.taxonomy_term.person.field_cat_date_begin
+    - field.field.taxonomy_term.person.field_cat_date_end
+    - field.field.taxonomy_term.person.field_facebook_id
+    - field.field.taxonomy_term.person.field_identifier
+    - field.field.taxonomy_term.person.field_instagram_id
+    - field.field.taxonomy_term.person.field_name_arabic
+    - field.field.taxonomy_term.person.field_occupation
+    - field.field.taxonomy_term.person.field_official_website
+    - field.field.taxonomy_term.person.field_relationships
+    - field.field.taxonomy_term.person.field_twitter_id
+    - field.field.taxonomy_term.person.field_youtube_channel_id
+    - taxonomy.vocabulary.person
+  module:
+    - controlled_access_terms
+    - link
+    - text
+id: taxonomy_term.person.default
+targetEntityType: taxonomy_term
+bundle: person
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_affiliated_country:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_affiliated_language:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_alternate_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_alternate_name_arabic:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_authority_link:
+    type: authority_formatter_default
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: _blank
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_award_received:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_biography:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_cat_date_begin:
+    type: edtf_default
+    label: above
+    settings:
+      date_separator: space
+      date_order: little_endian
+      month_format: mmm
+      day_format: dd
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_cat_date_end:
+    type: edtf_default
+    label: above
+    settings:
+      date_separator: space
+      date_order: little_endian
+      month_format: mmm
+      day_format: dd
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_facebook_id:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_identifier:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_instagram_id:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_name_arabic:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_occupation:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_official_website:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_relationships:
+    type: typed_relation_default
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_twitter_id:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_youtube_channel_id:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 15
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
