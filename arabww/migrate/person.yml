@@ -1,0 +1,118 @@
+uuid: 63b9f42b-5b12-4a8a-aef0-95b282347f73
+id: person_migration1
+label: Import Person from CSV
+migration_group: migrate_islandora_csv
+
+source:
+  plugin: csv
+  path: modules/contrib/islandora_defaults/migrate/person.csv
+
+  # 1 means you have a header row, 0 means you don't
+  header_row_count: 1
+
+  # Each migration needs a unique key per row in the csv.  Here we're using the file path.
+  ids:
+    - field_identifier
+
+  # You can't enter string literals into a process plugin, but you can give it a constant as a 'source'.
+  constants:
+    # Everything gets created as admin
+    uid: 1
+
+# Set fields using values from the CSV
+process:
+  name: name
+  field_name_arabic: field_name_arabic
+  uid: constants/uid
+
+  field_identifier: field_identifier
+  field_cat_date_begin: field_cat_date_begin
+  field_cat_date_end: field_cat_date_end
+  field_biography: field_biography
+
+  field_facebook_id/uri: field_facebook_id
+  field_facebook_id/title: field_facebook_title
+
+  field_twitter_id/uri: field_twitter_id
+  field_twitter_id/title: field_twitter_title
+
+  field_instagram_id/uri: field_instagram_id
+  field_instagram_id/title: field_instagram_title
+
+  field_official_website/uri: field_official_website
+  field_official_website/title: field_official_website_title
+
+  field_alternate_name:
+    -
+      plugin: skip_on_empty
+      source: field_alternate_name
+      method: process
+    -
+      plugin: explode
+      delimiter: '|'
+
+  field_alternate_name_arabic:
+    -
+      plugin: skip_on_empty
+      source: field_alternate_name_arabic
+      method: process
+    -
+      plugin: explode
+      delimiter: '|'
+
+ # Split up our pipe-delimited string of
+  # subjects, and generate terms for each.
+  field_affiliated_language:
+    -
+      plugin: skip_on_empty
+      source: field_affiliated_language
+      method: process
+    -
+      plugin: explode
+      delimiter: '|'
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      value_key: name
+      bundle_key: vid
+      bundle: language
+
+ # Split up our pipe-delimited string of
+  # subjects, and generate terms for each.
+  field_occupation:
+    -
+      plugin: skip_on_empty
+      source: field_occupation
+      method: process
+    -
+      plugin: explode
+      delimiter: '|'
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      value_key: name
+      bundle_key: vid
+      bundle: occupation
+
+
+  # Split up our pipe-delimited string of
+  # subjects, and generate terms for each.
+  field_affiliated_country:
+    -
+      plugin: skip_on_empty
+      source: field_affiliated_country
+      method: process
+    -
+      plugin: explode
+      delimiter: '|'
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      value_key: name
+      bundle_key: vid
+      bundle: country
+
+# We're making nodes
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: person
