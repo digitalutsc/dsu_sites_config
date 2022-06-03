@@ -1,0 +1,52 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.item_metadata
+  module:
+    - context
+    - node
+    - views
+  theme:
+    - barriodepartments
+id: views_block__item_metadata_block_1
+theme: barriodepartments
+region: content
+weight: -6
+provider: null
+plugin: 'views_block:item_metadata-block_1'
+settings:
+  id: 'views_block:item_metadata-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  context:
+    id: context
+    negate: null
+    values: ''
+  user_status:
+    id: user_status
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    user_status:
+      viewing_profile: '0'
+      logged_viewing_profile: '0'
+      own_page_true: '0'
+      field_value: '0'
+    user_fields: uid
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      islandora_object: islandora_object
