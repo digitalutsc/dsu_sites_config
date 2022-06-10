@@ -1,132 +1,15 @@
 blocks:
   -
-    info: 'Advanced Search Button'
+    info: 'Alumni link'
     langcode: en
-    uuid: 92b19474-1ac5-4b30-9211-a6b9004dcfa7
+    uuid: 5a43041f-ddaa-4dbf-be9f-a4f7c4d5bc61
     bundle: basic
     revision_id: null
     rev_id_current: null
     fields:
       body:
         -
-          value: "<p><button class=\"search-button search-header-button mt-lg-5\" id=\"advanced-search-main\" onclick=\"window.location.href='/advanced-search'\" type=\"button\"><span class=\"dt-only\">Advanced Search</span></button></p>\r\n"
-          summary: ''
-          format: full_html
-  -
-    info: 'Item Description Header'
-    langcode: en
-    uuid: 5f6d337a-e586-4194-a547-831a389103a1
-    bundle: basic
-    revision_id: null
-    rev_id_current: null
-    fields:
-      body:
-        -
-          value: "<h2>Item Description</h2>\r\n"
-          summary: ''
-          format: full_html
-  -
-    info: 'DSU Logo'
-    langcode: en
-    uuid: 53d1f24b-86ae-48c4-91fb-3ca8eeac37cc
-    bundle: basic
-    revision_id: null
-    rev_id_current: null
-    fields:
-      body:
-        -
-          value: "<p><img alt=\"DSU Logo\" data-entity-type=\"file\" data-entity-uuid=\"a5ccc2b4-f233-495a-b7ac-9513945f3de1\" src=\"/sites/default/files/inline-images/logo.png\" /></p>\r\n"
-          summary: ''
-          format: full_html
-  -
-    info: 'Footer Social'
-    langcode: en
-    uuid: 82ad0554-66f8-4787-a138-032ff803167c
-    bundle: basic
-    revision_id: null
-    rev_id_current: null
-    fields:
-      body:
-        -
-          value: "<a class=\"logo\" href=\"//www.utsc.utoronto.ca\">University of Toronto Scarborough</a> <a class=\"utogether\" href=\"//www.utsc.utoronto.ca/strategicplan/\">Inspiring Inclusive Excellence</a>\r\n<ul class=\"social-media\" style=\"display: flex\">\r\n\t<li class=\"facebook\"><a href=\"//https://www.facebook.com/UTSCLibrary/\" style=\"width: 53px\" target=\"_blank\">facebook</a></li>\r\n\t<li class=\"instagram\"><a href=\"//https://instagram.com/UTSCLibrary/\" style=\"width: 53px\" target=\"_blank\">instagram</a></li>\r\n\t<li class=\"twitter\"><a href=\"//https://twitter.com/utsclibrary\" style=\"width: 53px\" target=\"_blank\">twitter</a></li>\r\n\t<li class=\"youtube\"><a href=\"//https://www.youtube.com/channel/UCWFM3BW7xnCLtJ8zTh5kxnQ\" style=\"width: 53px\" target=\"_blank\">youtube</a></li>\r\n\t<li class=\"linkedin\"><a href=\"//www.linkedin.com/school/university-of-toronto-scarborough\" style=\"width: 53px\" target=\"_blank\">linkedin</a></li>\r\n</ul>\r\n"
-          summary: ''
-          format: full_html
-  -
-    info: 'Footer Important Links'
-    langcode: en
-    uuid: 47992406-6190-4380-9049-b0839db6ed53
-    bundle: basic
-    revision_id: null
-    rev_id_current: null
-    fields:
-      body:
-        -
-          value: "<div class=\"col footer-links\" style=\"margin-left: 40px;\">\r\n<ul>\r\n\t<li class=\"link-headings\">U OF T SCARBOROUGH</li>\r\n\t<li><a href=\"//utsc.library.utoronto.ca/\" style=\"border: none\">Library Home</a></li>\r\n\t<li><a href=\"//digital.utsc.utoronto.ca/\" style=\"border: none\">Library Digital Scholarship Unit</a></li>\r\n\t<li><a href=\"//indigenous.utoronto.ca/about/land-acknowledgement/\" style=\"border: none\">Land Acknowledgement</a></li>\r\n\t<li><a href=\"//www.utoronto.ca/accessibility\" style=\"border: none\"><i>Access</i>Ability Statement</a></li>\r\n\t<li><a href=\"/user\" style=\"border: none\">Login</a></li>\r\n</ul>\r\n</div>\r\n"
-          summary: ''
-          format: full_html
-  -
-    info: 'Footer Campus Links'
-    langcode: en
-    uuid: 7c80d4c0-47b5-41f2-9fb9-efa6333c92c1
-    bundle: basic
-    revision_id: null
-    rev_id_current: null
-    fields:
-      body:
-        -
-          value: "<div class=\"col footer-links\">\r\n<ul>\r\n\t<li class=\"link-headings\">U OF T LIBRARIES</li>\r\n\t<li><a href=\"//https://onesearch.library.utoronto.ca/digital-scholarship/digital-scholarship-services\" style=\"border: none\">Digital Scholarship Services</a></li>\r\n\t<li><a href=\"//https://onesearch.library.utoronto.ca/online-privacy-data-collection\" style=\"border: none\">Privacy &amp; Data Collection Policy</a></li>\r\n</ul>\r\n\r\n<p><a class=\"positiveSpace\" href=\"//www.utsc.utoronto.ca/strategicplan/\"><img src=\"https://doris2.digital.utsc.utoronto.ca/themes/dsu_subtheme_barrioDepartments/images/positive_space.png\" alt=\"Positive Space Logo\"/></a></p>\r\n</div>\r\n"
-          summary: ''
-          format: full_html
-  -
-    info: 'Footer Address and Acknowledgment'
-    langcode: en
-    uuid: fd06e215-00d5-48a7-8464-1c364954f00a
-    bundle: basic
-    revision_id: null
-    rev_id_current: null
-    fields:
-      body:
-        -
-          value: "<div class=\"col-sm-12\">\r\n<div class=\"utsc-address\">\r\n<p class=\"addressText\" style=\"text-align:center\"><strong>University of Toronto Scarborough</strong> 1265 Military Trail, Toronto, ON. Canada, M1C 1A4, Ph. (416) 287 8872</p>\r\n</div>\r\n</div>\r\n"
-          summary: ''
-          format: full_html
-  -
-    info: 'Google search'
-    langcode: en
-    uuid: bd6fb16a-9f41-4f4e-b859-d50eb533ef95
-    bundle: basic
-    revision_id: null
-    rev_id_current: null
-    fields:
-      body:
-        -
-          value: "<fieldset id=\"google\">\r\n                                        <legend>Google Search</legend>\r\n                                        <form action=\"https://www.google.com/search\" name=\"searchform\" id=\"utsearch\"\r\n                                              class=\"searchform\" method=\"get\" target=\"blank\">\r\n                                            <!-- Value of search results will have website name -->\r\n                                            <label for=\"sitesearch\"><span class=\"sr-only\">Search</span></label>\r\n                                            <input name=\"sitesearch\" type=\"hidden\" value=\"www.utsc.utoronto.ca\"/>\r\n                                            <label for=\"search-site\"><span\r\n                                                        class=\"sr-only\">What can we help you with?</span>\r\n                                                <input autocomplete=\"on\" class=\"search\" name=\"search-site\" tabindex=\"-1\"\r\n                                                       placeholder=\"What can we help you with?\" required=\"required\"\r\n                                                       type=\"search\"></label>\r\n                                            <button type=\"submit\" id=\"searchBTN\" tabindex=\"-1\">Go</button>\r\n                                        </form>\r\n                                    </fieldset>"
-          summary: ''
-          format: full_html
-  -
-    info: 'Quick Links'
-    langcode: en
-    uuid: 49fbb7a7-1efa-4ee6-a5e2-1f699a71db67
-    bundle: basic
-    revision_id: null
-    rev_id_current: null
-    fields:
-      body:
-        -
-          value: "<div class=\"dropdown-quicklinks d-none d-lg-block mt-5\">\r\n                    <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" data-display=\"static\"\r\n                            aria-expanded=\"false\" id=\"dropdownMenuButton\">\r\n                        UTSC Quick Links\r\n                    </button>\r\n\r\n                    <div class=\"dropdown-menu quicklinks\" aria-labelledby=\"dropdownMenuButton\" role=\"dropdown\">\r\n                        <ul>\r\n                            <li><a href=\"//utsc.utoronto.ca/home/az-index\">A-Z Listing</a></li>\r\n                            <li><a href=\"//webmail.utsc.utoronto.ca\">Webmail</a></li>\r\n                            <li><a href=\"//mail.utoronto.ca\">O365 Mail</a></li>\r\n                            <li><a href=\"//utsc.calendar.utoronto.ca/\">Academic Calendar</a></li>\r\n                            <li><a href=\"//intranet.utsc.utoronto.ca/home.php?login=1\">Intranet</a></li>\r\n                            <li><a href=\"//utsc.library.utoronto.ca\">Library</a></li>\r\n                            <li><a href=\"//intranet.utsc.utoronto.ca/intranet2/Controller?search=Search\">People\r\n                                    Directory</a></li>\r\n                        </ul>\r\n                    </div>\r\n\r\n                </div>"
-          summary: ''
-          format: full_html
-  -
-    info: 'Search button'
-    langcode: en
-    uuid: fe4c036a-b7c9-444a-b723-28fb3ba8355d
-    bundle: basic
-    revision_id: null
-    rev_id_current: null
-    fields:
-      body:
-        -
-          value: "<button class=\"search-button search-header-button mt-lg-5\" id=\"search-main\" type=\"button\"><span class=\"dt-only\">Search </span></button>\r\n"
+          value: "<a href=\"https://www.utsc.utoronto.ca/alumni/\" class=\"text-center\">\r\n                        <span class=\"d-md-inline alumni-giving-text\">Alumni &amp; Friends</span>\r\n                        <span class=\"d-none d-md-inline alumni-giving-hyphen\">- Ways to get involved and give back</span>\r\n                    </a>"
           summary: ''
           format: full_html
   -
@@ -143,15 +26,132 @@ blocks:
           summary: ''
           format: full_html
   -
-    info: 'Alumni link'
+    info: 'Search button'
     langcode: en
-    uuid: 5a43041f-ddaa-4dbf-be9f-a4f7c4d5bc61
+    uuid: fe4c036a-b7c9-444a-b723-28fb3ba8355d
     bundle: basic
     revision_id: null
     rev_id_current: null
     fields:
       body:
         -
-          value: "<a href=\"https://www.utsc.utoronto.ca/alumni/\" class=\"text-center\">\r\n                        <span class=\"d-md-inline alumni-giving-text\">Alumni &amp; Friends</span>\r\n                        <span class=\"d-none d-md-inline alumni-giving-hyphen\">- Ways to get involved and give back</span>\r\n                    </a>"
+          value: "<button class=\"search-button search-header-button mt-lg-5\" id=\"search-main\" type=\"button\"><span class=\"dt-only\">Search </span></button>\r\n"
+          summary: ''
+          format: full_html
+  -
+    info: 'Quick Links'
+    langcode: en
+    uuid: 49fbb7a7-1efa-4ee6-a5e2-1f699a71db67
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: "<div class=\"dropdown-quicklinks d-none d-lg-block mt-5\">\r\n                    <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" data-display=\"static\"\r\n                            aria-expanded=\"false\" id=\"dropdownMenuButton\">\r\n                        UTSC Quick Links\r\n                    </button>\r\n\r\n                    <div class=\"dropdown-menu quicklinks\" aria-labelledby=\"dropdownMenuButton\" role=\"dropdown\">\r\n                        <ul>\r\n                            <li><a href=\"//utsc.utoronto.ca/home/az-index\">A-Z Listing</a></li>\r\n                            <li><a href=\"//webmail.utsc.utoronto.ca\">Webmail</a></li>\r\n                            <li><a href=\"//mail.utoronto.ca\">O365 Mail</a></li>\r\n                            <li><a href=\"//utsc.calendar.utoronto.ca/\">Academic Calendar</a></li>\r\n                            <li><a href=\"//intranet.utsc.utoronto.ca/home.php?login=1\">Intranet</a></li>\r\n                            <li><a href=\"//utsc.library.utoronto.ca\">Library</a></li>\r\n                            <li><a href=\"//intranet.utsc.utoronto.ca/intranet2/Controller?search=Search\">People\r\n                                    Directory</a></li>\r\n                        </ul>\r\n                    </div>\r\n\r\n                </div>"
+          summary: ''
+          format: full_html
+  -
+    info: 'Google search'
+    langcode: en
+    uuid: bd6fb16a-9f41-4f4e-b859-d50eb533ef95
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: "<fieldset id=\"google\">\r\n                                        <legend>Google Search</legend>\r\n                                        <form action=\"https://www.google.com/search\" name=\"searchform\" id=\"utsearch\"\r\n                                              class=\"searchform\" method=\"get\" target=\"blank\">\r\n                                            <!-- Value of search results will have website name -->\r\n                                            <label for=\"sitesearch\"><span class=\"sr-only\">Search</span></label>\r\n                                            <input name=\"sitesearch\" type=\"hidden\" value=\"www.utsc.utoronto.ca\"/>\r\n                                            <label for=\"search-site\"><span\r\n                                                        class=\"sr-only\">What can we help you with?</span>\r\n                                                <input autocomplete=\"on\" class=\"search\" name=\"search-site\" tabindex=\"-1\"\r\n                                                       placeholder=\"What can we help you with?\" required=\"required\"\r\n                                                       type=\"search\"></label>\r\n                                            <button type=\"submit\" id=\"searchBTN\" tabindex=\"-1\">Go</button>\r\n                                        </form>\r\n                                    </fieldset>"
+          summary: ''
+          format: full_html
+  -
+    info: 'Footer Address and Acknowledgment'
+    langcode: en
+    uuid: fd06e215-00d5-48a7-8464-1c364954f00a
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: "<div class=\"col-sm-12\">\r\n<div class=\"utsc-address\">\r\n<p class=\"addressText\" style=\"text-align:center\"><strong>University of Toronto Scarborough</strong> 1265 Military Trail, Toronto, ON. Canada, M1C 1A4, Ph. (416) 287 8872</p>\r\n</div>\r\n</div>\r\n"
+          summary: ''
+          format: full_html
+  -
+    info: 'Footer Campus Links'
+    langcode: en
+    uuid: 7c80d4c0-47b5-41f2-9fb9-efa6333c92c1
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: "<div class=\"col footer-links\">\r\n<ul>\r\n\t<li class=\"link-headings\">U OF T LIBRARIES</li>\r\n\t<li><a href=\"//https://onesearch.library.utoronto.ca/digital-scholarship/digital-scholarship-services\" style=\"border: none\">Digital Scholarship Services</a></li>\r\n\t<li><a href=\"//https://onesearch.library.utoronto.ca/online-privacy-data-collection\" style=\"border: none\">Privacy &amp; Data Collection Policy</a></li>\r\n</ul>\r\n\r\n<p><a class=\"positiveSpace\" href=\"//www.utsc.utoronto.ca/strategicplan/\"><img src=\"https://doris2.digital.utsc.utoronto.ca/themes/dsu_subtheme_barrioDepartments/images/positive_space.png\" alt=\"Positive Space Logo\"/></a></p>\r\n</div>\r\n"
+          summary: ''
+          format: full_html
+  -
+    info: 'Footer Important Links'
+    langcode: en
+    uuid: 47992406-6190-4380-9049-b0839db6ed53
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: "<div class=\"col footer-links\" style=\"margin-left: 40px;\">\r\n<ul>\r\n\t<li class=\"link-headings\">U OF T SCARBOROUGH</li>\r\n\t<li><a href=\"//utsc.library.utoronto.ca/\" style=\"border: none\">Library Home</a></li>\r\n\t<li><a href=\"//digital.utsc.utoronto.ca/\" style=\"border: none\">Library Digital Scholarship Unit</a></li>\r\n\t<li><a href=\"//indigenous.utoronto.ca/about/land-acknowledgement/\" style=\"border: none\">Land Acknowledgement</a></li>\r\n\t<li><a href=\"//www.utoronto.ca/accessibility\" style=\"border: none\"><i>Access</i>Ability Statement</a></li>\r\n\t<li><a href=\"/user\" style=\"border: none\">Login</a></li>\r\n</ul>\r\n</div>\r\n"
+          summary: ''
+          format: full_html
+  -
+    info: 'Footer Social'
+    langcode: en
+    uuid: 82ad0554-66f8-4787-a138-032ff803167c
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: "<a class=\"logo\" href=\"//www.utsc.utoronto.ca\">University of Toronto Scarborough</a> <a class=\"utogether\" href=\"//www.utsc.utoronto.ca/strategicplan/\">Inspiring Inclusive Excellence</a>\r\n<ul class=\"social-media\" style=\"display: flex\">\r\n\t<li class=\"facebook\"><a href=\"//https://www.facebook.com/UTSCLibrary/\" style=\"width: 53px\" target=\"_blank\">facebook</a></li>\r\n\t<li class=\"instagram\"><a href=\"//https://instagram.com/UTSCLibrary/\" style=\"width: 53px\" target=\"_blank\">instagram</a></li>\r\n\t<li class=\"twitter\"><a href=\"//https://twitter.com/utsclibrary\" style=\"width: 53px\" target=\"_blank\">twitter</a></li>\r\n\t<li class=\"youtube\"><a href=\"//https://www.youtube.com/channel/UCWFM3BW7xnCLtJ8zTh5kxnQ\" style=\"width: 53px\" target=\"_blank\">youtube</a></li>\r\n\t<li class=\"linkedin\"><a href=\"//www.linkedin.com/school/university-of-toronto-scarborough\" style=\"width: 53px\" target=\"_blank\">linkedin</a></li>\r\n</ul>\r\n"
+          summary: ''
+          format: full_html
+  -
+    info: 'DSU Logo'
+    langcode: en
+    uuid: 53d1f24b-86ae-48c4-91fb-3ca8eeac37cc
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: "<p><img id=\"logo\" alt=\"DSU Logo\" data-entity-type=\"file\" data-entity-uuid=\"a5ccc2b4-f233-495a-b7ac-9513945f3de1\" src=\"/sites/default/files/logo.svg\" /></p>\r\n"
+          summary: ''
+          format: full_html
+  -
+    info: 'Item Description Header'
+    langcode: en
+    uuid: 5f6d337a-e586-4194-a547-831a389103a1
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: "<h2>Item Description</h2>\r\n"
+          summary: ''
+          format: full_html
+  -
+    info: 'Advanced Search Button'
+    langcode: en
+    uuid: 92b19474-1ac5-4b30-9211-a6b9004dcfa7
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: "<p><button class=\"search-button search-header-button mt-lg-5\" id=\"advanced-search-main\" onclick=\"window.location.href='/advanced-search'\" type=\"button\"><span class=\"dt-only\">Advanced Search</span></button></p>\r\n"
           summary: ''
           format: full_html
