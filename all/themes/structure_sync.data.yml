@@ -126,7 +126,7 @@ blocks:
     fields:
       body:
         -
-          value: "<p><img id=\"logo\" alt=\"DSU Logo\" data-entity-type=\"file\" data-entity-uuid=\"a5ccc2b4-f233-495a-b7ac-9513945f3de1\" src=\"/sites/default/files/logo.svg\" /></p>\r\n"
+          value: "<p><a href=\"/\"><img alt=\"DSU Logo\" data-entity-type=\"file\" data-entity-uuid=\"a5ccc2b4-f233-495a-b7ac-9513945f3de1\" id=\"logo\" src=\"/sites/default/files/logo.svg\" /></a></p>\r\n"
           summary: ''
           format: full_html
   -
