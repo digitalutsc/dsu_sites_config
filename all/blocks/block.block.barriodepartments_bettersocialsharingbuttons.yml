@@ -10,7 +10,7 @@ dependencies:
 id: barriodepartments_bettersocialsharingbuttons
 theme: barriodepartments
 region: content
-weight: -7
+weight: -6
 provider: null
 plugin: social_sharing_buttons_block
 settings:
