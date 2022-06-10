@@ -12,7 +12,7 @@ dependencies:
 id: views_block__download_button_block_1
 theme: barriodepartments
 region: content
-weight: -10
+weight: -4
 provider: null
 plugin: 'views_block:download_button-block_1'
 settings:
@@ -24,6 +24,10 @@ settings:
   views_label: ''
   items_per_page: none
 visibility:
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
   context:
     id: context
     negate: null
@@ -39,10 +43,6 @@ visibility:
       own_page_true: '0'
       field_value: '0'
     user_fields: uid
-  context_all:
-    id: context_all
-    negate: null
-    values: ''
   'entity_bundle:node':
     id: 'entity_bundle:node'
     negate: false
