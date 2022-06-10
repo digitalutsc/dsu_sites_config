@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:7c80d4c0-47b5-41f2-9fb9-efa6333c92c1'
+  module:
+    - block_content
+    - context
+  theme:
+    - barriodepartments
+id: footercampuslinks
+theme: barriodepartments
+region: footer_third
+weight: 0
+provider: null
+plugin: 'block_content:7c80d4c0-47b5-41f2-9fb9-efa6333c92c1'
+settings:
+  id: 'block_content:7c80d4c0-47b5-41f2-9fb9-efa6333c92c1'
+  label: 'Footer Campus Links'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  context:
+    id: context
+    negate: null
+    values: ''
+  user_status:
+    id: user_status
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    user_status:
+      viewing_profile: '0'
+      logged_viewing_profile: '0'
+      own_page_true: '0'
+      field_value: '0'
+    user_fields: uid
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
