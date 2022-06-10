@@ -8,7 +8,7 @@ dependencies:
     - facets
   theme:
     - barriodepartments
-id: publicationdatecollection
+id: barriodepartments_publicationdatecollection
 theme: barriodepartments
 region: sidebar_first
 weight: -12
@@ -20,7 +20,7 @@ settings:
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: publicationdatecollection
+  block_id: barriodepartments_publicationdatecollection
 visibility:
   view_inclusion:
     id: view_inclusion
