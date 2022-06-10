@@ -3,13 +3,12 @@ status: true
 dependencies:
   module:
     - context
-    - system
   theme:
     - barriodepartments
 id: pagetitle
 theme: barriodepartments
 region: content
-weight: -12
+weight: -11
 provider: null
 plugin: page_title_block
 settings:
@@ -37,7 +36,3 @@ visibility:
       own_page_true: '0'
       field_value: '0'
     user_fields: uid
-  request_path:
-    id: request_path
-    negate: true
-    pages: '<front>'
