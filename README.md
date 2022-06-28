@@ -4,7 +4,7 @@
 
 
 ````
-wget wget https://raw.githubusercontent.com/digitalutsc/dsu_sites_config/exported_doris/all/patches/deploy-dsu-theme-for-makefile.patch
+wget https://raw.githubusercontent.com/digitalutsc/dsu_sites_config/exported_doris/all/patches/deploy-dsu-theme-for-makefile.patch
 ````
 
 ````
