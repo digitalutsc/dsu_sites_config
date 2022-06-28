@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:47992406-6190-4380-9049-b0839db6ed53'
+  module:
+    - block_content
+    - context
+  theme:
+    - barriodepartments
+id: footerimportantlinks
+theme: barriodepartments
+region: footer_second
+weight: 0
+provider: null
+plugin: 'block_content:47992406-6190-4380-9049-b0839db6ed53'
+settings:
+  id: 'block_content:47992406-6190-4380-9049-b0839db6ed53'
+  label: 'Footer Important Links'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  context:
+    id: context
+    negate: null
+    values: ''
+  user_status:
+    id: user_status
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    user_status:
+      viewing_profile: '0'
+      logged_viewing_profile: '0'
+      own_page_true: '0'
+      field_value: '0'
+    user_fields: uid
+  context_all:
+    id: context_all
+    negate: null
+    values: ''

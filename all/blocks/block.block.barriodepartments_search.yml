@@ -1,0 +1,49 @@
+langcode: en
+status: false
+dependencies:
+  module:
+    - advanced_search
+    - context
+    - system
+  theme:
+    - barriodepartments
+id: barriodepartments_search
+theme: barriodepartments
+region: highlighted
+weight: -15
+provider: null
+plugin: search_block
+settings:
+  id: search_block
+  label: Search
+  label_display: '0'
+  provider: advanced_search
+  search_view_machine_name: view.advanced_search.page_1
+  search_textfield_label: ''
+  search_placeholder: 'Search Collections'
+  search_submit_label: Search
+  search_method: dismax
+visibility:
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+  context:
+    id: context
+    negate: null
+    values: ''
+  user_status:
+    id: user_status
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    user_status:
+      viewing_profile: '0'
+      logged_viewing_profile: '0'
+      own_page_true: '0'
+      field_value: '0'
+    user_fields: uid
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/collection/*\r\n/search-results"
