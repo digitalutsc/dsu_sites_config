@@ -8,8 +8,8 @@ dependencies:
     - barriodepartments
 id: barriodepartments_breadcrumbs
 theme: barriodepartments
-region: content
-weight: -14
+region: breadcrumb
+weight: -30
 provider: null
 plugin: system_breadcrumb_block
 settings:
