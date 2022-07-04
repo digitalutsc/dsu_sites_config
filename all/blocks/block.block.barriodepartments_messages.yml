@@ -8,7 +8,7 @@ dependencies:
 id: barriodepartments_messages
 theme: barriodepartments
 region: highlighted
-weight: -5
+weight: -14
 provider: null
 plugin: system_messages_block
 settings:

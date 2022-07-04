@@ -1,26 +1,27 @@
 langcode: en
 status: true
 dependencies:
-  config:
-    - facets.facet.timelinejs_subject
   module:
+    - advanced_search
     - context
-    - facets
   theme:
     - barriodepartments
-id: timelinejssubject
+id: barriodepartments_mapsolrbasedviewadvancedsearchforblock
 theme: barriodepartments
 region: sidebar_first
-weight: -13
+weight: -6
 provider: null
-plugin: 'facet_block:timelinejs_subject'
+plugin: 'advanced_search_block:map_solr_based_view__block_1'
 settings:
-  id: 'facet_block:timelinejs_subject'
-  label: Subject
-  label_display: visible
-  provider: facets
-  context_mapping: {  }
-  block_id: timelinejssubject
+  id: 'advanced_search_block:map_solr_based_view__block_1'
+  label: 'Map Solr Based View: Advanced Search for Block'
+  label_display: '0'
+  provider: advanced_search
+  fields:
+    - fulltext_title
+    - field_description
+    - field_coordinates
+  context_filter: null
 visibility:
   context_all:
     id: context_all
@@ -45,4 +46,4 @@ visibility:
     id: view_inclusion
     negate: false
     view_inclusion:
-      view-timelinejs_solr_based_view-page_1: view-timelinejs_solr_based_view-page_1
+      view-map_solr_based_view-page_1: view-map_solr_based_view-page_1

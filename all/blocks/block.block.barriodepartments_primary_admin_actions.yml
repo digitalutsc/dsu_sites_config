@@ -5,8 +5,8 @@ dependencies:
     - barriodepartments
 id: barriodepartments_primary_admin_actions
 theme: barriodepartments
-region: highlighted
-weight: -5
+region: content
+weight: -18
 provider: null
 plugin: local_actions_block
 settings:

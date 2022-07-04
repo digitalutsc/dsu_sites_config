@@ -9,7 +9,7 @@ dependencies:
 id: barriodepartments_advancedsearchsearchresultspagerforpage
 theme: barriodepartments
 region: content
-weight: -12
+weight: -15
 provider: null
 plugin: 'advanced_search_result_pager:advanced_search__page_1'
 settings:

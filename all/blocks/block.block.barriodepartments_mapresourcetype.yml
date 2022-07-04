@@ -2,25 +2,25 @@ langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.map_genre
+    - facets.facet.map_resource_type
   module:
     - context
     - facets
   theme:
-    - olivero
-id: mapgenre_2
-theme: olivero
-region: sidebar
-weight: 0
+    - barriodepartments
+id: barriodepartments_mapresourcetype
+theme: barriodepartments
+region: sidebar_first
+weight: -3
 provider: null
-plugin: 'facet_block:map_genre'
+plugin: 'facet_block:map_resource_type'
 settings:
-  id: 'facet_block:map_genre'
-  label: 'Map Genre'
+  id: 'facet_block:map_resource_type'
+  label: 'Resource Type'
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: mapgenre_2
+  block_id: barriodepartments_mapresourcetype
 visibility:
   context_all:
     id: context_all

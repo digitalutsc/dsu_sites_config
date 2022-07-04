@@ -10,12 +10,12 @@ dependencies:
 id: barriodepartments_citationselectblock
 theme: barriodepartments
 region: content
-weight: -3
+weight: -9
 provider: null
 plugin: citation_select_block
 settings:
   id: citation_select_block
-  label: 'Citation this object'
+  label: 'Cite this object'
   label_display: visible
   provider: citation_select
 visibility:

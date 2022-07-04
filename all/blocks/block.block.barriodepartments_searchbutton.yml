@@ -1,26 +1,27 @@
 langcode: en
 status: true
 dependencies:
-  config:
-    - facets.facet.map_geographic_subject
+  content:
+    - 'block_content:basic:fe4c036a-b7c9-444a-b723-28fb3ba8355d'
   module:
+    - block_content
     - context
-    - facets
   theme:
-    - olivero
-id: mapgeographicsubject_2
-theme: olivero
-region: sidebar
+    - barriodepartments
+id: barriodepartments_searchbutton
+theme: barriodepartments
+region: header_form
 weight: 0
 provider: null
-plugin: 'facet_block:map_geographic_subject'
+plugin: 'block_content:fe4c036a-b7c9-444a-b723-28fb3ba8355d'
 settings:
-  id: 'facet_block:map_geographic_subject'
-  label: 'Map Geographic Subject'
-  label_display: visible
-  provider: facets
-  context_mapping: {  }
-  block_id: mapgeographicsubject_2
+  id: 'block_content:fe4c036a-b7c9-444a-b723-28fb3ba8355d'
+  label: 'Search button'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
 visibility:
   context_all:
     id: context_all
@@ -41,8 +42,3 @@ visibility:
       own_page_true: '0'
       field_value: '0'
     user_fields: uid
-  view_inclusion:
-    id: view_inclusion
-    negate: false
-    view_inclusion:
-      view-map_solr_based_view-page_1: view-map_solr_based_view-page_1

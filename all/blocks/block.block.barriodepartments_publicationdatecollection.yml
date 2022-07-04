@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.publication_date_collection_
+    - facets.facet.collection_publication_date
   module:
     - context
     - facets
@@ -13,20 +13,19 @@ theme: barriodepartments
 region: sidebar_first
 weight: -12
 provider: null
-plugin: 'facet_block:publication_date_collection_'
+plugin: 'facet_block:collection_publication_date'
 settings:
-  id: 'facet_block:publication_date_collection_'
+  id: 'facet_block:collection_publication_date'
   label: 'Publication Date'
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: barriodepartments_publicationdatecollection
+  block_id: publicationdatecollection
 visibility:
-  view_inclusion:
-    id: view_inclusion
-    negate: false
-    view_inclusion:
-      view-collection-page_1: view-collection-page_1
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
   context:
     id: context
     negate: null
@@ -42,7 +41,8 @@ visibility:
       own_page_true: '0'
       field_value: '0'
     user_fields: uid
-  context_all:
-    id: context_all
-    negate: null
-    values: ''
+  view_inclusion:
+    id: view_inclusion
+    negate: false
+    view_inclusion:
+      view-collection-page_1: view-collection-page_1

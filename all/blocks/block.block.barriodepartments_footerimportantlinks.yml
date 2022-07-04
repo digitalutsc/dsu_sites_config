@@ -1,26 +1,27 @@
 langcode: en
 status: true
 dependencies:
-  config:
-    - facets.facet.timelinejs_resource_type
+  content:
+    - 'block_content:basic:47992406-6190-4380-9049-b0839db6ed53'
   module:
+    - block_content
     - context
-    - facets
   theme:
     - barriodepartments
-id: timelinejsresourcetype
+id: barriodepartments_footerimportantlinks
 theme: barriodepartments
-region: sidebar_first
-weight: -14
+region: footer_second
+weight: 0
 provider: null
-plugin: 'facet_block:timelinejs_resource_type'
+plugin: 'block_content:47992406-6190-4380-9049-b0839db6ed53'
 settings:
-  id: 'facet_block:timelinejs_resource_type'
-  label: 'Resource Type'
-  label_display: visible
-  provider: facets
-  context_mapping: {  }
-  block_id: timelinejsresourcetype
+  id: 'block_content:47992406-6190-4380-9049-b0839db6ed53'
+  label: 'Footer Important Links'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
 visibility:
   context_all:
     id: context_all
@@ -41,8 +42,3 @@ visibility:
       own_page_true: '0'
       field_value: '0'
     user_fields: uid
-  view_inclusion:
-    id: view_inclusion
-    negate: false
-    view_inclusion:
-      view-timelinejs_solr_based_view-page_1: view-timelinejs_solr_based_view-page_1

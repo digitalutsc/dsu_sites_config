@@ -10,24 +10,16 @@ dependencies:
 id: barriodepartments_miradorblock
 theme: barriodepartments
 region: content
-weight: -5
+weight: -12
 provider: null
 plugin: mirador_block
 settings:
   id: mirador_block
   label: 'Mirador block'
-  label_display: '0'
+  label_display: visible
   provider: islandora_mirador
   iiif_manifest_url: 'https://islandora.traefik.me/node/[node:nid]/book-manifest'
 visibility:
-  context_all:
-    id: context_all
-    negate: null
-    values: ''
-  context:
-    id: context
-    negate: null
-    values: ''
   user_status:
     id: user_status
     negate: false
@@ -39,6 +31,14 @@ visibility:
       own_page_true: '0'
       field_value: '0'
     user_fields: uid
+  context:
+    id: context
+    negate: null
+    values: ''
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
   term:
     id: term
     tid:

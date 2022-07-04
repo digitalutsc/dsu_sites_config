@@ -5,8 +5,8 @@ dependencies:
     - barriodepartments
 id: barriodepartments_primary_local_tasks
 theme: barriodepartments
-region: highlighted
-weight: -4
+region: content
+weight: -19
 provider: null
 plugin: local_tasks_block
 settings:

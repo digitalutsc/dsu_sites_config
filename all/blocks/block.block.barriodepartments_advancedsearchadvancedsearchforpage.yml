@@ -1,5 +1,5 @@
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - advanced_search
@@ -8,14 +8,14 @@ dependencies:
     - barriodepartments
 id: barriodepartments_advancedsearchadvancedsearchforpage
 theme: barriodepartments
-region: footer_fourth
-weight: -22
+region: sidebar_first
+weight: -19
 provider: null
 plugin: 'advanced_search_block:advanced_search__page_1'
 settings:
   id: 'advanced_search_block:advanced_search__page_1'
   label: 'Advanced Search: Advanced Search for Page'
-  label_display: visible
+  label_display: '0'
   provider: advanced_search
   fields:
     - title

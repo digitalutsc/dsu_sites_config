@@ -2,35 +2,29 @@ langcode: en
 status: true
 dependencies:
   config:
-    - views.view.collection_metadata
+    - views.view.newspaper
   module:
     - context
+    - node
+    - term_condition
     - views
   theme:
     - barriodepartments
-id: views_block__collection_metadata_block_1
+id: barriodepartments_views_block__newspaper_block_1
 theme: barriodepartments
 region: content
-weight: -14
+weight: -7
 provider: null
-plugin: 'views_block:collection_metadata-block_1'
+plugin: 'views_block:newspaper-block_1'
 settings:
-  id: 'views_block:collection_metadata-block_1'
+  id: 'views_block:newspaper-block_1'
   label: ''
   label_display: visible
   provider: views
+  context_mapping: {  }
   views_label: ''
   items_per_page: none
 visibility:
-  view_inclusion:
-    id: view_inclusion
-    negate: false
-    view_inclusion:
-      view-collection-page_1: view-collection-page_1
-  context:
-    id: context
-    negate: null
-    values: ''
   user_status:
     id: user_status
     negate: false
@@ -42,7 +36,25 @@ visibility:
       own_page_true: '0'
       field_value: '0'
     user_fields: uid
+  context:
+    id: context
+    negate: null
+    values: ''
   context_all:
     id: context_all
     negate: null
     values: ''
+  term:
+    id: term
+    tid:
+      -
+        target_id: '19'
+    negate: false
+    context_mapping: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      islandora_object: islandora_object

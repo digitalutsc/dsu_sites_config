@@ -1,26 +1,27 @@
 langcode: en
 status: true
 dependencies:
-  config:
-    - facets.facet.timelinejs_geographic_subject
   module:
+    - advanced_search
     - context
-    - facets
   theme:
     - barriodepartments
-id: timelinejsgeographicsubject
+id: barriodepartments_timelinejssolrbasedviewadvancedsearchforpage
 theme: barriodepartments
 region: sidebar_first
-weight: -15
+weight: -11
 provider: null
-plugin: 'facet_block:timelinejs_geographic_subject'
+plugin: 'advanced_search_block:timelinejs_solr_based_view__page_1'
 settings:
-  id: 'facet_block:timelinejs_geographic_subject'
-  label: 'TimelineJS Geographic Subject'
-  label_display: visible
-  provider: facets
-  context_mapping: {  }
-  block_id: timelinejsgeographicsubject
+  id: 'advanced_search_block:timelinejs_solr_based_view__page_1'
+  label: 'TimelineJS Solr based: Advanced Search for Page'
+  label_display: '0'
+  provider: advanced_search
+  fields:
+    - fulltext_title
+    - field_description
+    - field_edtf_date_created
+  context_filter: null
 visibility:
   context_all:
     id: context_all

@@ -2,21 +2,21 @@ langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:53d1f24b-86ae-48c4-91fb-3ca8eeac37cc'
+    - 'block_content:basic:7c80d4c0-47b5-41f2-9fb9-efa6333c92c1'
   module:
     - block_content
     - context
   theme:
     - barriodepartments
-id: dsulogo
+id: barriodepartments_footercampuslinks
 theme: barriodepartments
-region: top_header
+region: footer_third
 weight: 0
 provider: null
-plugin: 'block_content:53d1f24b-86ae-48c4-91fb-3ca8eeac37cc'
+plugin: 'block_content:7c80d4c0-47b5-41f2-9fb9-efa6333c92c1'
 settings:
-  id: 'block_content:53d1f24b-86ae-48c4-91fb-3ca8eeac37cc'
-  label: 'DSU Logo'
+  id: 'block_content:7c80d4c0-47b5-41f2-9fb9-efa6333c92c1'
+  label: 'Footer Campus Links'
   label_display: '0'
   provider: block_content
   status: true

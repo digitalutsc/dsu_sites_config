@@ -2,25 +2,25 @@ langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.timelinejs_subject
+    - facets.facet.map_geographic_subject
   module:
     - context
     - facets
   theme:
-    - olivero
-id: timelinejssubject_2
-theme: olivero
-region: sidebar
-weight: 0
+    - barriodepartments
+id: barriodepartments_mapgeographicsubject
+theme: barriodepartments
+region: sidebar_first
+weight: -4
 provider: null
-plugin: 'facet_block:timelinejs_subject'
+plugin: 'facet_block:map_geographic_subject'
 settings:
-  id: 'facet_block:timelinejs_subject'
-  label: Subject
+  id: 'facet_block:map_geographic_subject'
+  label: 'Geographic Subject'
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: timelinejssubject_2
+  block_id: barriodepartments_mapgeographicsubject
 visibility:
   context_all:
     id: context_all
@@ -45,4 +45,4 @@ visibility:
     id: view_inclusion
     negate: false
     view_inclusion:
-      view-timelinejs_solr_based_view-page_1: view-timelinejs_solr_based_view-page_1
+      view-map_solr_based_view-page_1: view-map_solr_based_view-page_1

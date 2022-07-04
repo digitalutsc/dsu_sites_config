@@ -1,5 +1,5 @@
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - system
@@ -7,8 +7,8 @@ dependencies:
     - barriodepartments
 id: barriodepartments_content
 theme: barriodepartments
-region: footer_fourth
-weight: 0
+region: content
+weight: -11
 provider: null
 plugin: system_main_block
 settings:

@@ -2,31 +2,30 @@ langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.advanced_search_subject
+    - facets.facet.map_genre
   module:
     - context
     - facets
   theme:
     - barriodepartments
-id: advancedsearchsubject
+id: barriodepartments_mapgenre
 theme: barriodepartments
 region: sidebar_first
-weight: -19
+weight: -5
 provider: null
-plugin: 'facet_block:advanced_search_subject'
+plugin: 'facet_block:map_genre'
 settings:
-  id: 'facet_block:advanced_search_subject'
-  label: Subject
+  id: 'facet_block:map_genre'
+  label: Genre
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: advancedsearchsubject
+  block_id: barriodepartments_mapgenre
 visibility:
-  view_inclusion:
-    id: view_inclusion
-    negate: false
-    view_inclusion:
-      view-advanced_search-page_1: view-advanced_search-page_1
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
   context:
     id: context
     negate: null
@@ -42,7 +41,8 @@ visibility:
       own_page_true: '0'
       field_value: '0'
     user_fields: uid
-  context_all:
-    id: context_all
-    negate: null
-    values: ''
+  view_inclusion:
+    id: view_inclusion
+    negate: false
+    view_inclusion:
+      view-map_solr_based_view-page_1: view-map_solr_based_view-page_1
