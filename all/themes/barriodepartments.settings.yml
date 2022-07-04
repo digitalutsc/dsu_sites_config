@@ -26,7 +26,7 @@ bootstrap_barrio_system_messages: messages_white
 bootstrap_barrio_table_hover: 1
 bootstrap_barrio_table_style: table-striped
 favicon:
-  use_default: 0
+  use_default: 1
   path: 'public://logo_0.png'
   mimetype: image/png
 features:
@@ -36,7 +36,7 @@ features:
   favicon: 1
 logo:
   use_default: 0
-  path: 'public://dsulogo.jpg'
+  path: 'public://logo.svg'
 bootstrap_barrio_source: bootstrap_barrio/bootstrap
 bootstrap_barrio_region_clean_top_header_form: 0
 bootstrap_barrio_region_class_top_header_form: ''
