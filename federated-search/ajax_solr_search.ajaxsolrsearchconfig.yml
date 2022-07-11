@@ -3,7 +3,7 @@ solr-server-url: 'https://dsu-fedora.utsc.utoronto.ca:8983/solr/multisite'
 solr-proxy-enabled: 0
 search-results-path: /federated-search
 solr-searchable-fields:
-  - ss_title
+  - tm_X3b_en_fulltext_title
   - tm_X3b_en_description
   - sm_genre
   - sm_geographic_subject
@@ -51,7 +51,7 @@ output-template: |-
         <div class="others">
           <p><h2><a href="{{ site }}/node/{{ its_nid }}" target="_blank">{{ ss_title }}</a></h2></p>
           <p><strong>Description</strong>: {{ tm_X3b_en_field_description }}</p>
-          <p><strong>{{ URL }}: </strong>{{ ss_url }}</p>
+          
         </div>
       </div>
       <hr />
