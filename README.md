@@ -10,3 +10,14 @@ wget https://raw.githubusercontent.com/digitalutsc/dsu_sites_config/exported_dor
 ````
 patch -p1 < deploy-dsu-theme-for-makefile.patch
 ````
+
+
+## Add deploy Federated Search 
+
+````
+wget https://raw.githubusercontent.com/digitalutsc/dsu_sites_config/main/federated-search/patches/deploy-federated-search.patch
+````
+
+````
+patch -p1 < deploy-federated-search.patch
+````
