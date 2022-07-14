@@ -18,7 +18,7 @@ index 52a4010..918f55b 100644
 +
 +	chmod +x codebase/islandora_lite_installation/scripts/*.*
 +
-+	docker-compose exec -T drupal with-contenv bash -lc "islandora_lite_installation/scriptsfederated_search.sh"
++	docker-compose exec -T drupal with-contenv bash -lc "islandora_lite_installation/scripts/federated_search.sh"
 +
  .PHONY: clean
  .SILENT: clean
