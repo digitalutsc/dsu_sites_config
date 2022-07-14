@@ -47,18 +47,17 @@ solr-condition-fields:
     label: Page
 output-template: |-
   <div class="node">
-        <div class="thumb"><img src="{{ sm_media_thumbnail_url }}" alt="thumbnail"/></div>
+        <div class="thumb"><img src="{{ ss_islandora_object_thumbnail }}" alt="thumbnail"/></div>
         <div class="others">
           <p><h2><a href="{{ site }}/node/{{ its_nid }}" target="_blank">{{ ss_title }}</a></h2></p>
           <p><strong>Description</strong>: {{ tm_X3b_en_field_description }}</p>
-          
         </div>
       </div>
       <hr />
      
 solr-results-html:
   -
-    fname: sm_media_thumbnail_url
+    fname: ss_islandora_object_thumbnail
     label: ''
   -
     fname: ss_title
