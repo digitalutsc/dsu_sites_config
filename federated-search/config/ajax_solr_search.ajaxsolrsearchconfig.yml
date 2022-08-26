@@ -1,6 +1,6 @@
 ajax_solr_search: null
 solr-server-url: 'https://dsu-fedora.utsc.utoronto.ca:8983/solr/multisite'
-solr-proxy-enabled: 0
+solr-proxy-enabled: 1
 search-results-path: /federated-search
 solr-searchable-fields:
   - tm_X3b_en_fulltext_title
@@ -14,7 +14,7 @@ sub-query-field-name: null
 sub-query-value: null
 solr-facets-fields:
   -
-    fname: site
+    fname: ss_islandora_site_name
     label: Site
   -
     fname: sm_genre
@@ -45,16 +45,23 @@ solr-condition-fields:
     fname: ss_islandora_model
     op: '!='
     label: Page
-output-template: |-
-  <div class="node">
-        <div class="thumb"><img src="{{ ss_islandora_object_thumbnail }}" alt="thumbnail"/></div>
-        <div class="others">
-          <p><h2><a href="{{ site }}/node/{{ its_nid }}" target="_blank">{{ ss_title }}</a></h2></p>
-          <p><strong>Description</strong>: {{ tm_X3b_en_field_description }}</p>
-        </div>
-      </div>
-      <hr />
-     
+  -
+    fname: site
+    op: '!='
+    label: 'https://doris2.digital.utsc.utoronto.ca/'
+  -
+    fname: site
+    op: '!='
+    label: 'http://tamil2.digital.utsc.utoronto.ca/'
+  -
+    fname: site
+    op: '!='
+    label: 'http://tamil2.digital.utsc.utoronto.ca/ta'
+  -
+    fname: site
+    op: '!='
+    label: 'https://tamil2.digital.utsc.utoronto.ca/ta'
+output-template: "<div class=\"node\">\r\n      <div class=\"thumb\"><img src=\"{{ ss_islandora_object_thumbnail }}\" alt=\"{{ sm_media_file_alt_text }}\"/></div>\r\n      <div class=\"others\">\r\n        <p><h2><a href=\"{{ site }}/node/{{ its_nid }}\" target=\"_blank\">{{ ss_title }}</a></h2></p>\r\n        <p><strong>Description</strong>: {{ tm_X3b_en_field_description }}</p>\r\n      </div>\r\n    </div>\r\n    <hr />\r\n   "
 solr-results-html:
   -
     fname: ss_islandora_object_thumbnail
@@ -74,4 +81,9 @@ solr-results-html:
   -
     fname: ss_url
     label: URL
-rewrite-search-results-output: 0
+  -
+    fname: sm_media_file_alt_text
+    label: ''
+rewrite-search-results-output: 1
+search-instruction: "<strong>Search tips:</strong>\r\n<ul>\r\n<li>Using <code>~</code> for <a href=\"https://solr.apache.org/guide/6_6/the-standard-query-parser.html#TheStandardQueryParser-FuzzySearches\" target=\"_blank\">fuzzy search</a></li>\r\n<li>Using <code>*</code> for <a href=\"https://solr.apache.org/guide/6_6/the-standard-query-parser.html#TheStandardQueryParser-WildcardSearches\" target=\"_blank\">wildcard search</a></li>\r\n<li>Using <code>\"\"</code> for exact match search</li>\r\n</ul>"
+items-per-page: '15'
