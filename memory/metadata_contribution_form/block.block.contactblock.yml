@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.metadata_contribution_form
+  module:
+    - contact_block
+    - context
+    - node
+  theme:
+    - barriodepartments
+id: contactblock
+theme: barriodepartments
+region: content
+weight: -10
+provider: null
+plugin: contact_block
+settings:
+  id: contact_block
+  label: 'Contact block'
+  label_display: '0'
+  provider: contact_block
+  contact_form: metadata_contribution_form
+  form_display: default
+visibility:
+  context:
+    id: context
+    negate: null
+    values: ''
+  user_status:
+    id: user_status
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    user_status:
+      viewing_profile: '0'
+      logged_viewing_profile: '0'
+      own_page_true: '0'
+      field_value: '0'
+    user_fields: uid
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      islandora_object: islandora_object

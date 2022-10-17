@@ -1,0 +1,53 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:0aed0a0e-eb6e-4d92-a18a-a90612cd6200'
+  module:
+    - block_content
+    - context
+    - node
+  theme:
+    - barriodepartments
+id: metadatacontributiondescription
+theme: barriodepartments
+region: content
+weight: -11
+provider: null
+plugin: 'block_content:0aed0a0e-eb6e-4d92-a18a-a90612cd6200'
+settings:
+  id: 'block_content:0aed0a0e-eb6e-4d92-a18a-a90612cd6200'
+  label: 'Metadata Contribution Description'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  context:
+    id: context
+    negate: null
+    values: ''
+  user_status:
+    id: user_status
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    user_status:
+      viewing_profile: '0'
+      logged_viewing_profile: '0'
+      own_page_true: '0'
+      field_value: '0'
+    user_fields: uid
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      islandora_object: islandora_object
+

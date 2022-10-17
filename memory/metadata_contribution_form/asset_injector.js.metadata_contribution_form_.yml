@@ -1,0 +1,119 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - context
+    - node
+id: metadata_contribution_form_
+label: 'Metadata Contribution Form '
+code: |
+  jQuery(window).bind("load", function() { 
+       jQuery(".js-form-submit").html("Submit");
+  });
+
+
+  // initalize the contribute parts
+  jQuery("#content > section").addClass( "metadata" );
+  var url = document.location.href.split('#')[0]; // Get current url
+  jQuery("a#contribute-link").attr("href", url + "#block-metadatacontributiondescription"); 
+  jQuery('a#contribute-link').attr("data-tooltip", 'Know something about this image? Click to contribute metadata');
+
+  jQuery("#contribute-link").click(function() {
+    if (jQuery("#content > section").hasClass("metadata")) { 
+    	// change parent div class
+    	jQuery("#content > section").removeClass( "metadata" ).addClass( "contribute" );	
+    	
+    	// change link label
+    	jQuery('a#contribute-link').text('Return to Object View');
+    	
+    	// change tooltips text
+    	jQuery('a#contribute-link').attr("data-tooltip", "Click to show the object's metadata");
+    	
+    	 // change link url with the associated anchor
+    	var url = document.location.href.split('#')[0]; // Get current url
+       jQuery("a#contribute-link").attr("href", url + "#block-metadatacontributiondescription"); 
+    }
+    else if (jQuery("#content > section").hasClass("contribute")) { 
+    	// change parent div class
+    	jQuery("#content > section").removeClass( "contribute" ).addClass( "metadata" );	
+    	
+    	// change link label
+    	jQuery('a#contribute-link').text('Contribute');
+    	
+    	// change tooltips text
+    	jQuery('a#contribute-link').attr("data-tooltip", 'Know something about this image? Click to contribute metadata');
+    	
+    	// change link url with the associated anchor
+    	var url = document.location.href.split('#')[0]; // Get current url
+       jQuery("a#contribute-link").attr("href", url + "#block-barriodepartments-citationselectblock"); 
+    	
+    }
+  });
+
+  // Select all links with hashes
+  jQuery('a[href*="#"]')
+    // Remove links that don't actually link to anything
+    .not('[href="#"]')
+    .not('[href="#0"]')
+    .click(function(event) {
+      // On-page links
+      if (
+        location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+        && 
+        location.hostname == this.hostname
+      ) {
+        // Figure out element to scroll to
+        var target = jQuery(this.hash);
+        target = target.length ? target : jQuery('[name=' + this.hash.slice(1) + ']');
+        // Does a scroll target exist?
+        if (target.length) {
+          // Only prevent default if animation is actually gonna happen
+          event.preventDefault();
+          jQuery('html, body').animate({
+            scrollTop: target.offset().top
+          }, 500, function() {
+            // Callback after animation
+            // Must change focus!
+            var jQuerytarget = jQuery(target);
+            jQuerytarget.focus();
+            if (jQuerytarget.is(":focus")) { // Checking if the target was focused
+              return false;
+            } else {
+              jQuerytarget.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+              jQuerytarget.focus(); // Set focus again
+            };
+          });
+        }
+      }
+    });
+    
+  /* Handle submission button enabled only until the Google recaptcha is passed */
+  jQuery(".g-recaptcha").attr("data-callback", "enableBtn");
+  jQuery('#contact-message-metadata-contribution-form-form').find(":submit").prop('disabled', true);
+  function enableBtn(){
+     jQuery('#contact-message-metadata-contribution-form-form').find(":submit").prop('disabled', false);
+   }
+noscript: ''
+noscriptRegion: {  }
+jquery: false
+header: false
+preprocess: true
+conditions:
+  context:
+    id: context
+    negate: null
+    values: ''
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      islandora_object: islandora_object
+contexts: {  }
+conditions_require_all: true
+

@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+id: metadata_contribution_form
+label: 'Metadata Contribution Form'
+recipients:
+  - kirsta.stapelfeldt@utoronto.ca
+  - dsu.utsc@utoronto.ca
+reply: 'Thank you for submitting your contribution to the Memory project! A UTSC staff member will review this information as soon as 
+possible. Questions may be directed to dsu.utsc@utoronto.ca.'
+weight: 0
+message: 'Thank you for submitting your contribution to the Memory project! A UTSC staff member will review this information as soon as 
+possible. Questions may be directed to dsu.utsc@utoronto.ca.'
+redirect: ''
