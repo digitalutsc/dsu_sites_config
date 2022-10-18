@@ -1,0 +1,49 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.related_archival_fonds_timeline_js
+  module:
+    - context
+    - facets
+  theme:
+    - barriodepartments
+id: relatedarchivalfondstimelinejs
+theme: barriodepartments
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:related_archival_fonds_timeline_js'
+settings:
+  id: 'facet_block:related_archival_fonds_timeline_js'
+  label: 'Related Archival Fonds'
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: relatedarchivalfondstimelinejs
+visibility:
+  view_inclusion:
+    id: view_inclusion
+    negate: false
+    view_inclusion:
+      view-timelinejs_solr_based_view-page_1: view-timelinejs_solr_based_view-page_1
+  context:
+    id: context
+    negate: null
+    values: ''
+  user_status:
+    id: user_status
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    user_status:
+      viewing_profile: '0'
+      logged_viewing_profile: '0'
+      own_page_true: '0'
+      field_value: '0'
+    user_fields: uid
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+
