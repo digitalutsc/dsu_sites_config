@@ -1,0 +1,62 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - context
+id: exhibit_view
+label: 'Exhibit View'
+code: |-
+  jQuery(document).ready(function(){
+  	   
+  	  jQuery('.sub-exhibit').prepend('<li class="nav-item active"><div class="views-field views-field-name"><span 
+class="field-content"><a class="nav-link" id="show-all-link" data-selected="all">Show All</a></span></div></li>');
+  	  jQuery('.view-id-exhibit_tabs > .view-content').removeClass("row");
+   
+  	  jQuery('#show-all-link').click(function(e){ 
+  	  	e.preventDefault();
+  	  	// hide all exhibit div 
+  	  	jQuery(".exhibit").show();
+  	  	
+  	  	
+  	  	// add active class to show which tab is selected
+    		jQuery(".sub-exhibit-link").parent().parent().parent().removeClass("active");
+    		jQuery(this).parent().parent().parent().addClass("active");
+  	  });
+  	  
+      jQuery(".sub-exhibit-link").click(function(e){
+      		e.preventDefault();
+      		
+      		// hide all exhibit div
+      		jQuery(".exhibit").hide();
+      		
+      		// add active class to show which tab is selected
+      		jQuery(".nav-link").parent().parent().parent().removeClass("active");
+      		jQuery(this).parent().parent().parent().addClass("active");
+      		
+      		// Show the block of object assoc to tab
+      		jQuery("." + jQuery(this).attr('data-selected')).parent().parent().parent().show();
+      });
+  });
+noscript: ''
+noscriptRegion: {  }
+jquery: false
+header: false
+preprocess: true
+conditions:
+  view_inclusion:
+    id: view_inclusion
+    negate: false
+    view_inclusion:
+      view-exhibit-page_1: view-exhibit-page_1
+      view-exhibit_non_solr-page_1: view-exhibit_non_solr-page_1
+  context:
+    id: context
+    negate: null
+    values: ''
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+contexts: {  }
+conditions_require_all: true
+

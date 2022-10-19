@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - context
+    - system
+id: exhibits_view
+label: 'Exhibits View'
+code: |+
+  .views-field-field-exhibit-image-1 { 
+     width: 60% !important;
+  }
+
+  .view-exhibits a { 
+     text-decoration: none;	
+  }
+  .view-exhibits a:hover {
+  	color: #001228ab;
+  }
+  .view-exhibits .views-field-name-1 {
+  	padding-bottom:80px;
+  }
+
+media: all
+preprocess: true
+conditions:
+  context:
+    id: context
+    negate: null
+    values: ''
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+  request_path:
+    id: request_path
+    negate: false
+    pages: /node/33460
+contexts: {  }
+conditions_require_all: true
+

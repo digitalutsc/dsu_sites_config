@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - context
+id: timeline
+label: Timeline
+code: |-
+  .highlighted { 
+     display: none !important;	
+  }
+media: all
+preprocess: true
+conditions:
+  view_inclusion:
+    id: view_inclusion
+    negate: false
+    view_inclusion:
+      view-timelinejs_solr_based_view-page_1: view-timelinejs_solr_based_view-page_1
+  context:
+    id: context
+    negate: null
+    values: ''
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+contexts: {  }
+conditions_require_all: true
+

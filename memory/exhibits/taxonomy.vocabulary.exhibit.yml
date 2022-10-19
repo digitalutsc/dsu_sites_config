@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Exhibit
+vid: exhibit
+description: 'Used for site exhibits'
+weight: 0
+

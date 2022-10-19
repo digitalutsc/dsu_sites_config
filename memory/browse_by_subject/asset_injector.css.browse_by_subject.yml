@@ -1,0 +1,75 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - context
+    - system
+id: browse_by_subject
+label: 'Browse by Subject'
+code: |-
+  .padding-50 {
+  	padding-top: 0px;
+      padding-bottom: 20px;
+  }
+
+  .views-summary {
+  	display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      padding-left: 0;
+      margin-bottom: 0;
+      list-style: none
+  	
+  }
+  .views-summary li.active {
+      color: #fff;
+      background-color: #001228 !important;
+      
+  }
+  .views-summary a {
+      background: 0 0;
+      border: 0;
+      border-radius: 0.25rem;
+      font-size: 1.5em;
+      text-decoration: none;
+      
+  }
+
+  .view-a-z-list-of-subjects {
+  	
+  	padding-bottom: 40px;
+  }
+
+  .item-list ul li {
+      margin: 0;
+      margin-right: 10px;
+  }
+  li.active a {
+  	color: #ffffff !important;
+  	text-align: center;
+          padding-left: 15px;
+      padding-right: 7px;
+  }
+  li.active a:visited {
+  	color: #ffffff !important;
+  }
+media: all
+preprocess: true
+conditions:
+  context:
+    id: context
+    negate: null
+    values: ''
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/browse-subjects*'
+contexts: {  }
+conditions_require_all: true
+
