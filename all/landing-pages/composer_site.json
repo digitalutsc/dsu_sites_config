@@ -1,0 +1,17 @@
+{
+    "name": "islandora_lite/dsu_site",
+    "description": "",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "",
+            "role": "Owner",
+            "email": ""
+        }
+    ],
+    "require": {
+        "digitalutsc/bootstrap_slideshow": "dev-main",
+        "digitalutsc/drupal_hero_banner": "dev-main"
+    }
+}
