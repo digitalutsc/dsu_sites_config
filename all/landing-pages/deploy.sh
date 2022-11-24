@@ -53,7 +53,7 @@ new_node=`curl --location --request POST ${site_url}'/node?_format=hal_json' \
     ],
     "title": [
         {
-            "value": "Test Homepage hahahaha"
+            "value": "Landing Page for this site"
         }
     ],
     "body": [
