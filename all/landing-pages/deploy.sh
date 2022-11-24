@@ -14,7 +14,7 @@ authentication=`echo -n "${username}:${password}" | base64`
 echo "Enter the site path (ie: /var/www/html/drupal):"
 read site_path
 
-echo "Enter the current path of dsu_sites_config (run pwd and copy the output, ie: /var/www/html/drupal/dsu_sites_config)"
+echo "Enter the current path of dsu_sites_config (run pwd and copy the output, ie: /var/www/html/drupal)"
 read app_path
 
 echo "Do you want to include Exibits components (Yes or No)"
