@@ -1,0 +1,111 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - context
+    - user
+id: timeline_view_adjusting_links_in_results_pager_for_admin_test_
+label: 'Timeline View: Adjusting links in Results pager (For Admin Test)'
+code: |+
+  var count = 0;
+  var max = 1;
+  // start watcher for each sec
+  var watcher = setInterval(function(){
+  	count++;
+  	//console.log("logging");
+  	
+  	// backup if could not catch changed event, run checker for 10
+  	if (count == max) {
+  			// add Timeline link and set is active
+  			current_url = window.location.pathname;
+  			jQuery(".advanced_search_result_pager .pager__display").removeClass("pager__link--is-active");
+  			jQuery(".pager__display").find('ul').append('<li class="pager__item"><a id="timeline-link" href="/collection/'+ current_url.split("/")[2] +'/timeline" class="pager__link pager__link--is-active"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Timeline</a></li>');
+  			
+  			var resetURL = window.location.pathname.replace("/timeline", "");
+  			jQuery("#edit-reset").hide();  
+  			jQuery('<a href="'+resetURL+'" class="advanced-search-form__reset button js-form-submit form-submit form-control" data-drupal-selector="edit-reset" type="submit" name="op" value="Reset" data-once="drupal-ajax" style="text-align: center;text-decoration: none;">Reset</a>').insertAfter("#edit-reset");
+  			
+  			// change grid to list
+  			jQuery('#block-barriodepartments-content > .content > .views-element-container > .view-timelinejs-solr-based-view').removeClass("view-grid");
+  			
+  			// replace with view-list
+  			jQuery('#block-barriodepartments-content > .content > .views-element-container > .view-timelinejs-solr-based-view').addClass("view-list");
+  			
+  			jQuery(".view-timelinejs-solr-based-view > .view-header").hide();
+  			
+  			// below doesn't seem to work if logging in
+  			// hide sort dropdown
+  			
+  			jQuery("#pager-sort-select").hide(); 
+  			
+  			
+  			// process timeline url
+  			var url = jQuery("#link-display-list").attr('href');
+  			if (url !== undefined) {
+  				if (url.includes('?')){
+  					var parts = url.split('?');
+  					parts[0].replace("/timeline", "");  
+  					var final_url = parts[0].replace("/timeline", "") + "?" + parts[1];
+  					jQuery("#link-display-list").attr('href', final_url + "&display=list");
+  				}
+  				else {
+  					url.replace("/timeline", "");
+  				}
+  			}
+  			
+  			url = jQuery("#link-display-grid").attr('href');
+  			if (url !== undefined) {
+  				if (url.includes('?')){
+  					var parts = url.split('?');
+  					parts[0].replace("/timeline", "");  
+  					var final_url = parts[0].replace("/timeline", "") + "?" + parts[1];
+  					jQuery("#link-display-grid").attr('href', final_url + "&display=grid");
+  				}
+  				else {
+  					url.replace("/timeline", "");
+  				}
+  			}
+  			// stop the watcher
+  	  	clearInterval(watcher);
+  	  	
+  	  	
+  	  	
+    }
+  },1000);
+
+
+
+
+
+
+
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions:
+  view_inclusion:
+    id: view_inclusion
+    negate: false
+    view_inclusion:
+      view-timelinejs_solr_based_view-page_1: view-timelinejs_solr_based_view-page_1
+  context:
+    id: context
+    negate: null
+    values: ''
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated
+      content_editor: content_editor
+      administrator: administrator
+contexts: {  }
+conditions_require_all: true
