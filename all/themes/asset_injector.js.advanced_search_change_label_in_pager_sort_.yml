@@ -1,0 +1,52 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - context
+id: advanced_search_change_label_in_pager_sort_
+label: 'Advanced Search - Change Label in Pager Sort '
+code: |-
+  var count = 0;
+  var max = 1;
+  // start watcher for each sec
+  var watcher = setInterval(function(){
+  	count++;
+  	//console.log("logging");
+  	
+  	// backup if could not catch changed event, run checker for 10
+  	if (count == max) {
+      jQuery('div.pager__sort > select option:contains("Relevant ↑")').text('Least Relevance');
+      jQuery('div.pager__sort > select option:contains("Relevant ↓")').text('Most Relevant');
+      
+      jQuery('div.pager__sort > select option:contains("Title ↑")').text('Title (A-Z)');
+      jQuery('div.pager__sort > select option:contains("Title ↓")').text('Title (Z-A)');
+      
+      jQuery('div.pager__sort > select option:contains("Date Created ↑")').text('Oldest');
+      jQuery('div.pager__sort > select option:contains("Date Created ↓")').text('Newest');
+      
+      // stop the watcher
+    	clearInterval(watcher);	
+    }
+  },1000);
+noscript: ''
+noscriptRegion: {  }
+jquery: false
+header: false
+preprocess: true
+conditions:
+  view_inclusion:
+    id: view_inclusion
+    negate: false
+    view_inclusion:
+      view-advanced_search-page_1: view-advanced_search-page_1
+      view-collection-page_1: view-collection-page_1
+  context:
+    id: context
+    negate: null
+    values: ''
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+contexts: {  }
+conditions_require_all: true
