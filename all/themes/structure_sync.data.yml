@@ -87,7 +87,7 @@ blocks:
     fields:
       body:
         -
-          value: "<div class=\"col footer-links\">\r\n<ul>\r\n\t<li class=\"link-headings\">U OF T LIBRARIES</li>\r\n\t<li><a href=\"//https://onesearch.library.utoronto.ca/digital-scholarship/digital-scholarship-services\" style=\"border: none\">Digital Scholarship Services</a></li>\r\n\t<li><a href=\"//https://onesearch.library.utoronto.ca/online-privacy-data-collection\" style=\"border: none\">Privacy &amp; Data Collection Policy</a></li>\r\n</ul>\r\n\r\n<p><a class=\"positiveSpace\" href=\"//www.utsc.utoronto.ca/strategicplan/\"><img src=\"https://doris2.digital.utsc.utoronto.ca/themes/dsu_subtheme_barrioDepartments/images/positive_space.png\" alt=\"Positive Space Logo\"/></a></p>\r\n</div>\r\n"
+          value: "<div class=\"col footer-links\">\r\n<ul>\r\n\t<li class=\"link-headings\">U OF T LIBRARIES</li>\r\n\t<li><a href=\"//https://onesearch.library.utoronto.ca/digital-scholarship/digital-scholarship-services\" style=\"border: none\">Digital Scholarship Services</a></li>\r\n\t<li><a href=\"//https://onesearch.library.utoronto.ca/online-privacy-data-collection\" style=\"border: none\">Privacy &amp; Data Collection Policy</a></li>\r\n</ul>\r\n\r\n<p><a class=\"positiveSpace\" href=\"//www.utsc.utoronto.ca/strategicplan/\"><img src=\"https://memory.digital.utsc.utoronto.ca/themes/dsu_subtheme_barrioDepartments/images/positive_space.png\" alt=\"Positive Space Logo\"/></a></p>\r\n</div>\r\n"
           summary: ''
           format: full_html
   -
