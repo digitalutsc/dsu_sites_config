@@ -11,19 +11,50 @@ code: |-
   // start watcher for each sec
   var watcher = setInterval(function(){
     count++;
-    //console.log("logging");
 
     // backup if could not catch changed event, run checker for 10
     if (count == max) {
-      //jQuery('div.pager__sort > select option:contains("Relevant ↑")').text('Least Relevance');
-      jQuery('div.pager__sort > select option:contains("Relevant ↑")').remove();
-      jQuery('div.pager__sort > select option:contains("Relevant ↓")').text('Most Relevant');
+    
+      // change label
+      jQuery('div.pager__sort > select option[value="search_api_relevance_asc"]').text('Least Relevance');
 
-      jQuery('div.pager__sort > select option:contains("Title ↑")').text('Title (A-Z)');
-      jQuery('div.pager__sort > select option:contains("Title ↓")').text('Title (Z-A)');
+      // Remove the label
+    	jQuery('div.pager__sort > select option[value="search_api_relevance_asc"]').remove();
+      
+      if (window.location.search !== "") { 
+      	// have search in place	
+      	jQuery('div.pager__sort > select option[value="search_api_relevance_desc"]').text('Most Relevance');
+      }
+      else {
+      	// no search in place
+      	jQuery('div.pager__sort > select option[value="search_api_relevance_desc"]').text('--- Sort by ---');
+      }
+
+      // handle when search results is changed
+      jQuery('div.view-collection, div.view-advanced-search').on('DOMSubtreeModified', function(){
+        
+        // when search in place
+  		  if(window.location.search !== "" &&
+           (window.location.search.indexOf("a%5B0%5D%5Bf%5D") != -1 
+              || window.location.search.indexOf("a[0][f]") != -1 )){
+  	    	
+          // have search in place	
+  	    	jQuery('div.pager__sort > select option[value="search_api_relevance_desc"]').text('Most Relevance');
+  	    }
+  	    else {
+  	    	// no search in place
+  	    	jQuery('div.pager__sort > select option[value="search_api_relevance_desc"]').text('--- Sort by ---');
+  	    }
+  		});
+    
+      jQuery('div.pager__sort > select option:contains("Title ↑")').text('Title (Z-A)');
+      jQuery('div.pager__sort > select option:contains("Title ↓")').text('Title (A-Z)');
 
       jQuery('div.pager__sort > select option:contains("Date Created ↑")').text('Oldest');
       jQuery('div.pager__sort > select option:contains("Date Created ↓")').text('Newest');
+      
+      jQuery('div.pager__sort > select option:contains("Created ↑")').text('Oldest');
+      jQuery('div.pager__sort > select option:contains("Created ↓")').text('Newest');
 
       // stop the watcher
       clearInterval(watcher);
