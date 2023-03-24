@@ -6,10 +6,12 @@ dependencies:
 id: advanced_search_change_label_in_pager_sort_
 label: 'Advanced Search - Change Label in Pager Sort '
 code: |-
+  jQuery("div.pager__sort").hide();
   var count = 0;
   var max = 1;
   // start watcher for each sec
   var watcher = setInterval(function(){
+  	jQuery("div.pager__sort").hide();
     count++;
 
     // backup if could not catch changed event, run checker for 10
@@ -56,6 +58,7 @@ code: |-
       jQuery('div.pager__sort > select option:contains("Created ↑")').text('Oldest');
       jQuery('div.pager__sort > select option:contains("Created ↓")').text('Newest');
 
+  		jQuery("div.pager__sort").show();
       // stop the watcher
       clearInterval(watcher);
     }
