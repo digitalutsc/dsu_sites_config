@@ -36,30 +36,32 @@ code: |+
   			// below doesn't seem to work if logging in
   			// hide sort dropdown
   			
-  			jQuery("#pager-sort-select").hide(); 
+  			jQuery("select[name='order']").hide(); 
   			
   			
   			// process timeline url
-  			var url = jQuery("#link-display-list").attr('href');
+  			var url = jQuery('a:contains("List")').attr('href');
   			if (url !== undefined) {
   				if (url.includes('?')){
   					var parts = url.split('?');
   					parts[0].replace("/timeline", "");  
   					var final_url = parts[0].replace("/timeline", "") + "?" + parts[1];
-  					jQuery("#link-display-list").attr('href', final_url + "&display=list");
+  					//jQuery("#link-display-list").attr('href', final_url + "&display=list");
+  					jQuery('a:contains("List")').attr('href', final_url + "&display=list");
   				}
   				else {
   					url.replace("/timeline", "");
   				}
   			}
   			
-  			url = jQuery("#link-display-grid").attr('href');
+  			url = jQuery('a:contains("Grid")').attr('href');
   			if (url !== undefined) {
   				if (url.includes('?')){
   					var parts = url.split('?');
   					parts[0].replace("/timeline", "");  
   					var final_url = parts[0].replace("/timeline", "") + "?" + parts[1];
-  					jQuery("#link-display-grid").attr('href', final_url + "&display=grid");
+  					//jQuery("#link-display-grid").attr('href', final_url + "&display=grid");
+  					jQuery('a:contains("Grid")').attr('href', final_url + "&display=list");
   				}
   				else {
   					url.replace("/timeline", "");
