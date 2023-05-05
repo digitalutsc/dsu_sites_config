@@ -36,7 +36,7 @@ code: |+
   			jQuery(".pager__sort").hide(); 
 
   			// process timeline url
-  			var url = jQuery('a:contains("List")').attr('href');
+  			var url = jQuery('.pager__item > a:contains("List")').attr('href');
   			if (url !== undefined) {
   				if (url.includes('?')){
   					var parts = url.split('?');
@@ -49,7 +49,7 @@ code: |+
   				}
   			}
   			
-  			url = jQuery('a:contains("Grid")').attr('href');
+  			url = jQuery('.pager__item > a:contains("Grid")').attr('href');
   			if (url !== undefined) {
   				if (url.includes('?')){
   					var parts = url.split('?');
