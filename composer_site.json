@@ -15,12 +15,12 @@
             "type": "package",
             "package": {
               "name": "islandora_lite/islandora_site_name",
-              "version": "dev-main",
+              "version": "1.0.0-beta1",
               "type": "drupal-module",
               "source": {
                 "url": "https://github.com/digitalutsc/islandora_site_name.git",
                 "type": "git",
-                "reference":"main"
+                "reference":"1.0.0-beta1"
               }
             }
         }
@@ -34,6 +34,6 @@
         "drupal/drupal_libcal": "1.x-dev@dev",
         "drupal/structure_sync": "^2.0",
         "drupal/google_analytics": "^4.0",
-        "islandora_lite/islandora_site_name": "dev-main"
+        "islandora_lite/islandora_site_name": "1.0.0-beta1"
     }
 }
