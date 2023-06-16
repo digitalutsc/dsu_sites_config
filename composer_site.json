@@ -34,6 +34,6 @@
         "drupal/drupal_libcal": "1.x-dev@dev",
         "drupal/structure_sync": "^2.0",
         "drupal/google_analytics": "^4.0",
-        "islandora_lite/islandora_site_name": "dev-main",
+        "islandora_lite/islandora_site_name": "dev-main"
     }
 }
