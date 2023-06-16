@@ -1,0 +1,13 @@
+diff --git a/Makefile b/Makefile
+index b396b66..04abdb2 100644
+--- a/Makefile
++++ b/Makefile
+@@ -20,7 +20,7 @@ endif
+ 
+ # If custom.makefile exists include it.
+ -include custom.Makefile
+-
++-include dsu_theme.Makefile
+ # Checks to see if the path includes a space character. Intended to be a temporary fix.
+ ifneq (1,$(words $(CURDIR)))
+ $(error Containing path cannot contain space characters: '$(CURDIR)')
