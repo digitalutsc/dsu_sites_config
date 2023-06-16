@@ -1,11 +1,11 @@
-# dsu_sites_config
+# Deploy DSU theme
 
 ## For for [isle-dc](https://github.com/digitalutsc/isle-dc/tree/islandora_lite)
 
 ###  Deploy [Dsu theme](https://github.com/digitalutsc/dsu_subtheme_barrioDepartments) 
 
 ````
-wget https://raw.githubusercontent.com/digitalutsc/dsu_sites_config/exported_doris/all/patches/deploy-dsu-theme-for-makefile.patch
+wget https://raw.githubusercontent.com/digitalutsc/dsu_sites_config/main/isle_dsu_theme.patch
 patch -p1 < deploy-dsu-theme-for-makefile.patch
 ````
 
@@ -19,13 +19,13 @@ make deploy-dsu-theme
 
 ````
 wget https://raw.githubusercontent.com/digitalutsc/dsu_sites_config/main/federated-search/patches/deploy-federated-search.patch
-patch -p1 < deploy-federated-search.patch
+patch -p1 < isle_dsu_theme.patch
 ````
 
 Run: 
 ````
 cd isle-dc
-make deploy-federated-search
+make install_dsu_theme
 ````
 
 ## For [playbook](https://github.com/digitalutsc/islandora-playbook/tree/islandora_lite)
