@@ -1,0 +1,39 @@
+{
+    "name": "islandora_lite/dsu_site",
+    "description": "",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "",
+            "role": "Owner",
+            "email": ""
+        }
+    ],
+    "repositories": [
+      {
+            "type": "package",
+            "package": {
+              "name": "islandora_lite/islandora_site_name",
+              "version": "dev-main",
+              "type": "drupal-module",
+              "source": {
+                "url": "https://github.com/digitalutsc/islandora_site_name.git",
+                "type": "git",
+                "reference":"main"
+              }
+            }
+        }
+    ],
+    "require": {
+        "drupal/bootstrap_barrio":"^5.5"
+        "digitalutsc/bootstrap_slideshow": "dev-main",
+        "digitalutsc/drupal_hero_banner": "dev-main",
+        "drupal/bootstrap": "^3.19",
+        "drupal/bootstrap_barrio": "^5.5",
+        "drupal/drupal_libcal": "1.x-dev@dev",
+        "drupal/structure_sync": "^2.0",
+        "drupal/google_analytics": "^4.0",
+        "islandora_lite/islandora_site_name": "dev-main",
+    }
+}
