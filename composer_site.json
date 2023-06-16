@@ -26,7 +26,7 @@
         }
     ],
     "require": {
-        "drupal/bootstrap_barrio":"^5.5"
+        "drupal/bootstrap_barrio":"^5.5",
         "digitalutsc/bootstrap_slideshow": "dev-main",
         "digitalutsc/drupal_hero_banner": "dev-main",
         "drupal/bootstrap": "^3.19",
