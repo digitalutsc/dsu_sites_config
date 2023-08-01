@@ -4,6 +4,7 @@ dependencies:
   module:
     - context
     - islandora_mirador
+    - node
     - term_condition
   theme:
     - barriodepartments
@@ -18,8 +19,16 @@ settings:
   label: 'Mirador block'
   label_display: visible
   provider: islandora_mirador
-  iiif_manifest_url: 'https://islandora.traefik.me/node/[node:nid]/book-manifest'
+  iiif_manifest_url: '/node/[node:nid]/book-manifest'
 visibility:
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+  context:
+    id: context
+    negate: null
+    values: ''
   user_status:
     id: user_status
     negate: false
@@ -31,18 +40,17 @@ visibility:
       own_page_true: '0'
       field_value: '0'
     user_fields: uid
-  context:
-    id: context
-    negate: null
-    values: ''
-  context_all:
-    id: context_all
-    negate: null
-    values: ''
   term:
     id: term
+    negate: false
+    context_mapping: {  }
     tid:
       -
         target_id: '15'
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
     negate: false
-    context_mapping: {  }
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      islandora_object: islandora_object
