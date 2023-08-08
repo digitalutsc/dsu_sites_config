@@ -1,3 +1,4 @@
+uuid: 092429d8-55be-4c1d-8b48-352e7fa15603
 langcode: en
 status: true
 dependencies:
@@ -6,15 +7,15 @@ dependencies:
     - views.view.federated_search
   module:
     - search_api
-id: federated_search_resource_type
-name: 'Federated Search: Resource Type'
+id: federated_search_linked_agent
+name: 'Federated Search: Linked Agent'
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
-url_alias: federated_search_resource_type
+url_alias: federated_search_linked_agent
 facet_source_id: 'search_api:views_page__federated_search__page_1'
-field_identifier: resource_type
+field_identifier: linked_agent
 query_operator: or
 hard_limit: 0
 exclude: false

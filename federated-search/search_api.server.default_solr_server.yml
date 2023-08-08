@@ -1,3 +1,4 @@
+uuid: d5c4d8b1-f4b8-4bca-87c6-d094bb43eb9d
 langcode: en
 status: true
 dependencies:
@@ -26,6 +27,8 @@ dependencies:
     - search_api_solr.solr_request_handler.request_handler_tvrh_default_7_0_0
   module:
     - search_api_solr
+_core:
+  default_config_hash: 9MN6yNcs38jLcfUjOVopbyS1QFZom0jIhycismXPxmU
 id: default_solr_server
 name: 'Solr Server'
 description: 'Default Solr server created by the Solr Search Defaults module'

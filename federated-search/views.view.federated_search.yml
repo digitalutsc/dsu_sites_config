@@ -1,14 +1,11 @@
+uuid: c653b14a-5139-4bfe-a49a-9b90be1c95e9
 langcode: en
 status: true
 dependencies:
   config:
     - search_api.index.multisite_default_solr_content_index_for_islandora
-    - user.role.administrator
-    - user.role.authenticated
-    - user.role.content_editor
   module:
     - search_api
-    - user
 id: federated_search
 label: 'Federated Search'
 module: views
@@ -573,6 +570,59 @@ display:
           multi_type: separator
           multi_separator: ', '
           format_plural_values: {  }
+        group_access_control:
+          id: group_access_control
+          table: search_api_index_multisite_default_solr_content_index_for_islandora
+          field: group_access_control
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          link_to_item: false
+          use_highlighting: false
+          multi_type: separator
+          multi_separator: ', '
       pager:
         type: full
         options:
@@ -605,12 +655,8 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: role
-        options:
-          role:
-            authenticated: authenticated
-            content_editor: content_editor
-            administrator: administrator
+        type: none
+        options: {  }
       cache:
         type: none
         options: {  }
@@ -988,7 +1034,6 @@ display:
         - url.query_args
         - 'url.query_args:sort_by'
         - 'url.query_args:sort_order'
-        - user.roles
       tags:
         - 'config:search_api.index.multisite_default_solr_content_index_for_islandora'
         - 'search_api_list:multisite_default_solr_content_index_for_islandora'
@@ -1018,7 +1063,6 @@ display:
         - url.query_args
         - 'url.query_args:sort_by'
         - 'url.query_args:sort_order'
-        - user.roles
       tags:
         - 'config:search_api.index.multisite_default_solr_content_index_for_islandora'
         - 'search_api_list:multisite_default_solr_content_index_for_islandora'

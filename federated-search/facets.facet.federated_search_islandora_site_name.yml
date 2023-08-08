@@ -1,3 +1,4 @@
+uuid: 6223896c-4814-4619-a0a6-be208253ecba
 langcode: en
 status: true
 dependencies:
@@ -6,15 +7,15 @@ dependencies:
     - views.view.federated_search
   module:
     - search_api
-id: federated_search_linked_agent
-name: 'Federated Search: Linked Agent'
+id: federated_search_islandora_site_name
+name: 'Federated Search: Islandora Site Name'
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
-url_alias: federated_search_linked_agent
+url_alias: federated_search_islandora_site_name
 facet_source_id: 'search_api:views_page__federated_search__page_1'
-field_identifier: linked_agent
+field_identifier: islandora_site_name
 query_operator: or
 hard_limit: 0
 exclude: false
@@ -28,8 +29,8 @@ enable_parent_when_child_gets_disabled: true
 widget:
   type: links
   config:
-    show_numbers: false
-    soft_limit: 10
+    show_numbers: true
+    soft_limit: 0
     show_reset_link: false
     reset_text: 'Show all'
     hide_reset_when_no_selection: false

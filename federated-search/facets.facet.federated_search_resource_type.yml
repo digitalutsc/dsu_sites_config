@@ -1,3 +1,4 @@
+uuid: 4038be4c-d393-4138-8fef-55d37b18b23e
 langcode: en
 status: true
 dependencies:
@@ -6,15 +7,15 @@ dependencies:
     - views.view.federated_search
   module:
     - search_api
-id: federated_search_genre
-name: 'Federated Search: Genre'
+id: federated_search_resource_type
+name: 'Federated Search: Resource Type'
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
-url_alias: federated_search_genre
+url_alias: federated_search_resource_type
 facet_source_id: 'search_api:views_page__federated_search__page_1'
-field_identifier: genre
+field_identifier: resource_type
 query_operator: or
 hard_limit: 0
 exclude: false
