@@ -100,7 +100,7 @@ blocks:
     fields:
       body:
         -
-          value: "<div class=\"col footer-links\" style=\"margin-left: 40px;\">\r\n<ul>\r\n\t<li class=\"link-headings\">U OF T SCARBOROUGH</li>\r\n\t<li><a href=\"//utsc.library.utoronto.ca/\" style=\"border: none\">Library Home</a></li>\r\n\t<li><a href=\"//digital.utsc.utoronto.ca/\" style=\"border: none\">Library Digital Scholarship Unit</a></li>\r\n\t<li><a href=\"//indigenous.utoronto.ca/about/land-acknowledgement/\" style=\"border: none\">Land Acknowledgement</a></li>\r\n\t<li><a href=\"//www.utoronto.ca/accessibility\" style=\"border: none\"><i>Access</i>Ability Statement</a></li>\r\n\t<li><a href=\"/user\" style=\"border: none\">Login</a></li>\r\n</ul>\r\n</div>\r\n"
+           value: '<div class="col footer-links" style="margin-left:40px;"><ul><li class="link-headings">U OF T SCARBOROUGH</li><li><a style="border:none;" href="//utsc.library.utoronto.ca/">Library Home</a></li><li><a style="border:none;" href="//digital.utsc.utoronto.ca/">Library Digital Scholarship Unit</a></li><li><a style="border:none;" href="//indigenous.utoronto.ca/about/land-acknowledgement/">Land Acknowledgement</a></li><li><a style="border:none;" href="//www.utoronto.ca/accessibility"><em>Access</em>Ability Statement</a></li></ul></div>'
           summary: ''
           format: full_html
   -
