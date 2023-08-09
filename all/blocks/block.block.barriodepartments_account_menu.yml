@@ -1,5 +1,5 @@
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - system.menu.account
@@ -9,8 +9,8 @@ dependencies:
     - barriodepartments
 id: barriodepartments_account_menu
 theme: barriodepartments
-region: footer_fourth
-weight: -18
+region: footer_second
+weight: -23
 provider: null
 plugin: 'system_menu_block:account'
 settings:
