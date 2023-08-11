@@ -6,13 +6,11 @@ dependencies:
     - system.menu.main
     - taxonomy.vocabulary.subject
   module:
-    - csv_serialization
     - node
     - rest
     - serialization
     - taxonomy
     - user
-    - views_data_export
 id: a_z_list_of_subjects
 label: 'A-Z List of subjects'
 module: views
