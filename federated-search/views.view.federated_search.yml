@@ -508,6 +508,59 @@ display:
           use_highlighting: false
           multi_type: separator
           multi_separator: ', '
+        group_access_control:
+          id: group_access_control
+          table: search_api_index_multisite_default_solr_content_index_for_islandora
+          field: group_access_control
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          link_to_item: false
+          use_highlighting: false
+          multi_type: separator
+          multi_separator: ', '
         its_nid:
           id: its_nid
           table: search_api_datasource_multisite_default_solr_content_index_for_islandora_solr_multisite_document
@@ -520,7 +573,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<a href=\"{{ url }}\" target=\"_blank\" class=\"object-link {{ islandora_model|replace({' ': '_'}) }}\">\r\n\t\t<div class=\"list-item\">\r\n\t\t    <div class=\"row\">\r\n\t\t        <div class=\"col-4\">{{ islandora_object_thumbnail }}</div>\r\n\t\t        <div class=\"col-8\"> \r\n\t\t               {% if fulltext_title is not empty %}\r\n\t\t                <div class=\"row\"><div class=\"col-sm-3 advanced-search-results-title\">Title</div><div class=\"col-sm-8\"><h4>{{ fulltext_title }}</h4> </div></div>\r\n                               {% endif %}\r\n                               {% if field_description is not empty %}\r\n\t\t                <div class=\"row\"><div class=\"col-sm-3 advanced-search-results-title\">Description</div><div class=\"col-sm-8\">{{ field_description }}</div></div>\r\n                               {% endif %}\r\n                               {% if resource_type is not empty %}\r\n\t\t                <div class=\"row\"><div class=\"col-sm-3 advanced-search-results-title\">Type</div><div class=\"col-sm-8\">{{ resource_type }}</div></div>\r\n                               {% endif %}\r\n\t\t         </div>\r\n\t\t    </div>\r\n\t\t</div>\r\n                <div class=\"grid-item\">\r\n\t\t<div class=\"row\">\r\n\t\t{{ islandora_object_thumbnail }}\r\n\t\t</div>\r\n\t\t<div class=\"row advanced-search-results-title\">\r\n\t\t<h4>{{ fulltext_title }}</h4>\r\n\t\t</div>\r\n\t\t</div> \r\n\t</a>\r\n\r\n"
+            text: "<a href=\"{{ url }}\" target=\"_blank\" class=\"object-link {{ islandora_model|replace({' ': '_'}) }}\">\r\n\t\t<div class=\"list-item\">\r\n\t\t    <div class=\"row\">\r\n                       {% if islandora_object_thumbnail is not empty %}\r\n\t\t        <div class=\"col-4\">{{ islandora_object_thumbnail }}</div>\r\n                        {% else %}\r\n                            <div class=\"col-4\"><img src=\"https://collections3.digital.utsc.utoronto.ca/system/files/2023-08/defaultimg.png\" alt=\"No Image available\" /> </div>\r\n                        {% endif %}\r\n\t\t        <div class=\"col-8\"> \r\n\t\t               {% if fulltext_title is not empty %}\r\n\t\t                <div class=\"row\"><div class=\"col-sm-3 advanced-search-results-title\">Title</div><div class=\"col-sm-8\"><h4>{{ fulltext_title }}</h4> </div></div>\r\n                               {% endif %}\r\n                               {% if field_description is not empty %}\r\n\t\t                <div class=\"row\"><div class=\"col-sm-3 advanced-search-results-title\">Description</div><div class=\"col-sm-8\">{{ field_description }}</div></div>\r\n                               {% endif %}\r\n                               {% if resource_type is not empty %}\r\n\t\t                <div class=\"row\"><div class=\"col-sm-3 advanced-search-results-title\">Type</div><div class=\"col-sm-8\">{{ resource_type }}</div></div>\r\n                               {% endif %}\r\n\t\t         </div>\r\n\t\t    </div>\r\n\t\t</div>\r\n                <div class=\"grid-item\">\r\n\t\t<div class=\"row\">\r\n                      {% if islandora_object_thumbnail is not empty %}\r\n\t                   {{ islandora_object_thumbnail }}\r\n                        {% else %}\r\n                            <img src=\"https://collections3.digital.utsc.utoronto.ca/system/files/2023-08/defaultimg.png\" alt=\"No Image available\" />\r\n                        {% endif %}\r\n\r\n\t\t</div>\r\n\t\t<div class=\"row advanced-search-results-title\">\r\n\t\t<h4>{{ fulltext_title }}</h4>\r\n\t\t</div>\r\n\t\t</div> \r\n\t</a>\r\n\r\n"
             make_link: false
             path: ''
             absolute: false
@@ -570,64 +623,11 @@ display:
           multi_type: separator
           multi_separator: ', '
           format_plural_values: {  }
-        group_access_control:
-          id: group_access_control
-          table: search_api_index_multisite_default_solr_content_index_for_islandora
-          field: group_access_control
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: search_api
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          link_to_item: false
-          use_highlighting: false
-          multi_type: separator
-          multi_separator: ', '
       pager:
         type: full
         options:
           offset: 0
-          items_per_page: 12
+          items_per_page: 24
           total_pages: null
           id: 0
           tags:
