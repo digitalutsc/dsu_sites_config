@@ -11,7 +11,7 @@ dependencies:
 id: barriodepartments_footerimportantlinks
 theme: barriodepartments
 region: footer_second
-weight: 0
+weight: -24
 provider: null
 plugin: 'block_content:47992406-6190-4380-9049-b0839db6ed53'
 settings:
