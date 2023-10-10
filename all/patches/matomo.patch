@@ -1,0 +1,12 @@
+diff --git a/matomo.install b/matomo.install
+index 021b86b..e9f2c1b 100644
+--- a/matomo.install
++++ b/matomo.install
+@@ -16,6 +16,7 @@ use Drupal\user\Entity\Role;
+ function matomo_install(): void {
+   // Make the default install more user and GDPR friendly.
+   $role = Role::load('authenticated');
++  if ($role == null) return;
+   $role->grantPermission('opt-in or out of matomo tracking');
+   $success = $role->save();
+   if ($success) {
