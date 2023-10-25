@@ -41,6 +41,22 @@ reactions:
         context_mapping: {  }
         iiif_manifest_url: '/node/[node:nid]/book-manifest'
         third_party_settings: {  }
+      a704dc77-d7ba-454a-8ad9-8932bc876d7f:
+        uuid: a704dc77-d7ba-454a-8ad9-8932bc876d7f
+        id: mirador_block
+        label: 'Mirador block'
+        provider: islandora_mirador
+        label_display: '0'
+        region: content
+        weight: '0'
+        custom_id: mirador_block
+        theme: barriodepartments
+        css_class: ''
+        unique: 0
+        context_id: paged_content_viewer
+        context_mapping: {  }
+        iiif_manifest_url: '/node/[node:nid]/book-manifest'
+        third_party_settings: {  }
     include_default_blocks: 1
     saved: false
 weight: 0
