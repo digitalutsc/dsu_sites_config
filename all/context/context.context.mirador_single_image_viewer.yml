@@ -44,6 +44,23 @@ reactions:
         views_label: ''
         items_per_page: none
         third_party_settings: {  }
+      1fa8947f-7463-49f7-9f68-5b03e16fa154:
+        uuid: 1fa8947f-7463-49f7-9f68-5b03e16fa154
+        id: 'views_block:media_display-mirador'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: content
+        weight: '0'
+        custom_id: views_block_media_display_mirador
+        theme: barriodepartments
+        css_class: ''
+        unique: 0
+        context_id: mirador_single_image_viewer
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: none
+        third_party_settings: {  }
     include_default_blocks: 1
     saved: false
 weight: 0
