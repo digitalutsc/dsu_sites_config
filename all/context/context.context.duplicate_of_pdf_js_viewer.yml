@@ -50,7 +50,7 @@ reactions:
         label: ''
         provider: views
         label_display: '0'
-        region: content
+        region: content_above
         weight: '0'
         custom_id: views_block_media_display_openseadragon
         theme: barriodepartments
