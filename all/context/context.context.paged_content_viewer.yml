@@ -47,7 +47,7 @@ reactions:
         label: 'Mirador block'
         provider: islandora_mirador
         label_display: '0'
-        region: content
+        region: content_above
         weight: '0'
         custom_id: mirador_block
         theme: barriodepartments
