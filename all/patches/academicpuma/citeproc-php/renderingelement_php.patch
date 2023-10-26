@@ -1,0 +1,14 @@
+--- vendor/academicpuma/citeproc-php/src/RenderingElement.php
++++ vendor/academicpuma/citeproc-php/src/RenderingElement_new.php
+@@ -34,10 +34,9 @@
+         foreach ($this->elements as $element) {
+             $text_parts[] = $element->render($data, $mode);
+         }
+-        $text = implode($delim, $text_parts); // insert the delimiter if supplied.
++        $text = implode($delim ?? '', $text_parts); // insert the delimiter if supplied.
+ 
+         return $this->format($text);
+     }
+ 
+ }
+-
