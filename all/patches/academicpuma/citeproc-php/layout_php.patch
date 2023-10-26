@@ -1,0 +1,15 @@
+--- vendor/academicpuma/citeproc-php/src/Layout.php
++++ vendor/academicpuma/citeproc-php/src/Layout_new.php
+@@ -41,9 +41,9 @@
+         foreach ($this->elements as $element) {
+             $parts[] = $element->render($data, $mode);
+         }
+-
+-        $text = implode($this->delimiter, $parts);
+-
++ 
++        $text = implode($this->delimiter ?? '', $parts);
++         
+         if ($mode == 'bibliography' || $mode == 'citation') {
+             return $this->format($text);
+         } else {
