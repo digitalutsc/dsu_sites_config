@@ -38,6 +38,7 @@
         "drupal/google_tag":"^2.0",
         "drupal/recaptcha":"^3.2",
         "drupal/recaptcha_v3": "^2.0",
-        "drupal/oembed_providers":"^2.1"
+        "drupal/oembed_providers":"^2.1",
+        "drupal/textarea_limit":"^3.0"
     }
 }
