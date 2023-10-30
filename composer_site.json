@@ -41,6 +41,7 @@
         "drupal/oembed_providers":"^2.1",
         "drupal/textarea_limit":"^3.0",
         "drupal/cer":"^5.0@beta",
-        "drupal/masquerade":"^2.0@RC"
+        "drupal/masquerade":"^2.0@RC",
+        "drupal/media_revisions_ui":"^2.1"
     }
 }
