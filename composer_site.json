@@ -23,7 +23,11 @@
                 "reference":"1.0.0-beta2"
               }
             }
-        }
+        },
+       {
+            "type": "vcs",
+            "url": "https://github.com/digitalutsc/serve_iiif_file"
+       }        
     ],
     "require": {
         "drupal/bootstrap_barrio": "^5.5",
@@ -43,6 +47,7 @@
         "drupal/cer":"^5.0@beta",
         "drupal/masquerade":"^2.0@RC",
         "drupal/media_revisions_ui":"^2.1",
-        "drupal/backup_migrate":"^5.0"
+        "drupal/backup_migrate":"^5.0",
+        "islandora_lite/serve_iiif_file": "^1.0@beta"        
     }
 }
