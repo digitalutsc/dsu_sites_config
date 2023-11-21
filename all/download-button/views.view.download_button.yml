@@ -89,7 +89,7 @@ display:
           click_sort_column: target_id
           type: file_download_link
           settings:
-            access_message: 'You don''t have access to download this file.'
+            access_message: "You don't have access to download this file."
             text: Download
           group_column: ''
           group_columns: {  }
@@ -153,7 +153,7 @@ display:
           click_sort_column: target_id
           type: file_download_link
           settings:
-            access_message: 'You don''t have access to download this file.'
+            access_message: "You don't have access to download this file."
             text: Download
           group_column: ''
           group_columns: {  }
@@ -217,7 +217,7 @@ display:
           click_sort_column: target_id
           type: file_download_link
           settings:
-            access_message: 'You don''t have access to download this file.'
+            access_message: "You don't have access to download this file."
             text: Download
           group_column: ''
           group_columns: {  }
@@ -281,7 +281,7 @@ display:
           click_sort_column: target_id
           type: file_download_link
           settings:
-            access_message: 'You don''t have access to download this file.'
+            access_message: "You don't have access to download this file."
             text: Download
           group_column: ''
           group_columns: {  }
@@ -345,7 +345,7 @@ display:
           click_sort_column: target_id
           type: file_download_link
           settings:
-            access_message: 'You don''t have access to download this file.'
+            access_message: "You don't have access to download this file."
             text: Download
           group_column: ''
           group_columns: {  }
@@ -590,7 +590,7 @@ display:
           click_sort_column: target_id
           type: file_download_link
           settings:
-            access_message: 'You don''t have access to download this file.'
+            access_message: "You don't have access to download this file."
             text: Download
           group_column: ''
           group_columns: {  }
@@ -654,7 +654,7 @@ display:
           click_sort_column: target_id
           type: file_download_link
           settings:
-            access_message: 'You don''t have access to download this file.'
+            access_message: "You don't have access to download this file."
             text: Download
           group_column: ''
           group_columns: {  }
@@ -718,7 +718,7 @@ display:
           click_sort_column: target_id
           type: file_download_link
           settings:
-            access_message: 'You don''t have access to download this file.'
+            access_message: "You don't have access to download this file."
             text: Download
           group_column: ''
           group_columns: {  }
@@ -782,7 +782,7 @@ display:
           click_sort_column: target_id
           type: file_download_link
           settings:
-            access_message: 'You don''t have access to download this file.'
+            access_message: "You don't have access to download this file."
             text: Download
           group_column: ''
           group_columns: {  }
@@ -846,7 +846,7 @@ display:
           click_sort_column: target_id
           type: file_download_link
           settings:
-            access_message: 'You don''t have access to download this file.'
+            access_message: "You don't have access to download this file."
             text: Download
           group_column: ''
           group_columns: {  }
@@ -1170,7 +1170,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"d-flex justify-content-between bd-highlight mb-3 islandora-objects-action\">\r\n    {% if field_model != 'Paged Content' %}\r\n           {% if field_model == \"Page\" or field_model == \"Image\" or field_model == \"Audio\" %}\r\n             <div id=\"download-buttons\" class=\"btn-group download-button-group\" role=\"group\">\r\n                <span type=\"button\" class=\"dropdown-toggle\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">\r\n                  Download\r\n                </span>\r\n                <ul class=\"dropdown-menu\">\r\n                  {% set images= view|striptags | replace({\"\\n\": \"\", \"\\r\": \"\", \"\\t\": \"\"}) | trim | split(' ') %}\r\n                  {% for image in images %}\r\n                          {% if image is not empty %}\r\n                              <li><a class=\"dropdown-item\" href=\"{{ image|striptags }}\" download> {{ image|striptags|split('.')|last|trim| upper }} </a></li>         \r\n                          {% endif %} \r\n                  {% endfor %}\r\n                </ul>\r\n              </div>    \r\n            {% else %}\r\n                <div class=\"download-btn p-2 bd-highlight\">\r\n                  {{ field_media_audio_file }}\r\n                  {{ field_media_file }}\r\n                  {{ field_media_video_file }} \r\n                  {{ field_media_oembed_video }} \r\n                  {% if field_media_document|trim is not empty  %}\r\n                    <div class=\"download-btn p-2 bd-highlight\"><span class=\"file file--mime-image-tiff file--image\"><a href=\"{{ field_media_document }}\" download>Download</a> </span></div>\r\n                  {% endif %}\r\n                </div>\r\n            {% endif %}\r\n          {% else  %}\r\n           <div id=\"download-buttons\" class=\"btn-group download-button-group\" role=\"group\">\r\n                      <span type=\"button\" class=\"dropdown-toggle\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">\r\n           Download\r\n          </span>\r\n          <ul class=\"dropdown-menu\">\r\n            {% if field_media_document|trim is not empty and field_media_document|split('.')|last == \"pdf\"  %}\r\n                              <li><a class=\"dropdown-item\" href=\"{{ field_media_document }}\">PDF</a></li>\r\n                         {% endif %}\r\n            <li><a class=\"dropdown-item\" href=\"/node/{{ nid }}/children\" target=\"_blank\">Individual Pages</a></li>\r\n          </ul>\r\n          </div>\r\n    {% endif %}\r\n     <div class=\"iiif-btn p-2 bd-highlight\">\r\n            {% if field_model == 'Paged Content' %}\r\n                 <a href=\"/node/{{ nid }}/book-manifest\" id=\"iiif-manifest\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/e/e8/International_Image_Interoperability_Framework_logo.png\"  alt=\"IIIF Drag-n-drop\"/></a>\r\n            {% else %}\r\n                 <a href=\"/node/{{ nid }}/item-manifest\" id=\"iiif-manifest\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/e/e8/International_Image_Interoperability_Framework_logo.png\"  alt=\"IIIF Drag-n-drop\"/></a>\r\n            {% endif %}\r\n      </div>\r\n      {% if field_location_url is not empty %}\r\n               <div class=\"permalink p-2 bd-highlight\">Permalink:  {{ field_location_url }}</div>\r\n      {% else %}\r\n              <div class=\"permalink p-2 bd-highlight\">&nbsp;</div>\r\n      {% endif %}\r\n     \r\n</div>"
+            text: "<div class=\"d-flex justify-content-between bd-highlight mb-3 islandora-objects-action\">\r\n    {% if field_model != 'Paged Content' %}\r\n           {% if field_model == \"Page\" or field_model == \"Image\" or field_model == \"Audio\" or field_model == \"Digital Document\" or field_model == \"Binary\" %}\r\n             <div id=\"download-buttons\" class=\"btn-group download-button-group\" role=\"group\">\r\n                <span type=\"button\" class=\"dropdown-toggle\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">\r\n                  Download\r\n                </span>\r\n                <ul class=\"dropdown-menu\">\r\n                  {% set images= view|striptags | replace({\"\\n\": \"\", \"\\r\": \"\", \"\\t\": \"\"}) | trim | split(' ') %}\r\n                  {% for image in images %}\r\n                          {% if image is not empty %}\r\n                              <li><a class=\"dropdown-item\" href=\"{{ image|striptags }}\" download> {{ image|striptags|split('.')|last|trim| upper }} </a></li>         \r\n                          {% endif %} \r\n                  {% endfor %}\r\n                </ul>\r\n              </div>    \r\n            {% else %}\r\n                <div class=\"download-btn p-2 bd-highlight\">\r\n                  {{ field_media_audio_file }}\r\n                  {{ field_media_file }}\r\n                  {{ field_media_video_file }} \r\n                  {{ field_media_oembed_video }} \r\n                  {% if field_media_document|trim is not empty  %}\r\n                    <div class=\"download-btn p-2 bd-highlight\"><span class=\"file file--mime-image-tiff file--image\"><a href=\"{{ field_media_document }}\" download>Download</a> </span></div>\r\n                  {% endif %}\r\n                </div>\r\n            {% endif %}\r\n          {% else  %}\r\n           <div id=\"download-buttons\" class=\"btn-group download-button-group\" role=\"group\">\r\n                      <span type=\"button\" class=\"dropdown-toggle\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">\r\n           Download\r\n          </span>\r\n          <ul class=\"dropdown-menu\">\r\n            {% if field_media_document|trim is not empty and field_media_document|split('.')|last == \"pdf\"  %}\r\n                              <li><a class=\"dropdown-item\" href=\"{{ field_media_document }}\">PDF</a></li>\r\n                         {% endif %}\r\n            <li><a class=\"dropdown-item\" href=\"/node/{{ nid }}/children\" target=\"_blank\">Individual Pages</a></li>\r\n          </ul>\r\n          </div>\r\n    {% endif %}\r\n     <div class=\"iiif-btn p-2 bd-highlight\">\r\n            {% if field_model == 'Paged Content' %}\r\n                 <a href=\"/node/{{ nid }}/book-manifest\" id=\"iiif-manifest\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/e/e8/International_Image_Interoperability_Framework_logo.png\"  alt=\"IIIF Drag-n-drop\"/></a>\r\n            {% endif %}\r\n      </div>\r\n      {% if field_location_url is not empty %}\r\n               <div class=\"permalink p-2 bd-highlight\">Permalink:  {{ field_location_url }}</div>\r\n      {% else %}\r\n              <div class=\"permalink p-2 bd-highlight\">&nbsp;</div>\r\n      {% endif %}\r\n     \r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1248,6 +1248,8 @@ display:
           category_fallback: ''
           category_facets: {  }
           category_facets_concat_separator: ', '
+      allow:
+        items_per_page: true
     cache_metadata:
       max-age: -1
       contexts:
