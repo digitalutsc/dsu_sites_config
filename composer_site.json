@@ -27,6 +27,10 @@
        {
             "type": "vcs",
             "url": "https://github.com/digitalutsc/serve_iiif_file"
+       },   
+       {
+            "type": "vcs",
+            "url": "https://github.com/digitalutsc/jsonld_markup"
        }        
     ],
     "require": {
@@ -48,6 +52,7 @@
         "drupal/masquerade":"^2.0@RC",
         "drupal/media_revisions_ui":"^2.1",
         "drupal/backup_migrate":"^5.0",
-        "islandora_lite/serve_iiif_file": "^1.0@beta"        
+        "islandora_lite/serve_iiif_file": "^1.0@beta",
+        "drupal/jsonld_markup": "^1.0@beta"
     }
 }
