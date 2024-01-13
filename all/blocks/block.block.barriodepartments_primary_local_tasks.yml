@@ -1,12 +1,14 @@
 langcode: en
 status: true
 dependencies:
+  module:
+    - user
   theme:
     - barriodepartments
 id: barriodepartments_primary_local_tasks
 theme: barriodepartments
-region: content
-weight: -19
+region: content_above
+weight: -37
 provider: null
 plugin: local_tasks_block
 settings:
@@ -16,4 +18,13 @@ settings:
   provider: core
   primary: true
   secondary: false
-visibility: {  }
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated
+      content_editor: content_editor
+      administrator: administrator
