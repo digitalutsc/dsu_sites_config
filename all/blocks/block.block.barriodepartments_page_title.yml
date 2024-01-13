@@ -5,8 +5,8 @@ dependencies:
     - barriodepartments
 id: barriodepartments_page_title
 theme: barriodepartments
-region: content
-weight: -17
+region: content_above
+weight: -35
 provider: null
 plugin: page_title_block
 settings:
