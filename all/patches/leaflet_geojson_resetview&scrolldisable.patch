@@ -1,0 +1,33 @@
+diff --git a/js/leaflet_geojson.bbox.js b/js/leaflet_geojson.bbox.js
+index 30a6eb8..719634b 100644
+--- a/js/leaflet_geojson.bbox.js
++++ b/js/leaflet_geojson.bbox.js
+@@ -12,6 +12,28 @@
+       Drupal.leafletBBox.map = map;
+       Drupal.leafletBBox.markerGroup = [];
+ 
++      map.scrollWheelZoom.disable();
++
++      var resetControl = L.control({position: 'topleft'});
++
++      resetControl.onAdd = function (map) {
++        var controlDiv = L.DomUtil.create('div', 'leaflet-control-resetview leaflet-bar leaflet-control');
++        var link = L.DomUtil.create("a", "leaflet-bar-part leaflet-bar-part-single", controlDiv);
++        link.title = "Reset View";
++        link.href = "#";
++        link.setAttribute("role", "button");
++        var icon = L.DomUtil.create("span", "leaflet-control-resetview-icon", link);
++        icon.innerHTML = "↻";
++
++        link.onclick = function () {
++          map.setView([0, 0], 2);
++        }
++
++        return controlDiv;
++      };
++
++      resetControl.addTo(map);
++
+       // Intialize empty layers and associated controls.
+       var layer_count = 0;
+       $.each(drupalSettings.leafletBBox, function (key, value) {

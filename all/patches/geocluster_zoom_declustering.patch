@@ -1,0 +1,52 @@
+diff --git a/js/geocluster.leaflet.bbox.js b/js/geocluster.leaflet.bbox.js
+index 624b251..8754b7b 100644
+--- a/js/geocluster.leaflet.bbox.js
++++ b/js/geocluster.leaflet.bbox.js
+@@ -32,8 +32,8 @@
+       }
+       else {
+         let title = '';
+-        if (featureData.properties.label) {
+-          title = featureData.properties.label;
++        if (featureData.properties.title) {
++          title = featureData.properties.title;
+         }
+         lMarker = new L.Marker(latlng, {title: title});
+       }
+@@ -41,16 +41,19 @@
+     },
+ 
+     onEachFeature: function (featureData, layer) {
+-      if (featureData.properties.geocluster_count > 1) {
+-        layer.on('click', function (e) {
+-          Drupal.leafletBBox.geoJSONOptions.clickOnClustered(e, featureData, layer);
+-        });
+-      }
+-      else {
+-        if (featureData.properties && featureData.properties.popup) {
+-          layer.bindPopup(featureData.properties.popup);
++      layer.on('add', function () {
++        if (featureData.properties.geocluster_count > 1 && layer._map._zoom < layer._map._layersMaxZoom - 4) {
++          layer.on('click', function (e) {
++            Drupal.leafletBBox.geoJSONOptions.clickOnClustered(e, featureData, layer);
++          });
+         }
+-      }
++        else {
++          if (featureData.properties && featureData.properties.popup) {
++            var popup = L.popup({maxHeight: 200}).setContent(featureData.properties.popup);
++            layer.bindPopup(popup);
++          }
++        }
++      });
+     },
+ 
+     clickOnClustered: function (e, featureData, layer) {
+@@ -60,7 +63,6 @@
+       if (map._popup) {
+         map._popup._source.closePopup();
+       }
+-
+       map.setView(layer.getLatLng(), map._zoom + 1);
+     }
+ 
