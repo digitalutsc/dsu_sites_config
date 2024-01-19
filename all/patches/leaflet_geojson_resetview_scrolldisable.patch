@@ -16,7 +16,6 @@ index 30a6eb8..dabce02 100644
 +    onMapLoad: function (map) {
        Drupal.leafletBBox.map = map;
        Drupal.leafletBBox.markerGroup = [];
-+      map.scrollWheelZoom.disable();
 +      var resetControl = L.control({position: 'topleft'});
 +
 +      resetControl.onAdd = function (map) {
