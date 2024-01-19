@@ -1,5 +1,5 @@
 diff --git a/js/leaflet_geojson.bbox.js b/js/leaflet_geojson.bbox.js
-index 30a6eb8..68372d8 100644
+index 30a6eb8..e8823d3 100644
 --- a/js/leaflet_geojson.bbox.js
 +++ b/js/leaflet_geojson.bbox.js
 @@ -1,4 +1,4 @@
@@ -8,7 +8,7 @@ index 30a6eb8..68372d8 100644
    'use strict';
  
    var jsonrequest;
-@@ -8,9 +8,28 @@
+@@ -8,9 +8,34 @@
      markerGroup: null,
      overlays: {},
  
@@ -17,6 +17,12 @@ index 30a6eb8..68372d8 100644
        Drupal.leafletBBox.map = map;
        Drupal.leafletBBox.markerGroup = [];
 +      var resetControl = L.control({position: 'topleft'});
++      
++      map.eachLayer(function (layer) {
++        if (layer instanceof L.TileLayer || layer instanceof L.ImageOverlay) {
++          layer.options.noWrap = true;
++        }
++      });
 +
 +      resetControl.onAdd = function (map) {
 +        var controlDiv = L.DomUtil.create('div', 'leaflet-control-resetview leaflet-bar leaflet-control');
@@ -38,7 +44,18 @@ index 30a6eb8..68372d8 100644
  
        // Intialize empty layers and associated controls.
        var layer_count = 0;
-@@ -236,10 +255,10 @@
+@@ -35,8 +60,8 @@
+       }
+ 
+       // settings maxbound so that the map remain alwxays centered
+-      var southWest = new L.LatLng(90, -18000);
+-      var northEast = new L.LatLng(-90, 180000);
++      var southWest = new L.LatLng(90, -180);
++      var northEast = new L.LatLng(-90, 180);
+       var bounds = new L.LatLngBounds(southWest, northEast);
+ 
+       map.setMaxBounds(bounds);
+@@ -236,10 +261,10 @@
    };
  
    // Insert map.
