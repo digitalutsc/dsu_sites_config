@@ -1,13 +1,22 @@
 diff --git a/js/leaflet_geojson.bbox.js b/js/leaflet_geojson.bbox.js
-index 30a6eb8..719634b 100644
+index 30a6eb8..dabce02 100644
 --- a/js/leaflet_geojson.bbox.js
 +++ b/js/leaflet_geojson.bbox.js
-@@ -12,6 +12,28 @@
+@@ -1,4 +1,4 @@
+-(function ($, Drupal, drupalSettings) {
++(function (Drupal, $, once, drupalSettings) {
+   'use strict';
+ 
+   var jsonrequest;
+@@ -8,9 +8,29 @@
+     markerGroup: null,
+     overlays: {},
+ 
+-    onMapLoad: function (map, settings) {
++    onMapLoad: function (map) {
        Drupal.leafletBBox.map = map;
        Drupal.leafletBBox.markerGroup = [];
- 
 +      map.scrollWheelZoom.disable();
-+
 +      var resetControl = L.control({position: 'topleft'});
 +
 +      resetControl.onAdd = function (map) {
@@ -17,7 +26,7 @@ index 30a6eb8..719634b 100644
 +        link.href = "#";
 +        link.setAttribute("role", "button");
 +        var icon = L.DomUtil.create("span", "leaflet-control-resetview-icon", link);
-+        icon.innerHTML = "↻";
++        icon.innerHTML = `<div style="font-size: 1.5rem;">↻</div>`;
 +
 +        link.onclick = function () {
 +          map.setView([0, 0], 2);
@@ -27,7 +36,21 @@ index 30a6eb8..719634b 100644
 +      };
 +
 +      resetControl.addTo(map);
-+
+ 
        // Intialize empty layers and associated controls.
        var layer_count = 0;
-       $.each(drupalSettings.leafletBBox, function (key, value) {
+@@ -236,10 +256,10 @@
+   };
+ 
+   // Insert map.
+-  $(document).bind('leaflet.map', function (e, settings, lMap) {
+-    $(window, settings).once("leaflet_geojson_bbox_init_map").each( function(){
+-      Drupal.leafletBBox.onMapLoad(lMap, settings);
++  $(document).bind('leaflet.map', function (e, map, lMap) {
++    $(once('leaflet_geojson_bbox_init_map', 'html')).each(function() {
++      Drupal.leafletBBox.onMapLoad(lMap);
+     });
+   });
+ 
+-})(jQuery, Drupal, drupalSettings);
++})(Drupal, jQuery, once, drupalSettings);
