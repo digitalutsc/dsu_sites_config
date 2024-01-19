@@ -1,5 +1,5 @@
 diff --git a/js/leaflet_geojson.bbox.js b/js/leaflet_geojson.bbox.js
-index 30a6eb8..dabce02 100644
+index 30a6eb8..68372d8 100644
 --- a/js/leaflet_geojson.bbox.js
 +++ b/js/leaflet_geojson.bbox.js
 @@ -1,4 +1,4 @@
@@ -8,7 +8,7 @@ index 30a6eb8..dabce02 100644
    'use strict';
  
    var jsonrequest;
-@@ -8,9 +8,29 @@
+@@ -8,9 +8,28 @@
      markerGroup: null,
      overlays: {},
  
@@ -38,7 +38,7 @@ index 30a6eb8..dabce02 100644
  
        // Intialize empty layers and associated controls.
        var layer_count = 0;
-@@ -236,10 +256,10 @@
+@@ -236,10 +255,10 @@
    };
  
    // Insert map.
