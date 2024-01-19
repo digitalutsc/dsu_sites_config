@@ -1,19 +1,33 @@
 diff --git a/js/geocluster.leaflet.bbox.js b/js/geocluster.leaflet.bbox.js
-index 624b251..8754b7b 100644
+index 624b251..88c8cea 100644
 --- a/js/geocluster.leaflet.bbox.js
 +++ b/js/geocluster.leaflet.bbox.js
-@@ -32,8 +32,8 @@
+@@ -6,6 +6,13 @@
+ 
+     pointToLayer: function (featureData, latlng) {
+       var lMarker;
++      var southWest = L.latLng(-90, -180),
++      northEast = L.latLng(90, 180),
++      bounds = L.latLngBounds(southWest, northEast);
++
++      if (!bounds.contains(latlng)) {
++        return null;
++      }
+ 
+       if (featureData.properties.geocluster_count > 1) {
+         var number = featureData.properties.geocluster_count;
+@@ -32,8 +39,8 @@
        }
        else {
          let title = '';
 -        if (featureData.properties.label) {
 -          title = featureData.properties.label;
-+        if (featureData.properties.title) {
-+          title = featureData.properties.title;
++        if (featureData.properties.name) {
++          title = featureData.properties.name;
          }
          lMarker = new L.Marker(latlng, {title: title});
        }
-@@ -41,16 +41,19 @@
+@@ -41,16 +48,19 @@
      },
  
      onEachFeature: function (featureData, layer) {
@@ -26,7 +40,7 @@ index 624b251..8754b7b 100644
 -        if (featureData.properties && featureData.properties.popup) {
 -          layer.bindPopup(featureData.properties.popup);
 +      layer.on('add', function () {
-+        if (featureData.properties.geocluster_count > 1 && layer._map._zoom < layer._map._layersMaxZoom - 4) {
++        if (featureData.properties.geocluster_count > 600 && layer._map._zoom < layer._map._layersMaxZoom - 8) {
 +          layer.on('click', function (e) {
 +            Drupal.leafletBBox.geoJSONOptions.clickOnClustered(e, featureData, layer);
 +          });
@@ -42,7 +56,7 @@ index 624b251..8754b7b 100644
      },
  
      clickOnClustered: function (e, featureData, layer) {
-@@ -60,7 +63,6 @@
+@@ -60,7 +70,6 @@
        if (map._popup) {
          map._popup._source.closePopup();
        }
