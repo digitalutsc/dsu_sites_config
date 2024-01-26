@@ -1,5 +1,5 @@
 diff --git a/js/geocluster.leaflet.bbox.js b/js/geocluster.leaflet.bbox.js
-index 624b251..88c8cea 100644
+index 624b251..3ec95a8 100644
 --- a/js/geocluster.leaflet.bbox.js
 +++ b/js/geocluster.leaflet.bbox.js
 @@ -6,6 +6,13 @@
@@ -64,3 +64,16 @@ index 624b251..88c8cea 100644
        map.setView(layer.getLatLng(), map._zoom + 1);
      }
  
+diff --git a/src/GeoclusterItem.php b/src/GeoclusterItem.php
+index c229844..e8deb5f 100644
+--- a/src/GeoclusterItem.php
++++ b/src/GeoclusterItem.php
+@@ -73,6 +73,9 @@ class GeoclusterItem extends GeofieldItem {
+    *   The geohash prefix
+    */
+   private function geoclusterGetGeohashPrefix($geohash, $length) {
++    if ($geohash === NULL) {
++      return NULL;
++    }
+     return substr($geohash ?? '', 0, min($length, strlen($geohash ?? '')));
+   }
