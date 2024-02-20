@@ -10,7 +10,7 @@ dependencies:
 id: barriodepartments_account_menu
 theme: barriodepartments
 region: footer_second
-weight: -23
+weight: -33
 provider: null
 plugin: 'system_menu_block:account'
 settings:
