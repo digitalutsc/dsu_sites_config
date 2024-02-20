@@ -55,6 +55,7 @@
         "islandora_lite/serve_iiif_file": "^1.0@beta",
         "drupal/jsonld_markup": "^1.0@beta",
         "drupal/metatag": "^2.0",
-        "drupal/redirect": "^1.9"
+        "drupal/redirect": "^1.9",
+        "drupal/file_extractor": "^4.1"
     }
 }
