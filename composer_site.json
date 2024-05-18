@@ -58,6 +58,7 @@
         "drupal/redirect": "^1.9",
         "drupal/file_extractor": "^4.1",
         "drupal/term_merge": "^2.0@beta",
-        "drupal/getjwtonlogin":"^2.0"
+        "drupal/getjwtonlogin":"^2.0",
+        "drupal/extlink":"^1.7"
     }
 }
