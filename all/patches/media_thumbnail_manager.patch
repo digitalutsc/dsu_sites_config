@@ -1,0 +1,43 @@
+diff --git a/src/Plugin/MediaThumbnailManager.php b/src/Plugin/MediaThumbnailManager.php
+index 1d9baad..5df1e99 100644
+--- a/src/Plugin/MediaThumbnailManager.php
++++ b/src/Plugin/MediaThumbnailManager.php
+@@ -131,6 +131,9 @@ class MediaThumbnailManager extends DefaultPluginManager implements ContainerAwa
+     /** @var \Drupal\file\FileInterface $thumbnail */
+     $thumbnail = $this->getThumbnail($media);
+ 
++    if (empty($thumbnail))
++        return;
++
+     // Remove the thumbnail from the media entity.
+     $media->set('thumbnail', NULL);
+ 
+@@ -193,13 +196,27 @@ class MediaThumbnailManager extends DefaultPluginManager implements ContainerAwa
+    * @return \Drupal\Core\Entity\EntityInterface|null
+    *   The loaded file object.
+    */
+-  public function getThumbnail(MediaInterface $media) {
++  /*public function getThumbnail(MediaInterface $media) {
+     try {
+       return $this->getFileObject($media, 'thumbnail');
+     }
+     catch (\Exception $e) {
+       return NULL;
+     }
++  }*/
++  public function getThumbnail(MediaInterface $media) {
++    try {
++      // TODO: if the source file and thumbnail point to the same file object, return NULL
++      $thumbnail_file = $this->getFileObject($media, 'thumbnail');
++      $original_file = $this->getFileObject($media, 'field_media_image');
++      if ($thumbnail_file === $original_file) {
++        return NULL;
++      }
++      return $thumbnail_file;
++    }
++    catch (\Exception $e) {
++      return NULL;
++    }
+   }
+ 
+   /**
