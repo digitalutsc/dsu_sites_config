@@ -1,12 +1,13 @@
-From 15b3da63036404312a9e8ad1787ac2e5fea829b3 Mon Sep 17 00:00:00 2001
+From 8e25218b59490f548d6ce36b487c7d8769f45526 Mon Sep 17 00:00:00 2001
 From: Kyle Huynh <kyle.huynh205@gmail.com>
-Date: Thu, 15 Aug 2024 16:32:51 -0400
-Subject: [PATCH] customization for tami site
+Date: Thu, 15 Aug 2024 16:51:08 -0400
+Subject: [PATCH] add customization for Tamil site
 
 ---
- css/csvfile-formatter.css | 39 +++++++++++++++++
- js/csvfile-formatter.js   | 91 +++++++++++++++++++++++++++++----------
- 2 files changed, 107 insertions(+), 23 deletions(-)
+ css/csvfile-formatter.css       | 39 ++++++++++++++
+ csvfile_formatter.libraries.yml |  3 ++
+ js/csvfile-formatter.js         | 91 ++++++++++++++++++++++++---------
+ 3 files changed, 110 insertions(+), 23 deletions(-)
  create mode 100644 css/csvfile-formatter.css
 
 diff --git a/css/csvfile-formatter.css b/css/csvfile-formatter.css
@@ -55,6 +56,20 @@ index 0000000..6b59e7c
 +    display: none;
 +}
 \ No newline at end of file
+diff --git a/csvfile_formatter.libraries.yml b/csvfile_formatter.libraries.yml
+index 3408e39..67b27d9 100644
+--- a/csvfile_formatter.libraries.yml
++++ b/csvfile_formatter.libraries.yml
+@@ -2,6 +2,9 @@
+ csvfile_formatter:
+   js:
+     js/csvfile-formatter.js: {}
++  css:
++    theme:
++      css/csvfile-formatter.css: {}
+   dependencies:
+     - core/jquery
+     - core/drupal
 diff --git a/js/csvfile-formatter.js b/js/csvfile-formatter.js
 index 8bdf054..f5cb37d 100644
 --- a/js/csvfile-formatter.js
