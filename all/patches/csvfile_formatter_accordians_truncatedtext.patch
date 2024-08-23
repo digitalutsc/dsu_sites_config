@@ -55,6 +55,9 @@ index 0000000..6b59e7c
 +.full-text {
 +    display: none;
 +}
++a.toggle-text {
++    color:#fff !important;
++}
 \ No newline at end of file
 diff --git a/csvfile_formatter.libraries.yml b/csvfile_formatter.libraries.yml
 index 3408e39..67b27d9 100644
