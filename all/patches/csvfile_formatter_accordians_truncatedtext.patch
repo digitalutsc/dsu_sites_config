@@ -1,21 +1,21 @@
-From 59451b19dc4ef12c9c3fb584ecdf769b263218e9 Mon Sep 17 00:00:00 2001
+From 3a79f0b00c9d5cd8b73bcf02a27c392cae21a2fb Mon Sep 17 00:00:00 2001
 From: Kyle Huynh <kyle.huynh205@gmail.com>
-Date: Fri, 23 Aug 2024 09:29:03 -0400
-Subject: [PATCH] Added customization for Tamil site
+Date: Fri, 23 Aug 2024 10:45:37 -0400
+Subject: [PATCH] Move the viewer to accordion and truncate the long text
 
 ---
- css/csvfile-formatter.css       |  39 ++++++++++++
+ css/csvfile-formatter.css       |  43 +++++++++++++
  csvfile_formatter.libraries.yml |   3 +
  js/csvfile-formatter.js         | 106 ++++++++++++++++++++++----------
- 3 files changed, 115 insertions(+), 33 deletions(-)
+ 3 files changed, 119 insertions(+), 33 deletions(-)
  create mode 100644 css/csvfile-formatter.css
 
 diff --git a/css/csvfile-formatter.css b/css/csvfile-formatter.css
 new file mode 100644
-index 0000000..6b59e7c
+index 0000000..fc3d9ad
 --- /dev/null
 +++ b/css/csvfile-formatter.css
-@@ -0,0 +1,39 @@
+@@ -0,0 +1,43 @@
 +table.dataTable thead .sorting {
 +	vertical-align: middle !important;
 +}
@@ -55,6 +55,7 @@ index 0000000..6b59e7c
 +.full-text {
 +    display: none;
 +}
++
 +a.toggle-text {
 +    color:#fff !important;
 +}
