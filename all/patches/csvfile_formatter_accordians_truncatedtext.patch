@@ -1,20 +1,7 @@
-From 3a79f0b00c9d5cd8b73bcf02a27c392cae21a2fb Mon Sep 17 00:00:00 2001
-From: Kyle Huynh <kyle.huynh205@gmail.com>
-Date: Fri, 23 Aug 2024 10:45:37 -0400
-Subject: [PATCH] Move the viewer to accordion and truncate the long text
-
----
- css/csvfile-formatter.css       |  43 +++++++++++++
- csvfile_formatter.libraries.yml |   3 +
- js/csvfile-formatter.js         | 106 ++++++++++++++++++++++----------
- 3 files changed, 119 insertions(+), 33 deletions(-)
- create mode 100644 css/csvfile-formatter.css
-
-diff --git a/css/csvfile-formatter.css b/css/csvfile-formatter.css
-new file mode 100644
-index 0000000..fc3d9ad
---- /dev/null
-+++ b/css/csvfile-formatter.css
+Binary files csvfile_formatter_org/.DS_Store and csvfile_formatter_changed/.DS_Store differ
+diff -ruN csvfile_formatter_org/css/csvfile-formatter.css csvfile_formatter_changed/css/csvfile-formatter.css
+--- csvfile_formatter_org/css/csvfile-formatter.css	1969-12-31 19:00:00
++++ csvfile_formatter_changed/css/csvfile-formatter.css	2024-08-23 10:33:16
 @@ -0,0 +1,43 @@
 +table.dataTable thead .sorting {
 +	vertical-align: middle !important;
@@ -60,24 +47,21 @@ index 0000000..fc3d9ad
 +    color:#fff !important;
 +}
 \ No newline at end of file
-diff --git a/csvfile_formatter.libraries.yml b/csvfile_formatter.libraries.yml
-index 3408e39..67b27d9 100644
---- a/csvfile_formatter.libraries.yml
-+++ b/csvfile_formatter.libraries.yml
-@@ -2,6 +2,9 @@
- csvfile_formatter:
+diff -ruN csvfile_formatter_org/csvfile_formatter.libraries.yml csvfile_formatter_changed/csvfile_formatter.libraries.yml
+--- csvfile_formatter_org/csvfile_formatter.libraries.yml	2023-06-01 10:50:37
++++ csvfile_formatter_changed/csvfile_formatter.libraries.yml	2024-08-23 10:32:08
+@@ -3,7 +3,7 @@
    js:
      js/csvfile-formatter.js: {}
-+  css:
+   css:
+-    component:
 +    theme:
-+      css/csvfile-formatter.css: {}
+       css/csvfile-formatter.css: {}
    dependencies:
      - core/jquery
-     - core/drupal
-diff --git a/js/csvfile-formatter.js b/js/csvfile-formatter.js
-index 8bdf054..8b3afb0 100644
---- a/js/csvfile-formatter.js
-+++ b/js/csvfile-formatter.js
+diff -ruN csvfile_formatter_org/js/csvfile-formatter.js csvfile_formatter_changed/js/csvfile-formatter.js
+--- csvfile_formatter_org/js/csvfile-formatter.js	2023-06-01 10:50:37
++++ csvfile_formatter_changed/js/csvfile-formatter.js	2024-08-23 10:32:08
 @@ -3,37 +3,77 @@
   * CSV File Formatter behaviors.
   */
@@ -190,6 +174,3 @@ index 8bdf054..8b3afb0 100644
 +  } (jQuery, Drupal));
 +  
 \ No newline at end of file
--- 
-2.39.3 (Apple Git-146)
-
