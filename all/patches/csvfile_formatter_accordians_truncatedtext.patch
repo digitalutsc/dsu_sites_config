@@ -1,13 +1,13 @@
-From 8e25218b59490f548d6ce36b487c7d8769f45526 Mon Sep 17 00:00:00 2001
+From 59451b19dc4ef12c9c3fb584ecdf769b263218e9 Mon Sep 17 00:00:00 2001
 From: Kyle Huynh <kyle.huynh205@gmail.com>
-Date: Thu, 15 Aug 2024 16:51:08 -0400
-Subject: [PATCH] add customization for Tamil site
+Date: Fri, 23 Aug 2024 09:29:03 -0400
+Subject: [PATCH] Added customization for Tamil site
 
 ---
- css/csvfile-formatter.css       | 39 ++++++++++++++
- csvfile_formatter.libraries.yml |  3 ++
- js/csvfile-formatter.js         | 91 ++++++++++++++++++++++++---------
- 3 files changed, 110 insertions(+), 23 deletions(-)
+ css/csvfile-formatter.css       |  39 ++++++++++++
+ csvfile_formatter.libraries.yml |   3 +
+ js/csvfile-formatter.js         | 106 ++++++++++++++++++++++----------
+ 3 files changed, 115 insertions(+), 33 deletions(-)
  create mode 100644 css/csvfile-formatter.css
 
 diff --git a/css/csvfile-formatter.css b/css/csvfile-formatter.css
@@ -71,22 +71,23 @@ index 3408e39..67b27d9 100644
      - core/jquery
      - core/drupal
 diff --git a/js/csvfile-formatter.js b/js/csvfile-formatter.js
-index 8bdf054..f5cb37d 100644
+index 8bdf054..8b3afb0 100644
 --- a/js/csvfile-formatter.js
 +++ b/js/csvfile-formatter.js
-@@ -3,7 +3,7 @@
+@@ -3,37 +3,77 @@
   * CSV File Formatter behaviors.
   */
  
 - (function ($, Drupal) {
 +(function ($, Drupal) {
  
-   'use strict';
- 
-@@ -12,28 +12,73 @@
-    */
-   Drupal.behaviors.csvfileFormatter = {
-     attach: function (context, settings) {
+-  'use strict';
+-
+-  /**
+-   * Adds DataTable to tables with the class '.add-externaljs-csvfiletable'.
+-   */
+-  Drupal.behaviors.csvfileFormatter = {
+-    attach: function (context, settings) {
 -      var dataTableSettings = drupalSettings.csvFormatter.dataTable;
 -
 -      var elements = once('csvfiletable-once', jQuery('.add-externaljs-csvfiletable'), context);
@@ -108,77 +109,82 @@ index 8bdf054..f5cb37d 100644
 -
 -        jQuery(element).DataTable(dataTableSetting);
 -      })
-+        var dataTableSettings = drupalSettings.csvFormatter.dataTable;
-+
-+        var elements = once('csvfiletable-once', jQuery('.add-externaljs-csvfiletable'), context);
-+        elements.forEach(element => {
-+            var dataTableSetting = Object.assign({}, dataTableSettings[0]);
-+            var numColumns = jQuery(element).find('th').length;
-+
-+            var scrollXMin = dataTableSetting['scrollX'];
-+            if (scrollXMin >= 0 && numColumns >= scrollXMin) {
-+                dataTableSetting['scrollX'] = true;
-+            }
-+            else {
-+                dataTableSetting['scrollX'] = false;
-+            }
-+
-+            if (dataTableSetting['scrollY'] < 0) {
-+                delete dataTableSetting.scrollY;
-+            }
-+
-+            // Add columnDefs to dataTableSetting
-+            dataTableSetting['columnDefs'] = [{
-+                targets: '_all', // replace with your target column number
-+                render: function (data, type, row) {
-+                    if (type === 'display' && data.length > 50) {
-+                        return '<span class="truncate">' +data.substr(0, 47) + '</span><span class="full-text">'+data+'</span> <a href="#" class="toggle-text">more....</a>';
-+                    } else {
-+                        return data;
-+                    }
-+                }
-+            }];
-+
-+            var table = jQuery(element).DataTable(dataTableSetting);
-+            $('.toggle-text').on('click', function(e) {
-+                e.preventDefault();
-+                var $this = $(this);
-+                var $truncate = $this.siblings('.truncate');
-+                var $fullText = $this.siblings('.full-text');
-+
-+                if ($truncate.is(':visible')) {
-+                    $truncate.hide();
-+                    $fullText.show();
-+                    $this.text('Show less');
-+                } else {
-+                    $truncate.show();
-+                    $fullText.hide();
-+                    $this.text('more...');
-+                }
-+            });
-+        });
-+
-+        jQuery(document).ready(function() {
-+          // Add the new div above the existing div
-+          var newDiv = `
-+              <div id="accordion" class="my-5 row justify-content-md-center"><div class="card col-12"><div class="card-header" id="heading0-0">
-+                  <a href="#collapse0-0" data-bs-target="#collapse0-0" class="p-4 btn collapsed" data-bs-toggle="collapse" aria-expanded="false" type="button" aria-controls="collapse0-0">View the Transcript</a> 
-+              </div>
-+              <div id="collapse0-0" class="collapse" aria-labelledby="heading0-0" data-bs-parent="#accordion" style="">
-+                  <div class="card-body"></div>
-+              </div></div></div>
-+          `;
-+          jQuery('.field.field--name-field-media-document.field--type-file.field--label-visually_hidden').before(newDiv);
-+        
-+          // Move the existing div into the card-body
-+          jQuery('.field.field--name-field-media-document.field--type-file.field--label-visually_hidden').appendTo('#collapse0-0 .card-body');
-+        });
-+
-     }
-   };
- 
+-    }
+-  };
+-
 -} (jQuery, Drupal));
-+} (jQuery, Drupal));
++    'use strict';
++  
++    /**
++     * Adds DataTable to tables with the class '.add-externaljs-csvfiletable'.
++     */
++    Drupal.behaviors.csvfileFormatter = {
++      attach: function (context, settings) {
++          var dataTableSettings = drupalSettings.csvFormatter.dataTable;
++  
++          var elements = once('csvfiletable-once', jQuery('.add-externaljs-csvfiletable'), context);
++          elements.forEach(element => {
++              var dataTableSetting = Object.assign({}, dataTableSettings[0]);
++              var numColumns = jQuery(element).find('th').length;
++  
++              var scrollXMin = dataTableSetting['scrollX'];
++              if (scrollXMin >= 0 && numColumns >= scrollXMin) {
++                  dataTableSetting['scrollX'] = true;
++              }
++              else {
++                  dataTableSetting['scrollX'] = false;
++              }
++  
++              if (dataTableSetting['scrollY'] < 0) {
++                  delete dataTableSetting.scrollY;
++              }
++  
++              // Add columnDefs to dataTableSetting
++              dataTableSetting['columnDefs'] = [{
++                  orderable: false,
++                  targets: '_all', // replace with your target column number
++                  render: function (data, type, row) {
++                      if (type === 'display' && data.length > 50) {
++                          return '<span class="truncate">' +data.substr(0, 47) + '</span><span class="full-text">'+data+'</span> <a href="#" class="toggle-text">more....</a>';
++                      } else {
++                          return data;
++                      }
++                  }
++              }];
++              // Add header rendering function
++              dataTableSetting['headerCallback'] = function (thead, data, start, end, display) {
++                  $(thead).find('th').each(function () {
++                      var $this = $(this);
++                      var text = $this.text();
++                      if (text.length > 50) {
++                          $this.html('<span class="truncate">' + text.substr(0, 47) + '</span><span class="full-text">' + text + '</span> <a href="#" class="toggle-text">more...</a>');
++                      }
++                  });
++              };
++              var table = jQuery(element).DataTable(dataTableSetting);
++              $('.toggle-text').on('click', function(e) {
++                  e.preventDefault();
++                  var $this = $(this);
++                  var $truncate = $this.siblings('.truncate');
++                  var $fullText = $this.siblings('.full-text');
++  
++                  if ($truncate.is(':visible')) {
++                      $truncate.hide();
++                      $fullText.show();
++                      $this.text('Show less');
++                  } else {
++                      $truncate.show();
++                      $fullText.hide();
++                      $this.text('more...');
++                  }
++              });
++          });
++  
++      }
++    };
++  
++  } (jQuery, Drupal));
++  
 \ No newline at end of file
 -- 
 2.39.3 (Apple Git-146)
