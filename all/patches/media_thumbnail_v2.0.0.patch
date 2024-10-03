@@ -1,0 +1,30 @@
+diff --git a/src/Plugin/MediaThumbnailManager.php b/src/Plugin/MediaThumbnailManager.php
+index 4878a86..3aa5e7f 100644
+--- a/src/Plugin/MediaThumbnailManager.php
++++ b/src/Plugin/MediaThumbnailManager.php
+@@ -161,6 +161,10 @@ class MediaThumbnailManager extends DefaultPluginManager {
+     /** @var \Drupal\file\FileInterface $thumbnail */
+     $thumbnail = $this->getThumbnail($media);
+ 
++    // if media doesn't have thumbnail, prevent deleting the media
++    if (empty($thumbnail))
++      return;
++
+     // Remove the thumbnail from the media entity.
+     $media->set('thumbnail', NULL);
+ 
+@@ -233,7 +237,13 @@ class MediaThumbnailManager extends DefaultPluginManager {
+    */
+   public function getThumbnail(MediaInterface $media) {
+     try {
+-      return $this->getFileObject($media, 'thumbnail');
++      // TODO: if the source file and thumbnail point to the same file object, return NULL
++      $thumbnail_file = $this->getFileObject($media, 'thumbnail');
++      $original_file = $this->getFileObject($media, 'field_media_image');
++      if ($thumbnail_file === $original_file) {
++        return NULL;
++      }
++      return $thumbnail_file;
+     }
+     catch (\Exception $e) {
+       $this->loggerChannelFactory->get('media')->error('Error retrieving media storage: @message', ['@message' => $e->getMessage()]);
