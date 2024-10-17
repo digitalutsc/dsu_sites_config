@@ -1,7 +1,7 @@
-Binary files csvfile_formatter_org/.DS_Store and csvfile_formatter_changed/.DS_Store differ
-diff -ruN csvfile_formatter_org/css/csvfile-formatter.css csvfile_formatter_changed/css/csvfile-formatter.css
+Binary files csvfile_formatter_org/.DS_Store and csvfile_formatter/.DS_Store differ
+diff -ruN csvfile_formatter_org/css/csvfile-formatter.css csvfile_formatter/css/csvfile-formatter.css
 --- csvfile_formatter_org/css/csvfile-formatter.css	1969-12-31 19:00:00
-+++ csvfile_formatter_changed/css/csvfile-formatter.css	2024-08-23 10:33:16
++++ csvfile_formatter/css/csvfile-formatter.css	2024-10-17 17:14:54
 @@ -0,0 +1,43 @@
 +table.dataTable thead .sorting {
 +	vertical-align: middle !important;
@@ -47,21 +47,22 @@ diff -ruN csvfile_formatter_org/css/csvfile-formatter.css csvfile_formatter_chan
 +    color:#fff !important;
 +}
 \ No newline at end of file
-diff -ruN csvfile_formatter_org/csvfile_formatter.libraries.yml csvfile_formatter_changed/csvfile_formatter.libraries.yml
---- csvfile_formatter_org/csvfile_formatter.libraries.yml	2023-06-01 10:50:37
-+++ csvfile_formatter_changed/csvfile_formatter.libraries.yml	2024-08-23 10:32:08
-@@ -3,7 +3,7 @@
+diff -ruN csvfile_formatter_org/csvfile_formatter.libraries.yml csvfile_formatter/csvfile_formatter.libraries.yml
+--- csvfile_formatter_org/csvfile_formatter.libraries.yml	2024-10-17 17:28:17
++++ csvfile_formatter/csvfile_formatter.libraries.yml	2024-10-17 17:25:04
+@@ -2,6 +2,9 @@
+ csvfile_formatter:
    js:
      js/csvfile-formatter.js: {}
-   css:
--    component:
++  css:
 +    theme:
-       css/csvfile-formatter.css: {}
++      css/csvfile-formatter.css: {}
    dependencies:
      - core/jquery
-diff -ruN csvfile_formatter_org/js/csvfile-formatter.js csvfile_formatter_changed/js/csvfile-formatter.js
---- csvfile_formatter_org/js/csvfile-formatter.js	2023-06-01 10:50:37
-+++ csvfile_formatter_changed/js/csvfile-formatter.js	2024-08-23 10:32:08
+     - core/drupal
+diff -ruN csvfile_formatter_org/js/csvfile-formatter.js csvfile_formatter/js/csvfile-formatter.js
+--- csvfile_formatter_org/js/csvfile-formatter.js	2024-10-17 17:28:17
++++ csvfile_formatter/js/csvfile-formatter.js	2024-10-17 17:14:54
 @@ -3,37 +3,77 @@
   * CSV File Formatter behaviors.
   */
@@ -174,3 +175,4 @@ diff -ruN csvfile_formatter_org/js/csvfile-formatter.js csvfile_formatter_change
 +  } (jQuery, Drupal));
 +  
 \ No newline at end of file
+Binary files csvfile_formatter_org/src/.DS_Store and csvfile_formatter/src/.DS_Store differ
