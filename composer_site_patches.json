@@ -38,7 +38,6 @@
         "digitalutsc/drupal_hero_banner": "dev-main",
         "drupal/drupal_libcal": "1.x-dev@dev",
         "drupal/google_analytics": "^4.0",
-        "islandora_lite/islandora_site_name": "^1.0.0@beta",
         "drupal/structure_sync":"^2.0",
         "digitalutsc/advanced_search_tips": "1.1.1",
         "drupal/xmlsitemap": "^1.5",
