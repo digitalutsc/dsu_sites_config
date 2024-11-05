@@ -1,0 +1,20 @@
+diff --git a/islandora_iiif_hocr_extend.module b/islandora_iiif_hocr_extend.module
+index cd0de16..7446741 100644
+--- a/islandora_iiif_hocr_extend.module
++++ b/islandora_iiif_hocr_extend.module
+@@ -18,7 +18,7 @@ function islandora_iiif_hocr_extend_page_attachments(array &$attachments) {
+  * Implements hook_views_pre_view().
+  */
+ function islandora_iiif_hocr_extend_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
+-  if ($view->id() == "advanced_search") {
++  if ($view->id() == "crossed_site_advanced_search" || $view->id() === "advanced_search") {
+     $filters = $view->getHandlers('filter');
+     $paramList = \Drupal::request()->query->all();
+     if (array_key_exists('a', $paramList)) {
+@@ -33,4 +33,4 @@ function islandora_iiif_hocr_extend_views_pre_view(ViewExecutable $view, $displa
+       $view->display_handler->overrideOption('filters', $filters);
+     }
+   }  
+-}
+\ No newline at end of file
++}
