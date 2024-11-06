@@ -1,0 +1,10 @@
+--- a/leaflet_geojson.libraries.yml	2023-11-23 12:48:49
++++ b/leaflet_geojson.libraries.yml	2023-11-23 12:46:38
+@@ -4,3 +4,7 @@
+   css:
+     theme:
+       css/style.css: {}
++  dependencies:    
++    - core/drupal
++    - jquery_once/jquery.once
++
