@@ -1,0 +1,22 @@
+diff --git a/js/leaflet_geojson.bbox.js b/js/leaflet_geojson.bbox.js
+index 6f963da..192146e 100644
+--- a/js/leaflet_geojson.bbox.js
++++ b/js/leaflet_geojson.bbox.js
+@@ -1,4 +1,4 @@
+-(function ($, Drupal, drupalSettings) {
++(function (Drupal, $, once, drupalSettings) {
+   'use strict';
+
+   var jsonrequest;
+@@ -228,9 +228,9 @@
+
+   // Insert map.
+   $(document).bind('leaflet.map', function (e, map, lMap) {
+-    $(window, settings).once("leaflet_geojson_bbox_init_map").each( function(){
++    $(once('leaflet_geojson_bbox_init_map', 'html')).each(function() {
+       Drupal.leafletBBox.onMapLoad(lMap);
+     });
+   });
+
+-})(jQuery, Drupal, drupalSettings);
++})(Drupal, jQuery, once, drupalSettings);
