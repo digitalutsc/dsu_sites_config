@@ -934,7 +934,7 @@ display:
           use_highlighting: false
           multi_type: separator
           multi_separator: ', '
-     pager:
+      pager:
         type: mini
         options:
           offset: 0
