@@ -1,0 +1,33 @@
+uuid: 7f651aaf-bc35-4f78-a3a0-166f1cced341
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.download_button
+  module:
+    - node
+    - views
+  theme:
+    - bootstrap_barrio
+id: bootstrap_barrio_views_block__download_button_block_1
+theme: bootstrap_barrio
+region: content
+weight: -7
+provider: null
+plugin: 'views_block:download_button-block_1'
+settings:
+  id: 'views_block:download_button-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      islandora_object: islandora_object
