@@ -8,7 +8,6 @@ dependencies:
     - image.style.large
     - taxonomy.vocabulary.islandora_media_use
   content:
-    - 'taxonomy_term:islandora_media_use:7657c25e-e6eb-4ee5-a44f-a0aabd95eb9d'
     - 'taxonomy_term:islandora_media_use:aeafae03-8522-4a74-8252-b299577c99bb'
   module:
     - file
@@ -791,17 +790,16 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        field_media_use_target_id:
-          id: field_media_use_target_id
-          table: media__field_media_use
-          field: field_media_use_target_id
-          relationship: field_islandora_object_media
+        field_external_uri_uri:
+          id: field_external_uri_uri
+          table: taxonomy_term__field_external_uri
+          field: field_external_uri_uri
+          relationship: field_media_use
           group_type: group
           admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value:
-            - 7
+          plugin_id: string
+          operator: '='
+          value: 'http://pcdm.org/use#ServiceFile'
           group: 1
           exposed: false
           expose:
@@ -818,7 +816,7 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            reduce: false
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -831,12 +829,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
-          vid: islandora_media_use
-          type: textfield
-          hierarchy: false
-          limit: true
-          error_message: true
       filter_groups:
         operator: AND
         groups:
