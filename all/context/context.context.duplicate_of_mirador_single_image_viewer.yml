@@ -59,7 +59,7 @@ reactions:
         unique: 0
         context_id: duplicate_of_mirador_single_image_viewer
         context_mapping: {  }
-        iiif_manifest_url: 'node/[node:nid]/manifest'
+        iiif_manifest_url: '/node/[node:nid]/manifest'
         third_party_settings: {  }
     include_default_blocks: 1
     saved: false
