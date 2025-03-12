@@ -1,16 +1,17 @@
+uuid: 47570d90-0952-4e26-a0e1-cfe78360b07e
 langcode: en
 status: true
 dependencies:
   module:
     - citation_select
-    - context
     - node
+    - term_condition
   theme:
     - barriodepartments
 id: barriodepartments_citationselectblock
 theme: barriodepartments
 region: content
-weight: -9
+weight: -15
 provider: null
 plugin: citation_select_block
 settings:
@@ -19,25 +20,6 @@ settings:
   label_display: visible
   provider: citation_select
 visibility:
-  context_all:
-    id: context_all
-    negate: null
-    values: ''
-  context:
-    id: context
-    negate: null
-    values: ''
-  user_status:
-    id: user_status
-    negate: false
-    context_mapping:
-      user: '@user.current_user_context:current_user'
-    user_status:
-      viewing_profile: '0'
-      logged_viewing_profile: '0'
-      own_page_true: '0'
-      field_value: '0'
-    user_fields: uid
   'entity_bundle:node':
     id: 'entity_bundle:node'
     negate: false
@@ -45,3 +27,9 @@ visibility:
       node: '@node.node_route_context:node'
     bundles:
       islandora_object: islandora_object
+  term:
+    id: term
+    negate: true
+    context_mapping: {  }
+    term_uuids:
+      - 0384668c-be0a-457a-a16f-1c19a7be159c

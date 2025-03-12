@@ -1,4 +1,4 @@
-uuid: 2f511b37-1ac0-476e-940f-42f0b87604a5
+uuid: 4f08331b-c2d3-455a-84ba-3824793ea371
 langcode: en
 status: true
 dependencies:
@@ -7,23 +7,22 @@ dependencies:
     - context
   theme:
     - barriodepartments
-id: barriodepartments_collectionadvancedsearchforpage
+id: barriodepartments_advancedsearchsearchresultspagerforcollectionmembers
 theme: barriodepartments
-region: sidebar_first
-weight: -20
+region: content
+weight: -21
 provider: null
-plugin: 'advanced_search_block:collection__page_1'
+plugin: 'advanced_search_result_pager:advanced_search__block_1'
 settings:
-  id: 'advanced_search_block:collection__page_1'
-  label: 'Collection: Advanced Search for Page'
+  id: 'advanced_search_result_pager:advanced_search__block_1'
+  label: 'Advanced Search: Search Results Pager for Collection Members'
   label_display: '0'
   provider: advanced_search
-  fields:
-    - title
-    - subject
-    - genre
-  context_filter: null
 visibility:
+  context_all:
+    id: context_all
+    negate: null
+    values: collection
   user_status:
     id: user_status
     negate: false
@@ -35,8 +34,3 @@ visibility:
       own_page_true: '0'
       field_value: '0'
     user_fields: uid
-  view_inclusion:
-    id: view_inclusion
-    negate: false
-    view_inclusion:
-      view-collection-page_1: view-collection-page_1

@@ -1,3 +1,4 @@
+uuid: ce178709-4e7c-444a-9547-c6bc2cf0758a
 langcode: en
 status: true
 dependencies:
@@ -11,7 +12,7 @@ dependencies:
 id: barriodepartments_timelinejssubject
 theme: barriodepartments
 region: sidebar_first
-weight: -7
+weight: -11
 provider: null
 plugin: 'facet_block:timelinejs_subject'
 settings:
@@ -22,14 +23,6 @@ settings:
   context_mapping: {  }
   block_id: barriodepartments_timelinejssubject
 visibility:
-  context_all:
-    id: context_all
-    negate: null
-    values: ''
-  context:
-    id: context
-    negate: null
-    values: ''
   user_status:
     id: user_status
     negate: false

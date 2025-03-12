@@ -1,3 +1,4 @@
+uuid: ce711828-7dab-499e-8caf-e35cb394e204
 langcode: en
 status: true
 dependencies:
@@ -23,14 +24,6 @@ settings:
   info: ''
   view_mode: full
 visibility:
-  context_all:
-    id: context_all
-    negate: null
-    values: ''
-  context:
-    id: context
-    negate: null
-    values: ''
   user_status:
     id: user_status
     negate: false

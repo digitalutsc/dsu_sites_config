@@ -1,3 +1,4 @@
+uuid: 560c3411-3f6a-4967-a37d-11b766ecfa66
 langcode: en
 status: true
 dependencies:
@@ -11,7 +12,7 @@ dependencies:
 id: barriodepartments_genre
 theme: barriodepartments
 region: sidebar_first
-weight: -14
+weight: -19
 provider: null
 plugin: 'facet_block:collection_genre'
 settings:
@@ -27,10 +28,6 @@ visibility:
     negate: false
     view_inclusion:
       view-collection-page_1: view-collection-page_1
-  context:
-    id: context
-    negate: null
-    values: ''
   user_status:
     id: user_status
     negate: false
@@ -42,7 +39,3 @@ visibility:
       own_page_true: '0'
       field_value: '0'
     user_fields: uid
-  context_all:
-    id: context_all
-    negate: null
-    values: ''

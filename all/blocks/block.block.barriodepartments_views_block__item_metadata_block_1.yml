@@ -1,18 +1,19 @@
+uuid: 77906c66-942d-4400-8541-ebe48779151a
 langcode: en
 status: true
 dependencies:
   config:
     - views.view.item_metadata
   module:
-    - context
     - node
+    - term_condition
     - views
   theme:
     - barriodepartments
 id: barriodepartments_views_block__item_metadata_block_1
 theme: barriodepartments
 region: content
-weight: -8
+weight: -17
 provider: null
 plugin: 'views_block:item_metadata-block_1'
 settings:
@@ -24,25 +25,6 @@ settings:
   views_label: ''
   items_per_page: none
 visibility:
-  context_all:
-    id: context_all
-    negate: null
-    values: ''
-  context:
-    id: context
-    negate: null
-    values: ''
-  user_status:
-    id: user_status
-    negate: false
-    context_mapping:
-      user: '@user.current_user_context:current_user'
-    user_status:
-      viewing_profile: '0'
-      logged_viewing_profile: '0'
-      own_page_true: '0'
-      field_value: '0'
-    user_fields: uid
   'entity_bundle:node':
     id: 'entity_bundle:node'
     negate: false
@@ -50,3 +32,9 @@ visibility:
       node: '@node.node_route_context:node'
     bundles:
       islandora_object: islandora_object
+  term:
+    id: term
+    negate: true
+    context_mapping: {  }
+    term_uuids:
+      - 0384668c-be0a-457a-a16f-1c19a7be159c

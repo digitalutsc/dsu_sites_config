@@ -1,28 +1,32 @@
-uuid: 5e313340-57a4-4174-aacf-96d1fdb6ed1b
+uuid: 6a6f31e9-89a5-4f0b-907c-47a284d2c8d2
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.collection_publication_date
+    - facets.facet.collection_member_genre
   module:
     - context
     - facets
   theme:
     - barriodepartments
-id: barriodepartments_publicationdatecollection
+id: barriodepartments_collectionmembergenre
 theme: barriodepartments
 region: sidebar_first
-weight: -17
+weight: -6
 provider: null
-plugin: 'facet_block:collection_publication_date'
+plugin: 'facet_block:collection_member_genre'
 settings:
-  id: 'facet_block:collection_publication_date'
-  label: 'Publication Date'
+  id: 'facet_block:collection_member_genre'
+  label: Genre
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: publicationdatecollection
+  block_id: collectionmembergenre
 visibility:
+  context_all:
+    id: context_all
+    negate: null
+    values: collection
   user_status:
     id: user_status
     negate: false
@@ -34,8 +38,3 @@ visibility:
       own_page_true: '0'
       field_value: '0'
     user_fields: uid
-  view_inclusion:
-    id: view_inclusion
-    negate: false
-    view_inclusion:
-      view-collection-page_1: view-collection-page_1

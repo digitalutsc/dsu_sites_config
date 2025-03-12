@@ -1,3 +1,4 @@
+uuid: ef756667-817b-4e99-bdd3-850636a14e10
 langcode: en
 status: true
 dependencies:
@@ -11,7 +12,7 @@ dependencies:
 id: barriodepartments_advancedsearchresourcetype
 theme: barriodepartments
 region: sidebar_first
-weight: -17
+weight: -22
 provider: null
 plugin: 'facet_block:advanced_search_resource_type'
 settings:
@@ -22,14 +23,6 @@ settings:
   context_mapping: {  }
   block_id: advancedsearchresourcetype
 visibility:
-  context:
-    id: context
-    negate: null
-    values: ''
-  context_all:
-    id: context_all
-    negate: null
-    values: ''
   view_inclusion:
     id: view_inclusion
     negate: false

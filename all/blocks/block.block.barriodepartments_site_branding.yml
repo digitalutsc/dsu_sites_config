@@ -1,3 +1,4 @@
+uuid: 22f0eb1c-d7af-45f0-b3f9-9fcb97c3a9e0
 langcode: en
 status: true
 dependencies:
@@ -21,14 +22,6 @@ settings:
   use_site_name: false
   use_site_slogan: false
 visibility:
-  context_all:
-    id: context_all
-    negate: null
-    values: ''
-  context:
-    id: context
-    negate: null
-    values: ''
   user_status:
     id: user_status
     negate: false

@@ -1,3 +1,4 @@
+uuid: 963cf8d5-428d-4221-b07e-79b0bf8d6f1a
 langcode: en
 status: true
 dependencies:
@@ -9,7 +10,7 @@ dependencies:
 id: barriodepartments_advancedsearchsearchresultspagerforpage
 theme: barriodepartments
 region: content
-weight: -15
+weight: -23
 provider: null
 plugin: 'advanced_search_result_pager:advanced_search__page_1'
 settings:
@@ -18,14 +19,6 @@ settings:
   label_display: '0'
   provider: advanced_search
 visibility:
-  context:
-    id: context
-    negate: null
-    values: ''
-  context_all:
-    id: context_all
-    negate: null
-    values: ''
   user_status:
     id: user_status
     negate: false

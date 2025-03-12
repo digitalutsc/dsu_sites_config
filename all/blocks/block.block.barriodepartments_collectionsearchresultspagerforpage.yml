@@ -1,3 +1,4 @@
+uuid: 0e9a9958-bb64-4694-bf05-a2649ab45dfb
 langcode: en
 status: true
 dependencies:
@@ -9,7 +10,7 @@ dependencies:
 id: barriodepartments_collectionsearchresultspagerforpage
 theme: barriodepartments
 region: content
-weight: -16
+weight: -24
 provider: null
 plugin: 'advanced_search_result_pager:collection__page_1'
 settings:
@@ -23,10 +24,6 @@ visibility:
     negate: false
     view_inclusion:
       view-collection-page_1: view-collection-page_1
-  context:
-    id: context
-    negate: null
-    values: ''
   user_status:
     id: user_status
     negate: false
@@ -38,7 +35,3 @@ visibility:
       own_page_true: '0'
       field_value: '0'
     user_fields: uid
-  context_all:
-    id: context_all
-    negate: null
-    values: ''

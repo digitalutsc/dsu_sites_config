@@ -1,29 +1,32 @@
-uuid: 1c7fb69d-cd9f-4216-9783-70a23321ec66
+uuid: 3be98bd6-aec1-415d-aead-fa9687551507
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'block_content:basic:fe4c036a-b7c9-444a-b723-28fb3ba8355d'
+  config:
+    - views.view.advanced_search
   module:
-    - block_content
     - context
+    - views
   theme:
     - barriodepartments
-id: barriodepartments_searchbutton
+id: barriodepartments_views_block__advanced_search_block_1
 theme: barriodepartments
-region: header_form
-weight: 0
+region: content
+weight: -20
 provider: null
-plugin: 'block_content:fe4c036a-b7c9-444a-b723-28fb3ba8355d'
+plugin: 'views_block:advanced_search-block_1'
 settings:
-  id: 'block_content:fe4c036a-b7c9-444a-b723-28fb3ba8355d'
-  label: 'Search button'
+  id: 'views_block:advanced_search-block_1'
+  label: ''
   label_display: '0'
-  provider: block_content
-  status: true
-  info: ''
-  view_mode: full
+  provider: views
+  views_label: ''
+  items_per_page: none
 visibility:
+  context_all:
+    id: context_all
+    negate: null
+    values: collection
   user_status:
     id: user_status
     negate: false

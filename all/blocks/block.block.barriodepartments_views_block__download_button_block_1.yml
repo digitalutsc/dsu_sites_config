@@ -1,3 +1,4 @@
+uuid: e965640c-b209-4a78-9652-a1fa99393a3a
 langcode: en
 status: true
 dependencies:
@@ -12,7 +13,7 @@ dependencies:
 id: barriodepartments_views_block__download_button_block_1
 theme: barriodepartments
 region: content
-weight: -10
+weight: -18
 provider: null
 plugin: 'views_block:download_button-block_1'
 settings:
@@ -24,14 +25,6 @@ settings:
   views_label: ''
   items_per_page: none
 visibility:
-  context_all:
-    id: context_all
-    negate: null
-    values: ''
-  context:
-    id: context
-    negate: null
-    values: ''
   user_status:
     id: user_status
     negate: false

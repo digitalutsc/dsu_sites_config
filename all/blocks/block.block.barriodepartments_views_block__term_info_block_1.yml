@@ -1,3 +1,4 @@
+uuid: ff851924-5aa6-416b-b72d-483007846f1b
 langcode: en
 status: true
 dependencies:
@@ -11,7 +12,7 @@ dependencies:
 id: barriodepartments_views_block__term_info_block_1
 theme: barriodepartments
 region: content
-weight: -14
+weight: -22
 provider: null
 plugin: 'views_block:term_info-block_1'
 settings:
@@ -23,14 +24,6 @@ settings:
   views_label: ''
   items_per_page: none
 visibility:
-  context_all:
-    id: context_all
-    negate: null
-    values: ''
-  context:
-    id: context
-    negate: null
-    values: ''
   user_status:
     id: user_status
     negate: false

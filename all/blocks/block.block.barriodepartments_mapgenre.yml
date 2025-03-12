@@ -1,3 +1,4 @@
+uuid: 3ca47028-25b3-4c15-8cf2-734e992314e9
 langcode: en
 status: true
 dependencies:
@@ -11,7 +12,7 @@ dependencies:
 id: barriodepartments_mapgenre
 theme: barriodepartments
 region: sidebar_first
-weight: -5
+weight: -10
 provider: null
 plugin: 'facet_block:map_genre'
 settings:
@@ -22,14 +23,6 @@ settings:
   context_mapping: {  }
   block_id: barriodepartments_mapgenre
 visibility:
-  context_all:
-    id: context_all
-    negate: null
-    values: ''
-  context:
-    id: context
-    negate: null
-    values: ''
   user_status:
     id: user_status
     negate: false

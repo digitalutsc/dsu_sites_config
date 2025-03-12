@@ -1,3 +1,4 @@
+uuid: e17610d3-a5fe-4a65-a753-528771a10fb4
 langcode: en
 status: true
 dependencies:
@@ -8,7 +9,7 @@ dependencies:
 id: barriodepartments_content
 theme: barriodepartments
 region: content
-weight: -11
+weight: -19
 provider: null
 plugin: system_main_block
 settings:

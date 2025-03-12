@@ -1,3 +1,4 @@
+uuid: 0b0c7197-ac9a-45ea-b59d-79ac7e887cbc
 langcode: en
 status: true
 dependencies:
@@ -9,7 +10,7 @@ dependencies:
 id: barriodepartments_timelinejssolrbasedviewadvancedsearchforpage
 theme: barriodepartments
 region: sidebar_first
-weight: -11
+weight: -16
 provider: null
 plugin: 'advanced_search_block:timelinejs_solr_based_view__page_1'
 settings:
@@ -23,14 +24,6 @@ settings:
     - field_edtf_date_created
   context_filter: null
 visibility:
-  context_all:
-    id: context_all
-    negate: null
-    values: ''
-  context:
-    id: context
-    negate: null
-    values: ''
   user_status:
     id: user_status
     negate: false

@@ -1,4 +1,4 @@
-uuid: bbd249b8-0b50-40d8-8985-e02b2a0ff93c
+uuid: fe8e1dec-4cb2-48d5-929a-5ed57775a4ec
 langcode: en
 status: true
 dependencies:
@@ -7,23 +7,26 @@ dependencies:
     - context
   theme:
     - barriodepartments
-id: barriodepartments_mapsolrbasedviewadvancedsearchforpage
+id: barriodepartments_advancedsearchadvancedsearchforcollectionmembers
 theme: barriodepartments
 region: sidebar_first
-weight: -13
+weight: -7
 provider: null
-plugin: 'advanced_search_block:map_solr_based_view__page_1'
+plugin: 'advanced_search_block:advanced_search__block_1'
 settings:
-  id: 'advanced_search_block:map_solr_based_view__page_1'
-  label: 'Map Solr Based View: Advanced Search for Page'
+  id: 'advanced_search_block:advanced_search__block_1'
+  label: 'Advanced Search: Advanced Search for Collection Members'
   label_display: '0'
   provider: advanced_search
   fields:
     - fulltext_title
-    - field_description
-    - field_coordinates
-  context_filter: null
+    - subject
+  context_filter: field_member_of
 visibility:
+  context_all:
+    id: context_all
+    negate: null
+    values: collection
   user_status:
     id: user_status
     negate: false
@@ -35,8 +38,3 @@ visibility:
       own_page_true: '0'
       field_value: '0'
     user_fields: uid
-  view_inclusion:
-    id: view_inclusion
-    negate: false
-    view_inclusion:
-      view-map_solr_based_view-page_1: view-map_solr_based_view-page_1

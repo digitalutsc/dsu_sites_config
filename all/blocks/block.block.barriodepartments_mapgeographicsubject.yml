@@ -1,3 +1,4 @@
+uuid: 9ddf43d6-a067-41e4-bc75-48d5b4b6e7d6
 langcode: en
 status: true
 dependencies:
@@ -11,7 +12,7 @@ dependencies:
 id: barriodepartments_mapgeographicsubject
 theme: barriodepartments
 region: sidebar_first
-weight: -4
+weight: -9
 provider: null
 plugin: 'facet_block:map_geographic_subject'
 settings:
@@ -22,14 +23,6 @@ settings:
   context_mapping: {  }
   block_id: barriodepartments_mapgeographicsubject
 visibility:
-  context_all:
-    id: context_all
-    negate: null
-    values: ''
-  context:
-    id: context
-    negate: null
-    values: ''
   user_status:
     id: user_status
     negate: false
