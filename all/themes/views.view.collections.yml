@@ -32,7 +32,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: language
-          label: 'Item language'
+          label: Hidden
           exclude: false
           alter:
             alter_text: true
@@ -83,7 +83,7 @@ display:
           admin_label: ''
           entity_type: node
           plugin_id: search_api_field
-          label: ''
+          label: Hidden
           exclude: false
           alter:
             alter_text: false
@@ -165,7 +165,7 @@ display:
           group_type: group
           admin_label: 'Thumbnail Image'
           plugin_id: view
-          label: ''
+          label: Hidden
           exclude: false
           alter:
             alter_text: false
@@ -284,6 +284,7 @@ display:
         type: mini
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 10
           total_pages: null
           id: 0
