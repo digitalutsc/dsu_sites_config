@@ -13,7 +13,6 @@ dependencies:
     - field.storage.node.field_model
   module:
     - file
-    - file_entity
     - image
     - link
     - media
