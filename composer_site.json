@@ -18,6 +18,18 @@
        {
             "type": "vcs",
             "url": "https://github.com/digitalutsc/jsonld_markup"
+       },
+       {
+         "type": "package",
+         "package": {
+            "name": "library/jquery-jsonview",
+            "version": "1.2.3",
+            "type": "drupal-library",
+            "dist": {
+               "url": "https://github.com/yesmeck/jquery-jsonview/archive/refs/tags/v1.2.3.zip",
+               "type": "zip"
+            }
+         }
        }        
     ],
     "require": {
@@ -46,6 +58,7 @@
         "drupal/term_merge": "^2.0@beta",
         "drupal/getjwtonlogin":"^2.0",
         "drupal/extlink":"^1.7",
-        "drupal/jquery_once":"^1.0"
+        "drupal/jquery_once":"^1.0",
+        "library/jquery-jsonview": "1.2.3"        
     }
 }
