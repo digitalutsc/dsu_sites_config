@@ -65,6 +65,7 @@
         "drupal/jquery_once":"^1.0",
         "library/jquery-jsonview": "1.2.3",
         "drupal/ultimate_cron": "^2.0@beta",
-        "islandora_lite/islandora_site_name": "^1.0.0@beta"        
+        "islandora_lite/islandora_site_name": "^1.0.0@beta",
+        "drupal/entity_reference_purger": "^1.0@beta"
     }
 }
