@@ -1,12 +1,13 @@
+uuid: 8b0f390a-fc08-4382-9781-7e2243602132
 langcode: en
 status: true
 dependencies:
   module:
-    - context
     - system
+    - termwithuri_condition
 id: exhibits_view
 label: 'Exhibits View'
-code: |+
+code: |-
   .views-field-field-exhibit-image-1 { 
      width: 60% !important;
   }
@@ -19,23 +20,36 @@ code: |+
   }
   .view-exhibits .views-field-name-1 {
   	padding-bottom:80px;
+  	padding-right: 20px;
+  	padding-left: 20px;
   }
 
+
+  #block-barriodepartments-stagewrightbanner img {
+    width: 100%;
+    aspect-ratio: 16/9; /* adjust the aspect ratio as needed */
+    height: 650px; /* adjust the height as needed */
+    object-fit: cover;
+  }
+
+  @media only screen and (max-width: 1035px) {
+    #block-barriodepartments-stagewrightbanner img {
+    	height: 250px;
+    }
+  }
 media: all
 preprocess: true
 conditions:
-  context:
-    id: context
-    negate: null
-    values: ''
-  context_all:
-    id: context_all
-    negate: null
-    values: ''
   request_path:
     id: request_path
     negate: false
-    pages: /node/33460
+    pages: "/node/2160\r\n<front>"
+  node_has_term:
+    id: node_has_term
+    logic: and
+    uri: 'http://purl.org/dc/dcmitype/Collection'
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'
 contexts: {  }
 conditions_require_all: true
-
