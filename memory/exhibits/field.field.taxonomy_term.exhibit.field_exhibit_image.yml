@@ -1,11 +1,17 @@
-langcode: en
+uuid: 10d4e3bf-5bd4-4b40-9c45-54a9d8c78b61
+langcode: fr
 status: true
 dependencies:
   config:
     - field.storage.taxonomy_term.field_exhibit_image
     - taxonomy.vocabulary.exhibit
   module:
+    - filehash
     - image
+third_party_settings:
+  filehash:
+    dedupe: 0
+    dedupe_original: false
 id: taxonomy_term.exhibit.field_exhibit_image
 field_name: field_exhibit_image
 entity_type: taxonomy_term
@@ -35,4 +41,3 @@ settings:
     width: null
     height: null
 field_type: image
-
