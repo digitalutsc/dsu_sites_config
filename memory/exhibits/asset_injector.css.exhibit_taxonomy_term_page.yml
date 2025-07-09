@@ -1,3 +1,4 @@
+uuid: 760b9fda-2176-41d1-9e7b-950674ca0dd2
 langcode: en
 status: true
 dependencies:
@@ -8,6 +9,8 @@ label: 'Exhibit Taxonomy Term Page'
 code: |-
   .view-display-id-block_2 .view-content.row {
   	display:block !important;
+  	margin-left: 0 !important;
+  	margin-right: 0 !important;
   }
   .exhibit-title {
   	/*background-color: rgba(0, 0, 0, 0.5);*/
@@ -23,8 +26,7 @@ code: |-
 
   .card { 
   	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* 
-Chrome,Safari4+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10+,Safari5.1+ */
     background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* IE10+ */
@@ -52,7 +54,7 @@ Chrome,Safari4+ */
   .view-exhibit-non-solr  .view-content .exhibit .views-field .view-item-media .view-content .media-subview img  
   {
   	object-fit: cover;
-    width: 350px;
+    /*width: 350px;*/
     height: 230px;
   }
 
@@ -81,7 +83,7 @@ Chrome,Safari4+ */
   	text-decoration: underline !important;	
   }
 
-  @media screen and (max-width: 420px) { 
+  @media screen and (max-width: 767px) {
       h1.card-title {
       	font-size: 1.5em;
       	margin: -1.125rem 1rem 1.25rem 1rem;
@@ -90,24 +92,48 @@ Chrome,Safari4+ */
       .region-top-header {
       	text-align: center !important ;
       }
+      
+  	  div.card {
+  	    position: relative !important; /* Essential for positioning children absolutely */
+  	    overflow: hidden; /* Ensures content stays within rounded corners */
+  	    max-width: 900px; /* Max width for the card */
+  	    width: 100%; /* Make card fluid up to max-width */
+  		}
+  		
+  		div.card-img-overlay {
+  	    position: absolute !important; /* Position overlay relative to the card */
+  	    top: 0;
+  	    left: 0;
+  	    right: 0;
+  	    bottom: 0;
+  	    display: flex; /* Use flexbox for easy content alignment */
+  	    align-items: flex-end; /* Align title to the bottom */
+  	    padding: 1.5rem; /* Padding inside the overlay */
+  	  }
+  }
+
+  /* The following is used to position h1 heading with exhibit banner */
+
+  .exhibit-title { 
+      display: flex;
+      align-items: center;    /* Vertically centers content */
+      justify-content: left; /* Horizontally centers content */
+      text-align: center;     /* Also good for text alignment */
+
+      /* Ensure it covers the full space of the card for proper centering */
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      position: absolute; /* Bootstrap usually sets this, but double check */
   }
 media: all
 preprocess: true
 conditions:
-  context:
-    id: context
-    negate: null
-    values: ''
-  context_all:
-    id: context_all
-    negate: null
-    values: ''
   view_inclusion:
     id: view_inclusion
     negate: false
     view_inclusion:
-      view-exhibit-page_1: view-exhibit-page_1
       view-exhibit_non_solr-page_1: view-exhibit_non_solr-page_1
 contexts: {  }
 conditions_require_all: true
-
