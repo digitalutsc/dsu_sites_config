@@ -1,3 +1,4 @@
+uuid: ee4e5b6a-34bc-45c8-b67f-652c26e51efb
 langcode: en
 status: true
 dependencies:
@@ -8,8 +9,7 @@ label: 'Exhibit View'
 code: |-
   jQuery(document).ready(function(){
   	   
-  	  jQuery('.sub-exhibit').prepend('<li class="nav-item active"><div class="views-field views-field-name"><span 
-class="field-content"><a class="nav-link" id="show-all-link" data-selected="all">Show All</a></span></div></li>');
+  	  jQuery('.sub-exhibit').prepend('<li class="nav-item active"><div class="views-field views-field-name"><span class="field-content"><a class="nav-link" id="show-all-link" data-selected="all">Show All</a></span></div></li>');
   	  jQuery('.view-id-exhibit_tabs > .view-content').removeClass("row");
    
   	  jQuery('#show-all-link').click(function(e){ 
@@ -59,4 +59,3 @@ conditions:
     values: ''
 contexts: {  }
 conditions_require_all: true
-
