@@ -1,3 +1,4 @@
+uuid: f96b896b-30c9-4585-81b5-1b50650b92c9
 langcode: en
 status: true
 dependencies:
@@ -24,7 +25,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Explore the Story of UTSC'
+      title: 'Explore the Stories of the Fonds Jean Trudel'
       fields:
         tid:
           id: tid
@@ -302,11 +303,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<a href=\"/taxonomy/term/{{ tid }}\">\r\n<div class=\"row\">\r\n     <div class=\"col-8\">{{ field_exhibit_image_1 
-}}</div>\r\n     <div class=\"col-4\">\r\n             <h2>{{ name }}</h2>\r\n             {% if description__value|length > 50 %}\r\n                     
-{% set teaser = synopsis|slice(0, 40)|join(' ') ~ '<span class=\"summary-ellipsis\">&hellip;</span>' %}\r\n                     {{ 
-teaser|raw }}\r\n             {% else %}\r\n                  {{ description__value }}\r\n             {% endif %}\r\n      
-</div>\r\n</div>\r\n</a>"
+            text: "<a href=\"/taxonomy/term/{{ tid }}\">\r\n<div class=\"row\">\r\n     <div class=\"col-8\">{{ field_exhibit_image_1 }}</div>\r\n     <div class=\"col-4\">\r\n             <h2>{{ name }}</h2>\r\n             {% if description__value|length > 50 %}\r\n                     {% set teaser = synopsis|slice(0, 40)|join(' ') ~ '<span class=\"summary-ellipsis\">&hellip;</span>' %}\r\n                     {{ teaser|raw }}\r\n             {% else %}\r\n                  {{ description__value }}\r\n             {% endif %}\r\n      </div>\r\n</div>\r\n</a>"
             make_link: false
             path: ''
             absolute: false
@@ -362,7 +359,8 @@ teaser|raw }}\r\n             {% else %}\r\n                  {{ description__va
         type: full
         options:
           offset: 0
-          items_per_page: 5
+          pagination_heading_level: h4
+          items_per_page: 0
           total_pages: null
           id: 0
           tags:
@@ -397,7 +395,22 @@ teaser|raw }}\r\n             {% else %}\r\n                  {{ description__va
         type: tag
         options: {  }
       empty: {  }
-      sorts: {  }
+      sorts:
+        weight:
+          id: weight
+          table: taxonomy_term_field_data
+          field: weight
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: weight
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       arguments: {  }
       filters:
         status:
@@ -422,6 +435,7 @@ teaser|raw }}\r\n             {% else %}\r\n                  {{ description__va
           plugin_id: bundle
           value:
             exhibit: exhibit
+          group: 1
           expose:
             operator_limit_selection: false
             operator_list: {  }
@@ -471,6 +485,52 @@ teaser|raw }}\r\n             {% else %}\r\n                  {{ description__va
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        langcode:
+          id: langcode
+          table: taxonomy_term_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: langcode
+          plugin_id: language
+          operator: in
+          value:
+            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: default
         options:
@@ -788,9 +848,7 @@ teaser|raw }}\r\n             {% else %}\r\n                  {{ description__va
           exclude: false
           alter:
             alter_text: true
-            text: "<a href=\"/exhibit/{{ tid }}\">\r\n<div class=\"row\">\r\n     <div class=\"col-lg-8 col-md-8 col-sm-8\">{{ 
-field_exhibit_image_1 }}</div>\r\n     <div class=\"col-lg-4 col-md-4 col-sm-4 padding-lr-15\">\r\n             <h2>{{ name }}</h2>\r\n             
-{{ description__value }}\r\n      </div>\r\n</div>\r\n</a>"
+            text: "<a href=\"/exhibit/{{ tid }}\">\r\n<div class=\"row\">\r\n     <div class=\"col-lg-8 col-md-8 col-sm-8\">{{ field_exhibit_image_1 }}</div>\r\n     <div class=\"col-lg-4 col-md-4 col-sm-4 padding-lr-15\">\r\n             <h2>{{ name }}</h2>\r\n             {{ description__value }}\r\n      </div>\r\n</div>\r\n</a>"
             make_link: false
             path: ''
             absolute: false
@@ -843,6 +901,21 @@ field_exhibit_image_1 }}</div>\r\n     <div class=\"col-lg-4 col-md-4 col-sm-4 p
           field_api_classes: false
           convert_spaces: false
       sorts:
+        weight:
+          id: weight
+          table: taxonomy_term_field_data
+          field: weight
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: weight
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
         name:
           id: name
           table: taxonomy_term_field_data
@@ -1149,6 +1222,119 @@ field_exhibit_image_1 }}</div>\r\n     <div class=\"col-lg-4 col-md-4 col-sm-4 p
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: "<p>\r\n    <a style=\"button\" class=\"primary\" href=\"/stage-wright\"><strong>Return to Stage Wright Exhibit</strong></a>\r\n</p>"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+        parent_target_id:
+          id: parent_target_id
+          table: taxonomy_term__parent
+          field: parent_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: parent
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_entity_id
+          settings: {  }
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         name_1:
           id: name_1
           table: taxonomy_term_field_data
@@ -1163,10 +1349,7 @@ field_exhibit_image_1 }}</div>\r\n     <div class=\"col-lg-4 col-md-4 col-sm-4 p
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"card bg-image text-white h-800\" style=\"height: 640px; background: url({{ field_exhibit_image_1 }});\">\r\n  
-<img src=\"{{ field_exhibit_image_1 }}\" alt=\"{{ field_exhibit_image_1 }}\" class=\"w-100 ratio-16-5\" /> \r\n  <div 
-class=\"card-img-overlay container exhibit-title\">\r\n    <h1 class=\"card-title font-weight-bold\">{{ name_1__value }}</h1>\r\n  
-</div>\r\n</div>\r\n<div class=\"description\">\r\n<div class=\"container\">\r\n{{ description__value }}\r\n</div>\r\n</div>"
+            text: "<div class=\"card bg-image text-white h-800\" style=\"height: 640px; background: url({{ field_exhibit_image_1 }});\">\r\n  <img src=\"{{ field_exhibit_image_1 }}\" alt=\"{{ field_exhibit_image_1 }}\" class=\"w-100 ratio-16-5\" /> \r\n  <div class=\"card-img-overlay container exhibit-title\">\r\n    <h1 class=\"card-title font-weight-bold\">{{ name_1__value }}</h1>\r\n  </div>\r\n</div>\r\n<div class=\"description\">\r\n<div class=\"container\">\r\n{{ description__value }}\r\n{% if parent_target_id != NULL %}\r\n{{ nothing }}\r\n{% endif %}\r\n</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1240,7 +1423,6 @@ class=\"card-img-overlay container exhibit-title\">\r\n    <h1 class=\"card-titl
           default_argument_options:
             index: 1
             use_alias: false
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -1257,10 +1439,613 @@ class=\"card-img-overlay container exhibit-title\">\r\n    <h1 class=\"card-titl
           validate_options: {  }
           break_phrase: false
           not: false
+      filters:
+        status:
+          id: status
+          table: taxonomy_term_field_data
+          field: status
+          entity_type: taxonomy_term
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        vid:
+          id: vid
+          table: taxonomy_term_field_data
+          field: vid
+          entity_type: taxonomy_term
+          entity_field: vid
+          plugin_id: bundle
+          value:
+            exhibit: exhibit
+          group: 1
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        parent_target_id:
+          id: parent_target_id
+          table: taxonomy_term__parent
+          field: parent_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: parent
+          plugin_id: numeric
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: 'NULL'
+          group: 2
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        parent_target_id_1:
+          id: parent_target_id_1
+          table: taxonomy_term__parent
+          field: parent_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: parent
+          plugin_id: numeric
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: '2411'
+          group: 2
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        langcode:
+          id: langcode
+          table: taxonomy_term_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: langcode
+          plugin_id: language
+          operator: in
+          value:
+            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+          2: OR
       defaults:
         title: false
         fields: false
         arguments: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      rendering_language: '***LANGUAGE_language_interface***'
+      display_extenders:
+        matomo:
+          enabled: false
+          keyword_gets: ''
+          keyword_behavior: first
+          keyword_concat_separator: ' '
+          category_behavior: none
+          category_gets: ''
+          category_concat_separator: ' '
+          category_fallback: ''
+          category_facets: {  }
+          category_facets_concat_separator: ', '
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user.permissions
+      tags:
+        - 'config:field.storage.taxonomy_term.field_exhibit_image'
+  block_3:
+    id: block_3
+    display_title: 'Stage Wright Exhibit'
+    display_plugin: block
+    position: 2
+    display_options:
+      title: 'Stage Wright Exhibit'
+      fields:
+        tid:
+          id: tid
+          table: taxonomy_term_field_data
+          field: tid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: tid
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_exhibit_image_1:
+          id: field_exhibit_image_1
+          table: taxonomy_term__field_exhibit_image
+          field: field_exhibit_image
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_link: ''
+            image_style: ''
+            image_loading:
+              attribute: lazy
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: '<h2>{{ name }}</h2>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: h2
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          convert_spaces: false
+        description__value:
+          id: description__value
+          table: taxonomy_term_field_data
+          field: description__value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: description
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 255
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: true
+            trim: true
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        name_1:
+          id: name_1
+          table: taxonomy_term_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: 'Custom Row'
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<a href=\"/exhibit/{{ tid }}\">\r\n<div class=\"row\">\r\n     <div class=\"col-lg-8 col-md-8 col-sm-8\">{{ field_exhibit_image_1 }}</div>\r\n     <div class=\"col-lg-4 col-md-4 col-sm-4 padding-lr-15\">\r\n             <h2>{{ name }}</h2>\r\n             {{ description__value }}\r\n      </div>\r\n</div>\r\n</a>"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          convert_spaces: false
+      pager:
+        type: none
+        options:
+          offset: 0
+      arguments: {  }
+      filters:
+        vid:
+          id: vid
+          table: taxonomy_term_field_data
+          field: vid
+          entity_type: taxonomy_term
+          entity_field: vid
+          plugin_id: bundle
+          value:
+            exhibit: exhibit
+          group: 1
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        parent_target_id:
+          id: parent_target_id
+          table: taxonomy_term__parent
+          field: parent_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: parent
+          plugin_id: numeric
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: '2411'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        pager: false
+        fields: false
+        arguments: false
+        filters: false
+        filter_groups: false
       display_description: ''
       display_extenders:
         matomo:
@@ -1279,9 +2064,6 @@ class=\"card-img-overlay container exhibit-title\">\r\n    <h1 class=\"card-titl
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
-        - url.query_args
         - user.permissions
       tags:
         - 'config:field.storage.taxonomy_term.field_exhibit_image'
-
