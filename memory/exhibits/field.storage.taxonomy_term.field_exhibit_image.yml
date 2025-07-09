@@ -1,14 +1,11 @@
-langcode: en
+uuid: 5c5aeae2-3324-4f27-b369-a077ec9ddadb
+langcode: fr
 status: true
 dependencies:
   module:
-    - field_permissions
     - file
     - image
     - taxonomy
-third_party_settings:
-  field_permissions:
-    permission_type: public
 id: taxonomy_term.field_exhibit_image
 field_name: field_exhibit_image
 entity_type: taxonomy_term
@@ -16,7 +13,7 @@ type: image
 settings:
   target_type: file
   display_field: false
-  display_default: false
+  display_default: true
   uri_scheme: public
   default_image:
     uuid: ''
@@ -31,4 +28,3 @@ translatable: true
 indexes: {  }
 persist_with_no_fields: false
 custom_storage: false
-
