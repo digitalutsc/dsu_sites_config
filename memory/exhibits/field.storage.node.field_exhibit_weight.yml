@@ -1,3 +1,4 @@
+uuid: 7d7109e4-dafb-41e3-8704-7ce86c574e2a
 langcode: en
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: public
+_core:
+  default_config_hash: 98bMVhiF6iBuuh1hXhuKY63jxczNRqWpBFEDEKBYGkw
 id: node.field_exhibit_weight
 field_name: field_exhibit_weight
 entity_type: node
@@ -21,4 +24,3 @@ translatable: true
 indexes: {  }
 persist_with_no_fields: false
 custom_storage: false
-
