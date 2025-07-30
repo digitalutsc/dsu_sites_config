@@ -1,0 +1,277 @@
+diff --git a/advanced_search.libraries.yml b/advanced_search.libraries.yml
+index b1f5e24..9279ae9 100644
+--- a/advanced_search.libraries.yml
++++ b/advanced_search.libraries.yml
+@@ -17,3 +17,8 @@ advanced.search.pager:
+   css:
+     component:
+       css/advanced_search.pager.css: {}
++
++advanced.search.facets_views_ajax: 
++  js: 
++     js/facets/facets-views-ajax.js: {}
++
+diff --git a/advanced_search.module b/advanced_search.module
+index 25e3307..97e9459 100644
+--- a/advanced_search.module
++++ b/advanced_search.module
+@@ -45,9 +45,6 @@ function advanced_search_library_info_alter(&$libraries, $extension) {
+     $libraries['soft-limit']['js'] = [
+       "$path/soft-limit.js" => [],
+     ];
+-    $libraries['drupal.facets.views-ajax']['js'] = [
+-      "$path/facets-views-ajax.js" => [],
+-    ];
+   }
+ }
+ 
+@@ -111,6 +108,7 @@ function advanced_search_preprocess_views_view(&$variables) {
+     $format = \Drupal::request()->query->get('display') ?? $config->get(SettingsForm::DISPLAY_DEFAULT);
+     $variables['attributes']['class'][] = "view-{$format}";
+     $view->element['#attached']['library'][] = 'advanced_search/advanced.search.pager';
++    $view->element['#attached']['library'][] = 'advanced_search/advanced.search.facets_views_ajax';
+   }
+   $view = &$variables['view'];
+ }
+diff --git a/js/facets/facets-views-ajax.js b/js/facets/facets-views-ajax.js
+index 04fb0c0..9dd2dcf 100644
+--- a/js/facets/facets-views-ajax.js
++++ b/js/facets/facets-views-ajax.js
+@@ -6,6 +6,24 @@
+ (function ($, Drupal) {
+   "use strict";
+ 
++  // For each search view override display mode config (in SearchPagerResultBlock.php)
++  jQuery( document ).ready(function() {
++      var initial_display = jQuery('a.pager__link.pager__link--is-active.pager__display').attr('type');
++      if (initial_display == undefined) {
++        initial_display = jQuery("#override-default-display-mode").html();
++      }
++      if (jQuery('div.view.view-list').length == 1 && initial_display != "list") {
++        var search_view = jQuery('div.view.view-list');
++        search_view.removeClass("view-list");
++        search_view.addClass("view-grid");
++      }
++      if (jQuery('div.view.view-grid').length == 1 && initial_display != "grid") {
++        var search_view = jQuery('div.view.view-grid');
++        search_view.removeClass("view-grid");
++        search_view.addClass("view-list");
++      }
++  });
++
+   // Generate events on push state.
+   (function (history) {
+     var pushState = history.pushState;
+@@ -92,9 +110,10 @@
+     if (url.indexOf("display=") == -1) { 
+       // append items_per_page
+       $("a.pager__display").each(function( index ) {
+-        var newUrl = url + "&display=" + $(this).find(".display-mode").html().toLowerCase();
++        var newUrl = url + "&display=" + $(this).attr('type');
+         $(this).attr("href", newUrl);
+       });
++      
+     } 
+     else { 
+       // replace existed display
+@@ -117,7 +136,7 @@
+       var newParamsUrl = newParams.join('&');
+       $("a.pager__display").each(function( index ) {
+ 
+-        var value = $(this).find(".display-mode").html().toLowerCase();
++        var value = $(this).attr('type');
+         $(this).attr("href", url.split("?")[0] + '?' + newParamsUrl + "&display=" + value);
+       });
+     }
+diff --git a/src/Form/AdvancedSearchForm.php b/src/Form/AdvancedSearchForm.php
+index 1dc20c0..a5bbb24 100644
+--- a/src/Form/AdvancedSearchForm.php
++++ b/src/Form/AdvancedSearchForm.php
+@@ -147,7 +147,7 @@ class AdvancedSearchForm extends FormBase {
+     $options = [];
+     foreach ($fields as $field) {
+       $id = $field->getFieldIdentifier();
+-      $options[$id] = $field->getLabel();
++      $options[$id] = $this->t($field->getLabel());
+     }
+     return $options;
+   }
+@@ -273,7 +273,7 @@ class AdvancedSearchForm extends FormBase {
+       ],
+     ];
+ 
+-    $options = (self::getEdismaxSearch() && self::getSearchAllFields()) ? ["all" => $this->t("@label", ["@label" => self::getEdismaxSearchLabel()])] + $this->fieldOptions($fields) : $this->fieldOptions($fields);
++    $options = (self::getEdismaxSearch() && self::getSearchAllFields()) ? ["all" => $this->t("@label", ["@label" => $this->t(self::getEdismaxSearchLabel())])] + $this->fieldOptions($fields) : $this->fieldOptions($fields);
+     $term_default_values = $this->defaultTermValues($options);
+     [$recursive, $term_values] = $this->processInput($form_state, $term_default_values);
+     $i = 0;
+diff --git a/src/Plugin/Block/SearchResultsPagerBlock.php b/src/Plugin/Block/SearchResultsPagerBlock.php
+index 687822d..888257d 100644
+--- a/src/Plugin/Block/SearchResultsPagerBlock.php
++++ b/src/Plugin/Block/SearchResultsPagerBlock.php
+@@ -13,6 +13,7 @@ use Drupal\views\ViewExecutable;
+ use Symfony\Component\DependencyInjection\ContainerInterface;
+ use Symfony\Component\HttpFoundation\Request;
+ use Drupal\advanced_search\Form\SettingsForm;
++use Drupal\Core\Form\FormStateInterface;
+ 
+ /**
+  * Provides a 'AjaxViewBlock' block.
+@@ -63,6 +64,58 @@ class SearchResultsPagerBlock extends BlockBase implements ContainerFactoryPlugi
+     );
+   }
+ 
++  /**
++   * {@inheritdoc}
++   */
++  public function blockForm($form, FormStateInterface $form_state) {
++    $config = \Drupal::config(SettingsForm::CONFIG_NAME);
++
++    $form['display-mode'] = [
++      '#type' => 'fieldset',
++      '#title' => $this->t("Pager Block"),
++      '#description' => $this->t("If this settings are set here, they will override the global settings at `/admin/config/search/advanced`")
++    ];
++    
++    $form['display-mode']['override_list_on_off'] = [
++      '#type' => 'checkbox',
++      '#title' => $this
++        ->t('Expose "List view" option.'),
++      '#default_value' => $this->configuration['override_list_on_off'] ?? $config->get(SettingsForm::DISPLAY_LIST_FLAG),
++    ];
++
++    $form['display-mode']['override_grid_on_off'] = [
++      '#type' => 'checkbox',
++      '#title' => $this
++        ->t('Expose "Grid view" option.'),
++      '#default_value' => $this->configuration['override_grid_on_off'] ?? $config->get(SettingsForm::DISPLAY_GRID_FLAG),
++    ];
++
++    $form['display-mode']['override-default-display-mode'] = [
++      '#type' => 'select',
++      '#title' => $this
++        ->t('Default view mode:'),
++      '#options' => [
++        'list' => 'List',
++        'grid' => 'Grid',
++      ],
++      '#default_value' => $this->configuration['override-default-display-mode'] ?? $config->get(SettingsForm::DISPLAY_DEFAULT),
++    ];
++    
++    $form['#attributes']['class'][] = 'clearfix';
++    $form['#attached']['library'][] = 'advanced_search/advanced.search.admin';
++    return $form; 
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function blockSubmit($form, FormStateInterface $form_state) {
++    $values = $form_state->getValues();
++    $this->configuration["override_list_on_off"] = $values["display-mode"]['override_list_on_off'];
++    $this->configuration["override_grid_on_off"] = $values["display-mode"]['override_grid_on_off'];
++    $this->configuration["override-default-display-mode"] = $values["display-mode"]['override-default-display-mode'];
++  }
++
+   /**
+    * {@inheritdoc}
+    */
+@@ -219,21 +272,41 @@ class SearchResultsPagerBlock extends BlockBase implements ContainerFactoryPlugi
+     $config = \Drupal::config(SettingsForm::CONFIG_NAME);
+     $display_options = [];
+ 
+-    if ($config->get(SettingsForm::DISPLAY_LIST_FLAG) == 1) {
+-      $display_options['list'] = [
+-        'icon' => 'fa-list',
+-        'title' => $this->t('List'),
+-      ];
++
++    if (isset($this->configuration["override_list_on_off"]) && isset($this->configuration["override_grid_on_off"])
++    && isset($this->configuration["override-default-display-mode"])) {
++      if ($this->configuration["override_list_on_off"] == 1) { 
++        $display_options['list'] = [
++          'icon' => 'fa-list',
++          'title' => $this->t('List'),
++        ];
++      } 
++
++      if ($this->configuration["override_grid_on_off"] == 1) { 
++        $display_options['grid'] = [
++          'icon' => 'fa-th',
++          'title' => $this->t('Grid'),
++        ];
++      }
++      $active_display = $query_parameters['display'] ?? $this->configuration["override-default-display-mode"];
+     }
++    else {
++      if ($config->get(SettingsForm::DISPLAY_LIST_FLAG) == 1) {
++        $display_options['list'] = [
++          'icon' => 'fa-list',
++          'title' => $this->t('List'),
++        ];
++      }
+ 
+-    if ($config->get(SettingsForm::DISPLAY_GRID_FLAG) == 1) {
+-      $display_options['grid'] = [
+-        'icon' => 'fa-th',
+-        'title' => $this->t('Grid'),
+-      ];
++      if ($config->get(SettingsForm::DISPLAY_GRID_FLAG) == 1) {
++        $display_options['grid'] = [
++          'icon' => 'fa-th',
++          'title' => $this->t('Grid'),
++        ];
++      }
++      $active_display = $query_parameters['display'] ?? $config->get(SettingsForm::DISPLAY_DEFAULT);
+     }
+ 
+-    $active_display = $query_parameters['display'] ?? $config->get(SettingsForm::DISPLAY_DEFAULT);
+     $items = [];
+     foreach ($display_options as $display => $options) {
+       $url = Url::fromRoute('<current>', [], [
+@@ -251,19 +324,30 @@ class SearchResultsPagerBlock extends BlockBase implements ContainerFactoryPlugi
+             ['pager__link', 'pager__link--is-active', 'pager__display'] :
+             ['pager__link', 'pager__display'],
+           'aria-label' => $this->t("Display as @link", ["@link" => Markup::create($text)]),
++          'type' => $display
+         ],
+         '#wrapper_attributes' => [
+           'class' => $active ? ['pager__item', 'is-active'] : ['pager__item'],
+         ],
+       ];
+     }
+-    return [
+-      '#theme' => 'item_list',
+-      '#list_type' => 'ul',
+-      '#items' => $items,
+-      '#attributes' => [],
+-      '#wrapper_attributes' => ['class' => ['pager__display', 'container']],
+-    ];
++
++    if (count($items) > 0) {
++      return [
++        '#theme' => 'item_list',
++        '#list_type' => 'ul',
++        '#items' => $items,
++        '#attributes' => [],
++        '#wrapper_attributes' => ['class' => ['pager__display', 'container']],
++      ];
++    }
++    else {
++      return [
++        '#markup' => Markup::create('<span hidden id="override-default-display-mode">' . $active_display . '</span>'),
++        '#attributes' => [],
++        '#wrapper_attributes' => ['class' => ['pager__display', 'container']],
++      ];
++    }
+   }
+ 
+   /**
+@@ -289,6 +373,7 @@ class SearchResultsPagerBlock extends BlockBase implements ContainerFactoryPlugi
+         $id = $sort->options['id'];
+         // Label should be translated via views already.
+         $label = $sort->options['expose']['label'];
++        $label = $this->t($label);
+         $asc = "{$id}_asc";
+         $desc = "{$id}_desc";
+         $options[$asc] = "{$label} ↓";
