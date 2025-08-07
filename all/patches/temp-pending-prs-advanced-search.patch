@@ -34,15 +34,30 @@ index 25e3307..97e9459 100644
    $view = &$variables['view'];
  }
 diff --git a/js/facets/facets-views-ajax.js b/js/facets/facets-views-ajax.js
-index 04fb0c0..9dd2dcf 100644
+index 04fb0c0..f9ae0cf 100644
 --- a/js/facets/facets-views-ajax.js
 +++ b/js/facets/facets-views-ajax.js
-@@ -6,6 +6,24 @@
+@@ -6,6 +6,15 @@
  (function ($, Drupal) {
    "use strict";
  
 +  // For each search view override display mode config (in SearchPagerResultBlock.php)
 +  jQuery( document ).ready(function() {
++    handleDisplayMode(); 
++  });
++
++  jQuery(document).ajaxComplete(function() {
++    handleDisplayMode();
++  });
++
+   // Generate events on push state.
+   (function (history) {
+     var pushState = history.pushState;
+@@ -17,6 +26,23 @@
+     };
+   })(window.history);
+ 
++  function handleDisplayMode() {
 +      var initial_display = jQuery('a.pager__link.pager__link--is-active.pager__display').attr('type');
 +      if (initial_display == undefined) {
 +        initial_display = jQuery("#override-default-display-mode").html();
@@ -57,12 +72,12 @@ index 04fb0c0..9dd2dcf 100644
 +        search_view.removeClass("view-grid");
 +        search_view.addClass("view-list");
 +      }
-+  });
++  }
 +
-   // Generate events on push state.
-   (function (history) {
-     var pushState = history.pushState;
-@@ -92,9 +110,10 @@
+   function parseQueryString( queryString ) {
+         var params = {}, queries, temp, i, l;
+ 
+@@ -92,9 +118,10 @@
      if (url.indexOf("display=") == -1) { 
        // append items_per_page
        $("a.pager__display").each(function( index ) {
@@ -74,7 +89,7 @@ index 04fb0c0..9dd2dcf 100644
      } 
      else { 
        // replace existed display
-@@ -117,7 +136,7 @@
+@@ -117,7 +144,7 @@
        var newParamsUrl = newParams.join('&');
        $("a.pager__display").each(function( index ) {
  
