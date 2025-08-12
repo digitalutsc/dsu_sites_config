@@ -34,7 +34,7 @@ index 25e3307..97e9459 100644
    $view = &$variables['view'];
  }
 diff --git a/js/facets/facets-views-ajax.js b/js/facets/facets-views-ajax.js
-index 04fb0c0..f9ae0cf 100644
+index 04fb0c0..66e3e6b 100644
 --- a/js/facets/facets-views-ajax.js
 +++ b/js/facets/facets-views-ajax.js
 @@ -6,6 +6,15 @@
@@ -98,6 +98,15 @@ index 04fb0c0..f9ae0cf 100644
          $(this).attr("href", url.split("?")[0] + '?' + newParamsUrl + "&display=" + value);
        });
      }
+@@ -207,7 +234,7 @@
+               $("li.pager__item a.pager__display").each(function () {
+                   $(this).parent().removeClass("is-active");
+                   $(this).removeClass("pager__link--is-active");
+-                  if ($(this).text().trim().toLowerCase() === getParam(window.location.search, "display").trim().toLowerCase()) {
++                  if ($(this).attr('type').trim().toLowerCase() === getParam(window.location.search, "display").trim().toLowerCase()) {
+                       $(this).addClass("pager__link--is-active");
+                   }
+               });
 diff --git a/src/Form/AdvancedSearchForm.php b/src/Form/AdvancedSearchForm.php
 index 1dc20c0..a5bbb24 100644
 --- a/src/Form/AdvancedSearchForm.php
