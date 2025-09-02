@@ -38,7 +38,11 @@
       {     
          "type": "vcs",
          "url": "https://github.com/digitalutsc/relation_extend"
-      }
+      },
+       {
+            "type": "vcs",
+            "url": "https://github.com/digitalutsc/group_concat"
+       }
     ],
     "require": {
         "drupal/bootstrap_barrio": "^5.5",
