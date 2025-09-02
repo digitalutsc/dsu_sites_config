@@ -34,7 +34,11 @@
        {
             "type": "vcs",
             "url": "https://github.com/digitalutsc/islandora_site_name"
-       }        
+       },
+      {     
+         "type": "vcs",
+         "url": "https://github.com/digitalutsc/relation_extend"
+      }
     ],
     "require": {
         "drupal/bootstrap_barrio": "^5.5",
@@ -66,6 +70,27 @@
         "library/jquery-jsonview": "1.2.3",
         "drupal/ultimate_cron": "^2.0@beta",
         "islandora_lite/islandora_site_name": "^1.0.0@beta",
-        "drupal/entity_reference_purger": "^1.0@beta"
+        "drupal/entity_reference_purger": "^1.0@beta",
+        "drupal/monolog": "^3.0",
+        "graylog2/gelf-php": "^2.0",
+        "drupal/anchor_link":"^3.0",
+        "drupal/contact_block": "^2.0",
+        "drupal/search_api_glossary": "^4.2",
+        "drupal/geofield":"^1.57",
+        "drupal/views_geojson":"1.2.0",
+        "drupal/leaflet_geojson":"1.x-dev@dev",
+        "drupal/leaflet":"^10.2",
+        "drupal/group_concat": "^1.0@alpha",
+        "drupal/dblog_filter":"^4.2",
+        "drupal/form_mode_control": "^2.4",
+        "drupal/quickedit": "^1.0",
+        "drupal/color": "^1.0",
+        "drupal/translatable_menu_link_uri": "^2.1",
+        "drupal/views_arg_entity_field": "^3.0@beta",
+        "drupal/embed":"^1.7",
+        "drupal/url_embed":"^3.0@beta",
+        "drupal/recogito_integration":"2.0.x-dev",
+        "drupal/views_url_path_arguments": "^1.2",
+        "islandora_lite/relation_extend": "^1.0.0-alpha"
     }
 }
