@@ -1,0 +1,15 @@
+diff --git a/templates/replayweb-template.html.twig b/templates/replayweb-template.html.twig
+index b60a285..61c931c 100644
+--- a/templates/replayweb-template.html.twig
++++ b/templates/replayweb-template.html.twig
+@@ -7,6 +7,8 @@
+  */
+ #}
+ {{ attach_library('replaywebpage/replayweb') }}
+-<div class="wrapper-class" style="height: {{height}}; width: {{width}};"> 
+-  <replay-web-page noSandbox={{noSandbox}} replayBase="{{playerBase}}" source="{{warcSource}}" url="{{baseUrl}}"></replay-web-page>
++{% set warcSource = warcSource|replace({'http://': 'https://'}) %}
++<div class="wrapper-class" style="height: {{height}}; width: {{width}};">
++  <replay-web-page noSandbox={{noSandbox}} replayBase="/replay/"  source="{{warcSource}}" url="{{baseUrl}}"></replay-web-page>
+ </div>
++
