@@ -9,7 +9,7 @@ index 6d1f851..7bf1fb8
          $file_url = \Drupal::service('file_url_generator')->generateAbsoluteString($item->entity->getFileUri());
          $iframe_src = \Drupal::service('file_url_generator')->generateAbsoluteString($viewer_path) . '?file=' . rawurlencode($file_url);
 +        if (strpos($iframe_src, "http") !== false) {
-+            $iframe_src = str_replace("http", "https", $iframe_src);
++            $iframe_src = str_replace("http:", "https:", $iframe_src);
 +        }
          $iframe_src = !empty($query) && $keep_pdfjs ? $iframe_src . '#' . $query : $iframe_src;
          $html = [
