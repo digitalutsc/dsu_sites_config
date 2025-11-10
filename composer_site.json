@@ -42,6 +42,10 @@
        {
             "type": "vcs",
             "url": "https://github.com/digitalutsc/group_concat"
+       },
+       {
+            "type": "vcs",
+            "url": "https://github.com/digitalutsc/advanced_search_default_sort_override"
        }
     ],
     "require": {
@@ -95,6 +99,7 @@
         "drupal/url_embed":"^3.0@beta",
         "drupal/recogito_integration":"2.0.x-dev",
         "drupal/views_url_path_arguments": "^1.2",
-        "islandora_lite/relation_extend": "^1.0.0-alpha"
+        "islandora_lite/relation_extend": "^1.0.0-alpha",
+        "islandora_lite/advanced_search_default_sort_override": "^1.0"
     }
 }
