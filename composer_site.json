@@ -46,6 +46,10 @@
        {
             "type": "vcs",
             "url": "https://github.com/digitalutsc/advanced_search_default_sort_override"
+       },
+       {     
+         "type": "vcs",
+         "url": "https://github.com/digitalutsc/xmlsitemap_extend"
        }
     ],
     "require": {
@@ -100,6 +104,7 @@
         "drupal/recogito_integration":"2.0.x-dev",
         "drupal/views_url_path_arguments": "^1.2",
         "islandora_lite/relation_extend": "^1.0.0-alpha",
-        "islandora_lite/advanced_search_default_sort_override": "^1.0"
+        "islandora_lite/advanced_search_default_sort_override": "^1.0",
+        "islandora_lite/xmlsitemap_extend": "dev-main"
     }
 }
