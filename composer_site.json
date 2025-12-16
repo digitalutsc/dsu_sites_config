@@ -106,6 +106,7 @@
         "islandora_lite/relation_extend": "^1.0.0-alpha",
         "islandora_lite/advanced_search_default_sort_override": "^1.0",
         "islandora_lite/xmlsitemap_extend": "dev-main",
-        "drupal/block_class": "^4.0"
+        "drupal/block_class": "^4.0",
+        "drupal/webform":"^6.2"
     }
 }
