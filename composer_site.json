@@ -50,6 +50,10 @@
        {     
          "type": "vcs",
          "url": "https://github.com/digitalutsc/xmlsitemap_extend"
+       },
+       {     
+         "type": "vcs",
+         "url": "https://github.com/Kxka/drupal_leafletjs"
        }
     ],
     "require": {
@@ -107,6 +111,7 @@
         "islandora_lite/advanced_search_default_sort_override": "^1.0",
         "islandora_lite/xmlsitemap_extend": "dev-main",
         "drupal/block_class": "^4.0",
-        "drupal/webform":"^6.2"
+        "drupal/webform":"^6.2",
+        "drupal_leafletjs": "v1.0.0"
     }
 }
