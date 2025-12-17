@@ -116,7 +116,6 @@
         "islandora_lite/xmlsitemap_extend": "dev-main",
         "drupal/block_class": "^4.0",
         "drupal/webform":"^6.2",
-        "Kxka/drupal_leafletjs": "v1.0.0",
         "digitalutsc/temporary_downloadable_media":"1.0.0"
     }
 }
