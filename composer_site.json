@@ -54,6 +54,10 @@
        {     
          "type": "vcs",
          "url": "https://github.com/Kxka/drupal_leafletjs"
+       },
+       {     
+         "type": "vcs",
+         "url": "https://github.com/digitalutsc/temporary_downloadable_media"
        }
     ],
     "require": {
