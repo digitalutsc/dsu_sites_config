@@ -58,6 +58,10 @@
        {     
          "type": "vcs",
          "url": "https://github.com/digitalutsc/temporary_downloadable_media"
+       },
+       {
+            "type": "vcs",
+            "url": "https://github.com/digitalutsc/assign_calc"
        }
     ],
     "require": {
@@ -117,6 +121,7 @@
         "drupal/block_class": "^4.0",
         "drupal/webform":"^6.2",
         "digitalutsc/temporary_downloadable_media":"1.0.0",
-        "kxka/leafletjs": "v1.0.0"
+        "kxka/leafletjs": "v1.0.0",
+        "borisay/assign_calc": "dev-utsc"
     }
 }
