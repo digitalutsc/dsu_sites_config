@@ -62,7 +62,11 @@
        {
             "type": "vcs",
             "url": "https://github.com/digitalutsc/assign_calc"
-       }
+       },
+       {
+            "type": "vcs",
+            "url": "https://github.com/digitalutsc/rest_translation_util"
+       }        
     ],
     "require": {
         "drupal/bootstrap_barrio": "^5.5",
@@ -122,6 +126,7 @@
         "drupal/webform":"^6.2",
         "digitalutsc/temporary_downloadable_media":"1.0.0",
         "kxka/leafletjs": "v1.0.0",
-        "borisay/assign_calc": "dev-utsc"
+        "borisay/assign_calc": "dev-utsc",
+        "islandora_lite/rest_translation_util": "dev-main"
     }
 }
