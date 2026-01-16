@@ -127,6 +127,7 @@
         "digitalutsc/temporary_downloadable_media":"1.0.0",
         "kxka/leafletjs": "v1.0.0",
         "borisay/assign_calc": "dev-utsc",
-        "islandora_lite/rest_translation_util": "dev-main"
+        "islandora_lite/rest_translation_util": "dev-main",
+        "drupal/webform_validation":"^2.0"
     }
 }
