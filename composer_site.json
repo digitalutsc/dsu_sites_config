@@ -106,7 +106,6 @@
         "drupal/search_api_glossary": "^4.2",
         "drupal/geofield":"^1.57",
         "drupal/views_geojson":"1.2.0",
-        "drupal/leaflet_geojson":"1.x-dev@dev",
         "drupal/leaflet":"^10.2",
         "drupal/group_concat": "^1.0@alpha",
         "drupal/dblog_filter":"^4.2",
