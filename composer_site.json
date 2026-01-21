@@ -124,7 +124,7 @@
         "drupal/block_class": "^4.0",
         "drupal/webform":"^6.2",
         "digitalutsc/temporary_downloadable_media":"1.0.0",
-        "kxka/leafletjs": "v1.0.0",
+        "kxka/leafletjs": "v1.0.2",
         "borisay/assign_calc": "dev-utsc",
         "islandora_lite/rest_translation_util": "dev-main",
         "drupal/webform_validation":"^2.0"
