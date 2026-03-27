@@ -66,7 +66,11 @@
        {
             "type": "vcs",
             "url": "https://github.com/digitalutsc/rest_translation_util"
-       }        
+       },
+       {
+            "type": "vcs",
+            "url": "https://github.com/digitalutsc/language_switcher_popup"
+       }               
     ],
     "require": {
         "drupal/bootstrap_barrio": "^5.5",
@@ -127,6 +131,7 @@
         "kxka/leafletjs": "v1.0.2",
         "borisay/assign_calc": "dev-utsc",
         "islandora_lite/rest_translation_util": "dev-main",
-        "drupal/webform_validation":"^2.0"
+        "drupal/webform_validation":"^2.0",
+        "drupal/language_switcher_popup":"^1.0"
     }
 }
