@@ -132,6 +132,7 @@
         "borisay/assign_calc": "^1.0",
         "islandora_lite/rest_translation_util": "dev-main",
         "drupal/webform_validation":"^2.0",
-        "drupal/language_switcher_popup":"^1.0"
+        "drupal/language_switcher_popup":"^1.0",
+        "drupal/ds":"^3.37"
     }
 }
