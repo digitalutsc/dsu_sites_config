@@ -70,6 +70,10 @@
        {
             "type": "vcs",
             "url": "https://github.com/digitalutsc/language_switcher_popup"
+       },
+       {
+            "type": "vcs",
+            "url": "https://github.com/digitalutsc/static_metadata_records"
        }               
     ],
     "require": {
@@ -133,6 +137,7 @@
         "islandora_lite/rest_translation_util": "dev-main",
         "drupal/webform_validation":"^2.0",
         "drupal/language_switcher_popup":"^1.0",
-        "drupal/ds":"^3.37"
+        "drupal/ds":"^3.37",
+        "digitalutsc/static_metadata_records":"^1.0"        
     }
 }
