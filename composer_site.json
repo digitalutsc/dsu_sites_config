@@ -139,6 +139,7 @@
         "drupal/webform_validation":"^2.0",
         "drupal/language_switcher_popup":"^1.0",
         "drupal/ds":"^3.37",
-        "digitalutsc/static_metadata_records":"^1.0"        
+        "digitalutsc/static_metadata_records":"^1.0",
+        "drupal/media_file_delete": "^1.3"
     }
 }
