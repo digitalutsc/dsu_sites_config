@@ -1,0 +1,14 @@
+uuid: c30e3b32-e791-4f4a-91f7-e004cdd3acd2
+langcode: en
+status: true
+dependencies: {  }
+id: 3d_object
+label: '3D Object'
+description: '3D model (GLB preferred, GLTF or OBJ) displayed with the DGI 3D viewer.'
+source: file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_file
+field_map:
+  name: name

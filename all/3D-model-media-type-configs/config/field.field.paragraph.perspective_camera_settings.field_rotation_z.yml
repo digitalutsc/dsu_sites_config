@@ -1,0 +1,25 @@
+uuid: 758c3572-2d77-4b73-b0cf-80a94620650e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rotation_z
+    - paragraphs.paragraphs_type.perspective_camera_settings
+id: paragraph.perspective_camera_settings.field_rotation_z
+field_name: field_rotation_z
+entity_type: paragraph
+bundle: perspective_camera_settings
+label: 'Rotation Z (radians)'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: 0.0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

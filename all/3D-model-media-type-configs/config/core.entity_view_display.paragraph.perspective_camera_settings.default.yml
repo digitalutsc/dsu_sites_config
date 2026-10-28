@@ -1,0 +1,93 @@
+uuid: a5262a5a-014e-4ea5-8b27-24245e085077
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.perspective_camera_settings.field_aspect
+    - field.field.paragraph.perspective_camera_settings.field_far
+    - field.field.paragraph.perspective_camera_settings.field_fov
+    - field.field.paragraph.perspective_camera_settings.field_near
+    - field.field.paragraph.perspective_camera_settings.field_position_x
+    - field.field.paragraph.perspective_camera_settings.field_position_y
+    - field.field.paragraph.perspective_camera_settings.field_position_z
+    - field.field.paragraph.perspective_camera_settings.field_rotation_x
+    - field.field.paragraph.perspective_camera_settings.field_rotation_y
+    - field.field.paragraph.perspective_camera_settings.field_rotation_z
+    - paragraphs.paragraphs_type.perspective_camera_settings
+id: paragraph.perspective_camera_settings.default
+targetEntityType: paragraph
+bundle: perspective_camera_settings
+mode: default
+content:
+  field_aspect:
+    type: number_decimal
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_far:
+    type: number_decimal
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_fov:
+    type: number_decimal
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_near:
+    type: number_decimal
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_position_x:
+    type: number_decimal
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_position_y:
+    type: number_decimal
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_position_z:
+    type: number_decimal
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_rotation_x:
+    type: number_decimal
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_rotation_y:
+    type: number_decimal
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_rotation_z:
+    type: number_decimal
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+hidden:
+  search_api_excerpt: true

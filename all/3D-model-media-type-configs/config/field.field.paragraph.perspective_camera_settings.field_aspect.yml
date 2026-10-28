@@ -1,0 +1,25 @@
+uuid: eb81c11e-c97f-4973-8d41-87a8ef7a9f31
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_aspect
+    - paragraphs.paragraphs_type.perspective_camera_settings
+id: paragraph.perspective_camera_settings.field_aspect
+field_name: field_aspect
+entity_type: paragraph
+bundle: perspective_camera_settings
+label: 'Aspect ratio'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: 1.7778
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

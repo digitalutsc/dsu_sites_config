@@ -1,0 +1,25 @@
+uuid: dbc93d22-7ab9-43d0-a124-fa014227f8ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rotation_y
+    - paragraphs.paragraphs_type.perspective_camera_settings
+id: paragraph.perspective_camera_settings.field_rotation_y
+field_name: field_rotation_y
+entity_type: paragraph
+bundle: perspective_camera_settings
+label: 'Rotation Y (radians)'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: 0.0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

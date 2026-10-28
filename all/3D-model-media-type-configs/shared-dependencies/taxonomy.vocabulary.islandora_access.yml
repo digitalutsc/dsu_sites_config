@@ -1,0 +1,11 @@
+uuid: 88fd17f1-e104-4ddc-a7e7-4eca8ec72522
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: KkowV_l2rZIshijQeRKZhLH-bF46TsD2IPJ9X68LC8w
+name: 'Islandora Access'
+vid: islandora_access
+description: null
+weight: 0
+new_revision: false

@@ -1,0 +1,25 @@
+uuid: 0cd0e5e0-43e5-4766-8c8c-a0c04339244b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_near
+    - paragraphs.paragraphs_type.perspective_camera_settings
+id: paragraph.perspective_camera_settings.field_near
+field_name: field_near
+entity_type: paragraph
+bundle: perspective_camera_settings
+label: 'Near plane'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: 0.1
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

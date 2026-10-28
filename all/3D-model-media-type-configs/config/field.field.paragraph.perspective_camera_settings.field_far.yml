@@ -1,0 +1,25 @@
+uuid: f3bb87ac-08e1-4e7d-ba5f-64a290b49386
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_far
+    - paragraphs.paragraphs_type.perspective_camera_settings
+id: paragraph.perspective_camera_settings.field_far
+field_name: field_far
+entity_type: paragraph
+bundle: perspective_camera_settings
+label: 'Far plane'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: 2000.0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

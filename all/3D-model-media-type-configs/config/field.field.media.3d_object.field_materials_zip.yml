@@ -1,0 +1,27 @@
+uuid: 7b8bbb0d-ad2c-4670-8754-6b55821619d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_materials_zip
+    - media.type.3d_object
+  module:
+    - file
+id: media.3d_object.field_materials_zip
+field_name: field_materials_zip
+entity_type: media
+bundle: 3d_object
+label: 'Materials (zip)'
+description: 'OBJ only: a zip with the .mtl file and its texture images.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: zip
+  max_filesize: ''
+  description_field: false
+field_type: file

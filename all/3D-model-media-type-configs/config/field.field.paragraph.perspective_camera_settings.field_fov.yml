@@ -1,0 +1,25 @@
+uuid: a1d0fc8f-37a3-4ed6-95b4-f9c3d6c08f76
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fov
+    - paragraphs.paragraphs_type.perspective_camera_settings
+id: paragraph.perspective_camera_settings.field_fov
+field_name: field_fov
+entity_type: paragraph
+bundle: perspective_camera_settings
+label: 'Field of view (degrees)'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: 50.0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

@@ -1,0 +1,21 @@
+uuid: ce8aa8d6-35ec-43dd-99b8-2cb1fa4d845b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_room_environment
+    - media.type.3d_object
+id: media.3d_object.field_room_environment
+field_name: field_room_environment
+entity_type: media
+bundle: 3d_object
+label: 'Use room environment lighting'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

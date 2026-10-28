@@ -1,0 +1,20 @@
+uuid: 31dcdcf9-7eaf-4247-8d05-ae2cbc1c0738
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_position_y
+field_name: field_position_y
+entity_type: paragraph
+type: decimal
+settings:
+  precision: 12
+  scale: 4
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

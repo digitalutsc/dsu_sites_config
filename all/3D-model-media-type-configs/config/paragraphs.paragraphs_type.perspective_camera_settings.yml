@@ -1,0 +1,10 @@
+uuid: 6e54fbbf-76ba-4d1d-92db-2feaa13ab4c0
+langcode: en
+status: true
+dependencies: {  }
+id: perspective_camera_settings
+label: 'Perspective camera settings'
+icon_uuid: null
+icon_default: null
+description: 'Fixed camera for the DGI 3D viewer (three.js PerspectiveCamera).'
+behavior_plugins: {  }

@@ -1,0 +1,25 @@
+uuid: e02d9057-4f55-46f3-92c5-ad409ee9bd38
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_position_z
+    - paragraphs.paragraphs_type.perspective_camera_settings
+id: paragraph.perspective_camera_settings.field_position_z
+field_name: field_position_z
+entity_type: paragraph
+bundle: perspective_camera_settings
+label: 'Position Z'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: 5.0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

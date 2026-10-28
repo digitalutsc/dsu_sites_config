@@ -1,0 +1,21 @@
+uuid: 045f4ede-a8a4-403a-a0d7-480ad81702c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_file_fits
+    - media.type.3d_object
+  module:
+    - json_field
+id: media.3d_object.field_media_file_fits
+field_name: field_media_file_fits
+entity_type: media
+bundle: 3d_object
+label: 'Media File Fits'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: json_native

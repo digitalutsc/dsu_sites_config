@@ -1,0 +1,84 @@
+uuid: b6d0a14a-1e0b-4589-acc8-49a7694377ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.perspective_camera_settings.field_aspect
+    - field.field.paragraph.perspective_camera_settings.field_far
+    - field.field.paragraph.perspective_camera_settings.field_fov
+    - field.field.paragraph.perspective_camera_settings.field_near
+    - field.field.paragraph.perspective_camera_settings.field_position_x
+    - field.field.paragraph.perspective_camera_settings.field_position_y
+    - field.field.paragraph.perspective_camera_settings.field_position_z
+    - field.field.paragraph.perspective_camera_settings.field_rotation_x
+    - field.field.paragraph.perspective_camera_settings.field_rotation_y
+    - field.field.paragraph.perspective_camera_settings.field_rotation_z
+    - paragraphs.paragraphs_type.perspective_camera_settings
+id: paragraph.perspective_camera_settings.default
+targetEntityType: paragraph
+bundle: perspective_camera_settings
+mode: default
+content:
+  field_aspect:
+    type: number
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_far:
+    type: number
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_fov:
+    type: number
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_near:
+    type: number
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_position_x:
+    type: number
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_position_y:
+    type: number
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_position_z:
+    type: number
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_rotation_x:
+    type: number
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_rotation_y:
+    type: number
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_rotation_z:
+    type: number
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

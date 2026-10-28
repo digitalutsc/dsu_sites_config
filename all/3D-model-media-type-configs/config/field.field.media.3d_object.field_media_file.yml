@@ -1,0 +1,27 @@
+uuid: 18f6a975-3388-48ca-b8fe-2d7df56a46ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_file
+    - media.type.3d_object
+  module:
+    - file
+id: media.3d_object.field_media_file
+field_name: field_media_file
+entity_type: media
+bundle: 3d_object
+label: '3D model file'
+description: 'GLB is preferred; some browsers fail on large GLTF files. For OBJ, upload the .mtl and textures as a zip below.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'glb gltf obj'
+  max_filesize: ''
+  description_field: false
+field_type: file
